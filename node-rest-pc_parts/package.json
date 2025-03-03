@@ -15,5 +15,8 @@
     "url": "https://github.com/Zokni1Coder/WPF-MVVM-RestAPI-PC_Builder_App/issues"
   },
   "homepage": "https://github.com/Zokni1Coder/WPF-MVVM-RestAPI-PC_Builder_App#readme",
-  "description": ""
+  "description": "",
+  "dependencies": {
+    "express": "^4.21.2"
+  }
 }
