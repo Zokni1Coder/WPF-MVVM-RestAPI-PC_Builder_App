@@ -1,0 +1,43 @@
+﻿<Application x:Class="PC_Builder.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:local="clr-namespace:PC_Builder"
+             xmlns:views="clr-namespace:PC_Builder.Views"
+             xmlns:viewmodels="clr-namespace:PC_Builder.ViewModels"
+             mc:Ignorable="d"
+             StartupUri="MainWindow.xaml">
+    <Application.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Templates.xaml"/>
+                <ResourceDictionary Source="/Styles/ButtonStyles.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+            <DataTemplate DataType="{x:Type viewmodels:HomeViewModel}">
+                <views:HomeView/>
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type viewmodels:MotherboardViewModel}">
+                <views:MotherboardView/>
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type viewmodels:CPUViewModel}">
+                <views:CPUView/>
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type viewmodels:CPUCoolerViewModel}">
+                <views:CPUCoolerView/>
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type viewmodels:GPUViewModel}">
+                <views:GPUView/>
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type viewmodels:RAMViewModel}">
+                <views:RAMView/>
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type viewmodels:ROMViewModel}">
+                <views:ROMView/>
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type viewmodels:PowerSupplyViewModel}">
+                <views:PowerSupplyView/>
+            </DataTemplate>
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>
