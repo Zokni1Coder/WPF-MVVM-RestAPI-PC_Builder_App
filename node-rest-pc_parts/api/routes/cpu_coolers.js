@@ -1,14 +1,15 @@
 const express = require('express');
 const router = express.Router();
 const db = require('../../db');
-const { Console } = require('console');
 
 router.get('/', async (req, res) => {
     try {
-        console.log('bent van');
-        Console.log('bent van');
-        const [rows] = await db.query('SELECT cpu_cooler.id, model, manufacturer.name AS manufacturer, fan_rpm, noise_level, height, water_cooled, price FROM `cpu_cooler` JOIN manufacturer ON manufacturer.id = cpu_cooler.manufacturer_id');
-        res.status(200).json(rows);
+        const [cpu_coolers] = await db.query('SELECT cpu_cooler.id, model, manufacturer.name, fan_rpm, noise_level, height, water_cooled, price from cpu_cooler JOIN manufacturer ON manufacturer.id = cpu_cooler.manufacturer_id');
+        const [compatibilities] = await db.query('SELECT cpu_cooler_compatibility.cooler_id,  cpu_socket.name from cpu_cooler_compatibility JOIN cpu_socket ON cpu_socket.id = cpu_cooler_compatibility.cpu_id ORDER BY cooler_id ASC');
+        res.status(200).json({
+            cpu_coolers: cpu_coolers,
+            compatibilities: compatibilities
+        });
     } catch (error) {
         console.error("SQL Error:", error); 
         res.status(500).json({ error: error.message }); 
@@ -18,15 +19,11 @@ router.get('/', async (req, res) => {
 router.get('/:id', async (req, res) => {
     const { id } = req.params;
     try {
-        const [rows] = await db.query('SELECT cpu_cooler.id, model, manufacturer.name AS manufacturer, fan_rpm, noise_level, height, water_cooled, price FROM `cpu_cooler` JOIN manufacturer ON manufacturer.id = cpu_cooler.manufacturer_id; WHERE cpu_cooler.id = ?', [id]);
-
-        if (rows.length === 0) {
-            return res.status(404).json({ error: "Not found anything" });
-        }
-
+        const [cpu_cooler] = await db.query('SELECT cpu_cooler.id, model, manufacturer.name, fan_rpm, noise_level, height, water_cooled, price from cpu_cooler JOIN manufacturer ON manufacturer.id = cpu_cooler.manufacturer_id WHERE cpu_cooler.id = ?', [id]);
+        const [compatibilities] = await db.query('SELECT cpu_cooler_compatibility.cooler_id,  cpu_socket.name from cpu_cooler_compatibility JOIN cpu_socket ON cpu_socket.id = cpu_cooler_compatibility.cpu_id WHERE cpu_cooler_compatibility.cooler_id = ? ORDER BY cooler_id ASC', [id]);
         res.status(200).json({
-            message: 'Success',
-            motherboard: rows[0]
+            cpu_coolers: cpu_cooler,
+            compatibilities: compatibilities
         });
     } catch (error) {
         console.error("SQL Hiba:", error);
