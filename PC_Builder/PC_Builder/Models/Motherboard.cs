@@ -136,26 +136,5 @@ namespace PC_Builder.Models
             get { return price; }
             set { price = value; }
         }
-
-
-        public Motherboard(int id, string manufacturer, string info, string socket, string form_factor, string chipset, int max_memory, string ram_type, int memory_slot_no, int sata_60gbs_no, int onboard_ethernet, int wifi, int raid_supp, int price)
-        {
-            this.Id = id;
-            this.Manufacturer = manufacturer;
-            this.Info = info;
-            this.Socket = socket;
-            this.Form_factor = form_factor;
-            this.Chipset = chipset;
-            this.Max_memory = max_memory;
-            this.Ram_type = ram_type;
-            this.Memory_slot_no = memory_slot_no;
-            this.Sata_60gbs_no = sata_60gbs_no;
-            this.Onboard_ethernet = onboard_ethernet;
-            this.Wifi = wifi;
-            this.Raid_supp = raid_supp;
-            this.Price = price;
-        }
-
-
     }
 }

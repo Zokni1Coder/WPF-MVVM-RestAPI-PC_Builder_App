@@ -90,7 +90,9 @@
     <Compile Include="Commands\UpdateViewCommand.cs" />
     <Compile Include="Interfaces\IConfig.cs" />
     <Compile Include="Interfaces\IPC.cs" />
+    <Compile Include="Models\M2.cs" />
     <Compile Include="Models\Motherboard.cs" />
+    <Compile Include="Models\USBHeader.cs" />
     <Compile Include="ViewModels\BaseViewModel.cs" />
     <Compile Include="ViewModels\CPUCoolerViewModel.cs" />
     <Compile Include="ViewModels\CPUViewModel.cs" />

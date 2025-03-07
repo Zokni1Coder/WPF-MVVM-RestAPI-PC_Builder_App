@@ -4,6 +4,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:PC_Builder.Views"
+             xmlns:viewmodels="clr-namespace:PC_Builder.ViewModels"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid>
@@ -20,7 +21,7 @@
             </Border.Background>
         </Border>
 
-        <DataGrid x:Name="DGrid" ColumnHeaderStyle="{StaticResource GridHeaderStyle}" BorderBrush="#23262B">
+        <DataGrid x:Name="DGrid" ItemsSource="{Binding Source=Motherboards}" ColumnHeaderStyle="{StaticResource GridHeaderStyle}" BorderBrush="#23262B">
             <DataGrid.Background>
                 <LinearGradientBrush StartPoint="0,0" EndPoint="0,5">
                     <GradientStop Color="#23262B" Offset="0.0"/>
@@ -28,12 +29,12 @@
                 </LinearGradientBrush>
             </DataGrid.Background>
             <DataGrid.Columns>
-                <DataGridTextColumn Header="Model" IsReadOnly="True" Width="*"/>
-                <DataGridTextColumn Header="Chipset" IsReadOnly="True" Width="*"/>
-                <DataGridTextColumn Header="Socket" IsReadOnly="True" Width="*"/>
-                <DataGridTextColumn Header="Form factor" IsReadOnly="True" Width="*"/>
-                <DataGridTextColumn Header="Memory type" IsReadOnly="True" Width="*"/>
-                <DataGridTextColumn Header="Price" IsReadOnly="True" Width="*"/>
+                <DataGridTextColumn Header="Model" Binding="{Binding Manufacturer}" IsReadOnly="True" Width="*"/>
+                <DataGridTextColumn Header="Chipset" Binding="{Binding Chipset}" IsReadOnly="True" Width="*"/>
+                <DataGridTextColumn Header="Socket" Binding="{Binding Socket}" IsReadOnly="True" Width="*"/>
+                <DataGridTextColumn Header="Form factor" Binding="{Binding Form_factor}" IsReadOnly="True" Width="*"/>
+                <DataGridTextColumn Header="Memory type" Binding="{Binding Ram_type}" IsReadOnly="True" Width="*"/>
+                <DataGridTextColumn Header="Price" Binding="{Binding Price}" IsReadOnly="True" Width="*"/>
                 <DataGridTemplateColumn Header="a" IsReadOnly="True" Width="auto">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
