@@ -21,7 +21,7 @@
             </Border.Background>
         </Border>
 
-        <DataGrid x:Name="DGrid" ItemsSource="{Binding Source=Motherboards}" ColumnHeaderStyle="{StaticResource GridHeaderStyle}" BorderBrush="#23262B">
+        <DataGrid x:Name="DGrid" AutoGenerateColumns="False" ItemsSource="{Binding Motherboards}" ColumnHeaderStyle="{StaticResource GridHeaderStyle}" BorderBrush="#23262B">
             <DataGrid.Background>
                 <LinearGradientBrush StartPoint="0,0" EndPoint="0,5">
                     <GradientStop Color="#23262B" Offset="0.0"/>

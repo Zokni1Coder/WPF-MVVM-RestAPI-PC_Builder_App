@@ -1,10 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Sockets;
 using System.Text;
 using System.Text.Json;
 using System.Text.Json.Serialization;
 using System.Threading.Tasks;
+using System.Xaml;
 
 namespace PC_Builder.Models
 {
@@ -135,6 +137,29 @@ namespace PC_Builder.Models
         {
             get { return price; }
             set { price = value; }
+        }
+
+        //public Motherboard(int Id, string manufacturer, string info,string socket, string form_factor, string chipset, int memory_max, string ram_type, int memory_slots_no, int sata_60gbs_no, int onboard_ethernet, int wifi, int raid_supp, int price)
+        //{
+        //   this.Id = Id;
+        //   this.Manufacturer = manufacturer;
+        //    this.Info = info;
+        //    this.Socket = socket;
+        //    this.form_factor = form_factor;
+        //    this.chipset = chipset; 
+        //    this.Max_memory = memory_max;
+        //    this.ram_type = ram_type;
+        //    this.memory_slot_no = memory_slots_no;
+        //    this.sata_60gbs_no = sata_60gbs_no;
+        //    this.onboard_ethernet = onboard_ethernet;
+        //    this.wifi = wifi;
+        //    this.raid_supp = raid_supp;
+        //    this.price = price;
+        //}
+        //
+        public Motherboard()
+        {
+            
         }
     }
 }
