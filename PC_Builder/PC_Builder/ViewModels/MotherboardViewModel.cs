@@ -18,32 +18,17 @@ namespace PC_Builder.ViewModels
     public class MotherboardViewModel : BaseViewModel
     {
 
-        //public string Id => motherboard.Id.ToString();
-        //public string Manufacturer => motherboard.Manufacturer;
-        //public string Chipset => motherboard.Chipset;
-        //public string Socket => motherboard.Socket;
-        //public string Form_factor => motherboard.Form_factor;
-        //public string Ram_type => motherboard.Ram_type;
-        //public string Price => motherboard.Price.ToString();
-
-
-        private ObservableCollection<MotherboardtoGrid> motherboardList;
+        private ObservableCollection<MotherboardtoGrid> motherboardList = new ObservableCollection<MotherboardtoGrid>();
 
         public ObservableCollection<MotherboardtoGrid> Motherboards
         {
             get { return motherboardList; }
-            set
-            {
-                motherboardList = value;
-                OnPropertyChanged(nameof(Motherboards));
-            }
         }
 
 
 
         public MotherboardViewModel()
         {
-            motherboardList = new ObservableCollection<MotherboardtoGrid>();
             getDatas();
         }
 
@@ -56,21 +41,18 @@ namespace PC_Builder.ViewModels
 
             if (structure?.motherboards != null)
             {
-                Motherboards.Clear();
-
                 foreach (var m in structure.motherboards)
                 {
                     Motherboards.Add(new MotherboardtoGrid
                     {
-                        Manufacturer = m.Manufacturer,
+                        Model = m.Manufacturer + " " + m.Info,
                         Chipset = m.Chipset,
                         Socket = m.Socket,
                         Form_factor = m.Form_factor,
                         Ram_type = m.Ram_type,
-                        Price = m.Price
+                        Price = m.Price + "€"
                     });
-                }
-               
+                }                
             }
         }
 
@@ -86,12 +68,12 @@ namespace PC_Builder.ViewModels
 
         public class MotherboardtoGrid
         {
-            public string Manufacturer { get; set; }
+            public string Model { get; set; }
             public string Chipset { get; set; }
             public string Socket { get; set; }
             public string Form_factor { get; set; }
             public string Ram_type { get; set; }
-            public int Price { get; set; }
+            public string Price { get; set; }
 
         }
     }
