@@ -108,8 +108,12 @@ namespace PC_Builder.Models
         [JsonPropertyName("onboard_ethernet")]
         public int Onboard_ethernet
         {
-            get { return onboard_ethernet; }
             set { onboard_ethernet = value; }
+        }
+
+        public string GetOnboardEthernet()
+        {
+            return onboard_ethernet == 1 ? "Yes" : "No";
         }
 
         private int wifi;
@@ -121,6 +125,11 @@ namespace PC_Builder.Models
             set { wifi = value; }
         }
 
+        public string GetWifi()
+        {
+            return wifi == 1 ? "Yes" : "No";
+        }
+
         private int raid_supp;
 
         [JsonPropertyName("raid_supp")]
@@ -128,6 +137,10 @@ namespace PC_Builder.Models
         {
             get { return raid_supp; }
             set { raid_supp = value; }
+        }
+        public string GetRaidSupport()
+        {
+            return raid_supp == 1 ? "Yes" : "No";
         }
 
         private int price;
@@ -138,25 +151,6 @@ namespace PC_Builder.Models
             get { return price; }
             set { price = value; }
         }
-
-        //public Motherboard(int Id, string manufacturer, string info,string socket, string form_factor, string chipset, int memory_max, string ram_type, int memory_slots_no, int sata_60gbs_no, int onboard_ethernet, int wifi, int raid_supp, int price)
-        //{
-        //   this.Id = Id;
-        //   this.Manufacturer = manufacturer;
-        //    this.Info = info;
-        //    this.Socket = socket;
-        //    this.form_factor = form_factor;
-        //    this.chipset = chipset; 
-        //    this.Max_memory = memory_max;
-        //    this.ram_type = ram_type;
-        //    this.memory_slot_no = memory_slots_no;
-        //    this.sata_60gbs_no = sata_60gbs_no;
-        //    this.onboard_ethernet = onboard_ethernet;
-        //    this.wifi = wifi;
-        //    this.raid_supp = raid_supp;
-        //    this.price = price;
-        //}
-        //
         public Motherboard()
         {
             

@@ -37,12 +37,12 @@ namespace PC_Builder.ViewModels
             {
                 CpusToView.Add(new CPUS
                 {
-                    Model = cpu.Series,
+                    Model = cpu.Manufacturer + " " + cpu.Series,
                     Core_Count = cpu.Core_count.ToString(),
-                    Boost_Clock = cpu.Boost_core_clock.ToString(),
-                    Core_Clock = cpu.Core_clock.ToString(),
+                    Boost_Clock = cpu.Boost_core_clock.ToString() + "GHz",
+                    Core_Clock = cpu.Core_clock.ToString() + "GHz",
                     Microarchitecture = cpu.Microarchitecture,
-                    Price = cpu.Price.ToString()
+                    Price = cpu.Price.ToString() + "€"
                 });
             }
         }

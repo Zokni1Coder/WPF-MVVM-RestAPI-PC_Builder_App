@@ -17,6 +17,15 @@ namespace PC_Builder.Models
             set { id = value; }
         }
 
+        private string manufacturer;
+        [JsonPropertyName("manufacturer")]
+        public string Manufacturer
+        {
+            get { return manufacturer; }
+            set { manufacturer = value; }
+        }
+
+
         private string series;
         [JsonPropertyName("series")]
         public string Series
