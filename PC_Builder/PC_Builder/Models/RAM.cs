@@ -42,7 +42,7 @@ namespace PC_Builder.Models
         }
 
         private string type;
-
+        [JsonPropertyName("type")]
         public string Type
         {
             get { return type; }
