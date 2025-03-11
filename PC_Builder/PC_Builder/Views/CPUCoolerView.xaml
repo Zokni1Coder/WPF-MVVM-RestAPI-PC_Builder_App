@@ -28,17 +28,18 @@
                 </LinearGradientBrush>
             </DataGrid.Background>
             <DataGrid.Columns>
-                <DataGridTextColumn Header="Model" Binding="{Binding Model}" IsReadOnly="True" Width="*"/>
-                <DataGridTextColumn Header="Manufacturer" Binding="{Binding Manufacturer}" IsReadOnly="True" Width="*"/>
-                <DataGridTextColumn Header="Fan RPM" Binding="{Binding Fan_RPM}" IsReadOnly="True" Width="*"/>
-                <DataGridTextColumn Header="Noise Level" Binding="{Binding Noise_level}" IsReadOnly="True" Width="*"/>
-                <DataGridTextColumn Header="Water Cooled" Binding="{Binding Water_cooled}" IsReadOnly="True" Width="*"/>
-                <DataGridTextColumn Header="Price" Binding="{Binding Price}" IsReadOnly="True" Width="*"/>
-                <DataGridTemplateColumn Header="a" IsReadOnly="True" Width="auto">
+                <DataGridTextColumn Header="Model" Binding="{Binding Model}" CellStyle="{StaticResource GridCellStyle}" IsReadOnly="True" Width="*"/>
+                <DataGridTextColumn Header="Manufacturer" Binding="{Binding Manufacturer}" CellStyle="{StaticResource GridCellStyle}" IsReadOnly="True" Width="*"/>
+                <DataGridTextColumn Header="Fan RPM" Binding="{Binding Fan_RPM}" CellStyle="{StaticResource GridCellStyle}" IsReadOnly="True" Width="*"/>
+                <DataGridTextColumn Header="Noise Level" Binding="{Binding Noise_level}" CellStyle="{StaticResource GridCellStyle}" IsReadOnly="True" Width="*"/>
+                <DataGridTextColumn Header="Water Cooled" Binding="{Binding Water_cooled}" CellStyle="{StaticResource GridCellStyle}" IsReadOnly="True" Width="*"/>
+                <DataGridTextColumn Header="Price" Binding="{Binding Price}" CellStyle="{StaticResource GridCellStyle}" IsReadOnly="True" Width="*"/>
+                <DataGridTemplateColumn Header="" IsReadOnly="True" Width="*">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
                             <StackPanel>
-                                <Button x:Name="BtnOpen" Cursor="Hand"/>
+                                <Button x:Name="BtnOpen" Style="{StaticResource GridDetailsButtonStyle}" Content="More detail" Cursor="Hand"/>
+                                <Button x:Name="BtnSelect" Content="Select" Style="{StaticResource GridSelectButtonStyle}" Cursor="Hand"/>
                             </StackPanel>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>

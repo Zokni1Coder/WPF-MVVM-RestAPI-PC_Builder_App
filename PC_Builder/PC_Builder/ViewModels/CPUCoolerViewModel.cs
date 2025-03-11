@@ -39,9 +39,9 @@ namespace PC_Builder.ViewModels
                     Model = cooler.Model,
                     Manufacturer = cooler.Manufacturer,
                     Fan_RPM = cooler.Fan_RPM.ToString(),
-                    Noise_level = cooler.Noise_level.ToString(),
+                    Noise_level = cooler.Noise_level.ToString() + "dB",
                     Water_cooled = cooler.GetWaterCooled(),
-                    Price = cooler.Price
+                    Price = cooler.Price.ToString() + "€"
                 });
             }
 
@@ -54,7 +54,7 @@ namespace PC_Builder.ViewModels
             public string Fan_RPM { get; set; }
             public string Noise_level { get; set; }
             public string Water_cooled { get; set; }
-            public int Price { get; set; }
+            public string Price { get; set; }
         }
 
         public class Structure
