@@ -44,7 +44,6 @@ namespace PC_Builder.ViewModels
                     Price = cooler.Price.ToString() + "€"
                 });
             }
-
         }
 
         public class CPU_CoolerToView

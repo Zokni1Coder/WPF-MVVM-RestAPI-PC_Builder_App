@@ -34,7 +34,7 @@ namespace PC_Builder.ViewModels
             {
                 this.gpus.Add(new GpuToView
                 {
-                    Model = gpu.Model,
+                    Model =gpu.Manufacturer + " " + gpu.Info + " " + gpu.Model,
                     Memory_Size = gpu.Vram.ToString() + "GB",
                     Memory_Type = gpu.Ram_type,
                     Core_Clock = gpu.Core_clock.ToString() + "MHz", 

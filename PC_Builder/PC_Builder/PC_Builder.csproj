@@ -96,6 +96,7 @@
     <Compile Include="Models\GPU.cs" />
     <Compile Include="Models\M2.cs" />
     <Compile Include="Models\Motherboard.cs" />
+    <Compile Include="Models\RAM.cs" />
     <Compile Include="Models\USBHeader.cs" />
     <Compile Include="ViewModels\BaseViewModel.cs" />
     <Compile Include="ViewModels\CPUCoolerViewModel.cs" />
