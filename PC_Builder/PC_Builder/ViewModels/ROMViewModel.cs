@@ -35,11 +35,11 @@ namespace PC_Builder.ViewModels
             {
                 Roms.Add(new ROMToView
                 {
-                    Model = rom.Model,
+                    Model = rom.Manufacturer + " " + rom.Model,
                     Capacity = rom.Capacity.ToString() + "GB",
                     Type = rom.Type,
                     Form_Factor = rom.Form_factor,
-                    //Manufacturer = ,
+                    Manufacturer = rom.Manufacturer,
                     Price = rom.Price.ToString() + "€"
                 });
             }

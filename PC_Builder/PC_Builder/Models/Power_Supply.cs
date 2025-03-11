@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace PC_Builder.Models
 {
-    public class ROM
+    public class Power_Supply
     {
         private int id;
         [JsonPropertyName("id")]
@@ -17,28 +17,20 @@ namespace PC_Builder.Models
             set { id = value; }
         }
 
-        private string model;
+        private string model1;
         [JsonPropertyName("model")]
         public string Model
         {
-            get { return model; }
-            set { model = value; }
+            get { return model1; }
+            set { model1 = value; }
         }
 
         private string manufacturer;
-        [JsonPropertyName("name")]
+        [JsonPropertyName("manufacturer")]
         public string Manufacturer
         {
             get { return manufacturer; }
             set { manufacturer = value; }
-        }
-
-        private int capacity;
-        [JsonPropertyName("capacity")]
-        public int Capacity
-        {
-            get { return capacity; }
-            set { capacity = value; }
         }
 
         private string type;
@@ -49,36 +41,28 @@ namespace PC_Builder.Models
             set { type = value; }
         }
 
-        private string form_factor;
-        [JsonPropertyName("form_factor")]
-        public string Form_factor
+        private string rating;
+        [JsonPropertyName("rating")]
+        public string Rating
         {
-            get { return form_factor; }
-            set { form_factor = value; }
+            get { return rating; }
+            set { rating = value; }
         }
 
-        private int nvme;
-        [JsonPropertyName("nvme")]
-        public int Nvme
+        private int wattage;
+        [JsonPropertyName("wattage")]
+        public int Wattage
         {
-            get { return nvme; }
-            set { nvme = value; }
+            get { return wattage; }
+            set { wattage = value; }
         }
 
-        private int? rpm;
-        [JsonPropertyName("rpm")]
-        public int? Rpm
+        private string modularity;
+        [JsonPropertyName("modularity")]
+        public string Modularity
         {
-            get { return rpm; }
-            set { rpm = value; }
-        }
-
-        private string Interface;
-        [JsonPropertyName("interface")]
-        public string INterface
-        {
-            get { return Interface; }
-            set { Interface = value; }
+            get { return modularity; }
+            set { modularity = value; }
         }
 
         private int price;
@@ -88,6 +72,7 @@ namespace PC_Builder.Models
             get { return price; }
             set { price = value; }
         }
+
 
     }
 }
