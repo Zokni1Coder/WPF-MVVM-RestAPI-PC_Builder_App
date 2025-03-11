@@ -36,7 +36,7 @@ namespace PC_Builder.ViewModels
             {
                 Rams.Add(new RAMToView
                 {
-                    Model = " " + ram.Model + " " + ram.Size.ToString() + "GB",
+                    Model = ram.Manufacturer + " " + ram.Model + " " + ram.Size.ToString() + "GB",
                     Memory_Size = ram.Size.ToString() + "GB",
                     Slot_Type = ram.Type,
                     Speed = ram.Speed.ToString() + "MHz",

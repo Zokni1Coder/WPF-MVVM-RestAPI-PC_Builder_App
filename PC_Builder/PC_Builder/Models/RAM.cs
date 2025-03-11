@@ -25,12 +25,12 @@ namespace PC_Builder.Models
             set { model = value; }
         }
 
-        private string name;
+        private string manufacturer;
         [JsonPropertyName("name")]
-        public string Name
+        public string Manufacturer
         {
-            get { return name; }
-            set { name = value; }
+            get { return manufacturer; }
+            set { manufacturer = value; }
         }
 
         private int speed;
