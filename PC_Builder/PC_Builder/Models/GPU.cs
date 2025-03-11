@@ -18,7 +18,7 @@ namespace PC_Builder.Models
         }
 
         private string info;
-        [JsonPropertyName("info")]               
+        [JsonPropertyName("info")]
         public string Info
         {
             get { return info; }
@@ -49,9 +49,9 @@ namespace PC_Builder.Models
             set { technology = value; }
         }
 
-        private int model;
+        private string model;
         [JsonPropertyName("model")]
-        public int Model
+        public string Model
         {
             get { return model; }
             set { model = value; }
@@ -75,7 +75,7 @@ namespace PC_Builder.Models
 
         private int core_clock;
         [JsonPropertyName("core_clock")]
-        public int core_clock
+        public int Core_clock
         {
             get { return core_clock; }
             set { core_clock = value; }
@@ -83,7 +83,7 @@ namespace PC_Builder.Models
 
         private int boost_clock;
         [JsonPropertyName("boost_clock")]
-        public int boost_clock
+        public int Boost_clock
         {
             get { return boost_clock; }
             set { boost_clock = value; }
@@ -115,7 +115,7 @@ namespace PC_Builder.Models
 
         private int hdmi_ouput;
         [JsonPropertyName("hdmi_ouput")]
-        public int hdmi_ouput
+        public int Hdmi_ouput
         {
             get { return hdmi_ouput; }
             set { hdmi_ouput = value; }
@@ -136,6 +136,5 @@ namespace PC_Builder.Models
             get { return price; }
             set { price = value; }
         }
-
     }
 }

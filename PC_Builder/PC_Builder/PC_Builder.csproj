@@ -93,6 +93,7 @@
     <Compile Include="Models\CPU.cs" />
     <Compile Include="Models\CPU_Cooler.cs" />
     <Compile Include="Models\CPU_Cooler_Compatibility.cs" />
+    <Compile Include="Models\GPU.cs" />
     <Compile Include="Models\M2.cs" />
     <Compile Include="Models\Motherboard.cs" />
     <Compile Include="Models\USBHeader.cs" />

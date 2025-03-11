@@ -20,7 +20,7 @@
             </Border.Background>
         </Border>
 
-        <DataGrid x:Name="DGrid" ColumnHeaderStyle="{StaticResource GridHeaderStyle}" BorderBrush="#23262B">
+        <DataGrid x:Name="DGrid" AutoGenerateColumns="False" ItemsSource="{Binding Gpus}"  ColumnHeaderStyle="{StaticResource GridHeaderStyle}" BorderBrush="#23262B">
             <DataGrid.Background>
                 <LinearGradientBrush StartPoint="0,0" EndPoint="0,5">
                     <GradientStop Color="#23262B" Offset="0.0"/>
@@ -28,17 +28,18 @@
                 </LinearGradientBrush>
             </DataGrid.Background>
             <DataGrid.Columns>
-                <DataGridTextColumn Header="Model" IsReadOnly="True" Width="*"/>
-                <DataGridTextColumn Header="Memory Size" IsReadOnly="True" Width="*"/>
-                <DataGridTextColumn Header="Memory Type" IsReadOnly="True" Width="*"/>
-                <DataGridTextColumn Header="Core Clock" IsReadOnly="True" Width="*"/>
-                <DataGridTextColumn Header="Slot" IsReadOnly="True" Width="*"/>
-                <DataGridTextColumn Header="Price" IsReadOnly="True" Width="*"/>
-                <DataGridTemplateColumn Header="a" IsReadOnly="True" Width="auto">
+                <DataGridTextColumn Header="Model" CellStyle="{StaticResource GridCellStyle}" Binding="{Binding Model}" IsReadOnly="True" Width="*"/>
+                <DataGridTextColumn Header="Memory Size" CellStyle="{StaticResource GridCellStyle}" Binding="{Binding Memory_Size}" IsReadOnly="True" Width="*"/>
+                <DataGridTextColumn Header="Memory Type" CellStyle="{StaticResource GridCellStyle}" Binding="{Binding Memory_Type}" IsReadOnly="True" Width="*"/>
+                <DataGridTextColumn Header="Core Clock" CellStyle="{StaticResource GridCellStyle}" Binding="{Binding Core_Clock}" IsReadOnly="True" Width="*"/>
+                <DataGridTextColumn Header="Slot" CellStyle="{StaticResource GridCellStyle}" Binding="{Binding Slot}" IsReadOnly="True" Width="*"/>
+                <DataGridTextColumn Header="Price" CellStyle="{StaticResource GridCellStyle}" Binding="{Binding Price}" IsReadOnly="True" Width="*"/>
+                <DataGridTemplateColumn Header="a" IsReadOnly="True" Width="*">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
                             <StackPanel>
-                                <Button x:Name="BtnOpen" Cursor="Hand"/>
+                                <Button x:Name="BtnOpen" Style="{StaticResource GridDetailsButtonStyle}" Content="More detail" Cursor="Hand"/>
+                                <Button x:Name="BtnSelect" Style="{StaticResource GridSelectButtonStyle}" Content="Select" Cursor="Hand"/>
                             </StackPanel>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
