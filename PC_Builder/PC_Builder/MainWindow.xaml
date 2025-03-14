@@ -19,7 +19,7 @@
 
         <TextBlock Grid.Column="1" Text="E R I K  K O V Á C S" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0, 0, 15, 10" FontSize="10" Foreground="#525965"/>
 
-        <Border Grid.Column="1" Background="#D61734"
+        <Border Grid.Column="1" Background="Red"
             Height="15"
             CornerRadius="3,0,0,3"
             Width="5"
@@ -30,7 +30,7 @@
         <StackPanel Orientation="Vertical" HorizontalAlignment="Left" Width="230" >
             <Grid Height="50" VerticalAlignment="Top" Margin="0, 30, 0, 0">
                 <TextBlock Text="PC Builder" FontSize="15" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="White"/>
-                <Border Background="#D61734"
+                <Border Background="Red"
                     Height="25"
                     CornerRadius="3,0,0,3"
                     Width="5"
