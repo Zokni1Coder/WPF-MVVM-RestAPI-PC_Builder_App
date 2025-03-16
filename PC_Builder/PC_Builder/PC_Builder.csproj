@@ -115,9 +115,14 @@
     <Compile Include="ViewModels\PowerSupplyViewModel.cs" />
     <Compile Include="ViewModels\RAMViewModel.cs" />
     <Compile Include="ViewModels\ROMViewModel.cs" />
+    <Compile Include="ViewModels\SelectedCPUCoolerViewModel.cs" />
     <Compile Include="ViewModels\SelectedCPUViewModel.cs" />
+    <Compile Include="ViewModels\SelectedGPUViewModel.cs" />
     <Compile Include="ViewModels\SelectedMotherboardViewModel.cs" />
     <Compile Include="ViewModels\SelectedPartViewModel.cs" />
+    <Compile Include="ViewModels\SelectedPowerSupplyViewModel.cs" />
+    <Compile Include="ViewModels\SelectedRAMViewModel.cs" />
+    <Compile Include="ViewModels\SelectedROMViewModel.cs" />
     <Compile Include="Views\CPUCoolerView.xaml.cs">
       <DependentUpon>CPUCoolerView.xaml</DependentUpon>
     </Compile>
@@ -142,11 +147,26 @@
     <Compile Include="Views\ROMView.xaml.cs">
       <DependentUpon>ROMView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\SelectedCPUCoolerView.xaml.cs">
+      <DependentUpon>SelectedCPUCoolerView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\SelectedCPUView.xaml.cs">
       <DependentUpon>SelectedCPUView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\SelectedGPUView.xaml.cs">
+      <DependentUpon>SelectedGPUView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\SelectedMotherboardView.xaml.cs">
       <DependentUpon>SelectedMotherboardView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SelectedPSView.xaml.cs">
+      <DependentUpon>SelectedPSView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SelectedRAMView.xaml.cs">
+      <DependentUpon>SelectedRAMView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SelectedROMView.xaml.cs">
+      <DependentUpon>SelectedROMView.xaml</DependentUpon>
     </Compile>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -204,11 +224,31 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Views\SelectedCPUCoolerView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\SelectedCPUView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Views\SelectedGPUView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\SelectedMotherboardView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\SelectedPSView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\SelectedRAMView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\SelectedROMView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -250,16 +290,6 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Assets\delete.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="delete.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="home.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
   </ItemGroup>

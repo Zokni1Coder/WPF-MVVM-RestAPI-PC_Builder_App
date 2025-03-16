@@ -38,7 +38,7 @@
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
                             <StackPanel>
-                                <Button x:Name="BtnOpen" Style="{StaticResource GridDetailsButtonStyle}" Content="More detail" Cursor="Hand"/>
+                                <Button x:Name="BtnOpen" Command="{Binding DataContext.SelectViewCommand, RelativeSource={RelativeSource AncestorType=UserControl}}" CommandParameter="PS" Style="{StaticResource GridDetailsButtonStyle}" Content="More detail" Cursor="Hand"/>
                                 <Button x:Name="BtnSelect" Style="{StaticResource GridSelectButtonStyle}" Content="Select" Cursor="Hand"/>
                             </StackPanel>
                         </DataTemplate>

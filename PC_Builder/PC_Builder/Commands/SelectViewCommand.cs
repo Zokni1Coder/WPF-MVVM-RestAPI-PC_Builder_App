@@ -26,9 +26,8 @@ namespace PC_Builder.Commands
 
         public void Execute(object parameter)
         {
-            Console.WriteLine(parameter.ToString());
             switch (parameter.ToString())
-            {                
+            {
                 case "Motherboard":
                     viewModel.SelectedViewModel = new SelectedMotherboardViewModel();
                     break;
@@ -36,26 +35,25 @@ namespace PC_Builder.Commands
                     viewModel.SelectedViewModel = new SelectedCPUViewModel();
                     break;
                 case "GPU":
-                    //viewModel.SelectedViewModel = new GPUViewModel();
+                    viewModel.SelectedViewModel = new SelectedGPUViewModel();
                     break;
                 case "CPU Cooler":
-                    //viewModel.SelectedViewModel = new CPUCoolerViewModel();
+                    viewModel.SelectedViewModel = new SelectedCPUCoolerViewModel();
                     break;
                 case "RAM":
-                    //viewModel.SelectedViewModel = new RAMViewModel();
+                    viewModel.SelectedViewModel = new SelectedRAMViewModel();
                     break;
                 case "ROM":
-                   // viewModel.SelectedViewModel = new ROMViewModel();
+                    viewModel.SelectedViewModel = new SelectedROMViewModel();
                     break;
                 case "PS":
-                    //viewModel.SelectedViewModel = new PowerSupplyViewModel();
+                    viewModel.SelectedViewModel = new SelectedPowerSupplyViewModel();
                     break;
                 default:
                     break;
             }
-            //MessageBox.Show("test");
             SelectedPart selectedPartWindow = new SelectedPart();
-            selectedPartWindow.DataContext = viewModel; 
+            selectedPartWindow.DataContext = viewModel;
             selectedPartWindow.Show();
         }
     }

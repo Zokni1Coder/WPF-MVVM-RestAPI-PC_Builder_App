@@ -24,7 +24,6 @@ namespace PC_Builder.ViewModels
             get { return cpusToView; }
             set { cpusToView = value; }
         }
-
         public ICommand SelectViewCommand { get; }
         public CPUViewModel()
         {

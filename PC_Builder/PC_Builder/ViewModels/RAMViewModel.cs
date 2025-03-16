@@ -8,6 +8,8 @@ using System.Text.Json.Serialization;
 using System.Text.Json;
 using System.Threading.Tasks;
 using PC_Builder.Models;
+using PC_Builder.Commands;
+using System.Windows.Input;
 
 namespace PC_Builder.ViewModels
 {
@@ -21,9 +23,11 @@ namespace PC_Builder.ViewModels
             set { rams = value; }
         }
 
+        public ICommand SelectViewCommand { get; }
         public RAMViewModel()
         {
             getDatas();
+            SelectViewCommand = new SelectViewCommand(new SelectedPartViewModel());
         }
 
         private async void getDatas()

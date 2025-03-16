@@ -6,6 +6,8 @@ using System.Net.Http;
 using System.Text;
 using System.Text.Json;
 using System.Threading.Tasks;
+using System.Windows.Input;
+using PC_Builder.Commands;
 using PC_Builder.Models;
 
 namespace PC_Builder.ViewModels
@@ -20,9 +22,11 @@ namespace PC_Builder.ViewModels
             set { supplies = value; }
         }
 
+        public ICommand SelectViewCommand { get; }
         public PowerSupplyViewModel()
         {
             getDatas();
+            SelectViewCommand = new SelectViewCommand(new SelectedPartViewModel());
         }
 
         private async void getDatas()

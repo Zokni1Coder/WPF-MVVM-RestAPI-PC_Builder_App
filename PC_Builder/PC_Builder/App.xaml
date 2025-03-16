@@ -44,6 +44,21 @@
             <DataTemplate DataType="{x:Type viewmodels:SelectedCPUViewModel}">
                 <views:SelectedCPUView/>
             </DataTemplate>
+            <DataTemplate DataType="{x:Type viewmodels:SelectedCPUCoolerViewModel}">
+                <views:SelectedCPUCooler/>
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type viewmodels:SelectedGPUViewModel}">
+                <views:SelectedGPUView/>
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type viewmodels:SelectedRAMViewModel}">
+                <views:SelectedRAMView/>
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type viewmodels:SelectedROMViewModel}">
+                <views:SelectedROMView/>
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type viewmodels:SelectedPowerSupplyViewModel}">
+                <views:SelectedPSView/>
+            </DataTemplate>
         </ResourceDictionary>
     </Application.Resources>
 </Application>
