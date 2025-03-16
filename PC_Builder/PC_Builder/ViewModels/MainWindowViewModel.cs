@@ -21,7 +21,6 @@ namespace PC_Builder.ViewModels
             }
 		}
 
-
 		public ICommand UpdateViewCommand { get; set; }
 
         public MainWindowViewModel()

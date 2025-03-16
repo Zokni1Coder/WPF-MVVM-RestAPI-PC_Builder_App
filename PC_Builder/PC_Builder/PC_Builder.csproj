@@ -87,6 +87,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Commands\SelectViewCommand.cs" />
     <Compile Include="Commands\UpdateViewCommand.cs" />
     <Compile Include="Interfaces\IConfig.cs" />
     <Compile Include="Interfaces\IPC.cs" />
@@ -100,17 +101,23 @@
     <Compile Include="Models\RAM.cs" />
     <Compile Include="Models\ROM.cs" />
     <Compile Include="Models\USBHeader.cs" />
+    <Compile Include="SelectedPart.xaml.cs">
+      <DependentUpon>SelectedPart.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ViewModels\BaseSelectedViewModel.cs" />
     <Compile Include="ViewModels\BaseViewModel.cs" />
     <Compile Include="ViewModels\CPUCoolerViewModel.cs" />
     <Compile Include="ViewModels\CPUViewModel.cs" />
     <Compile Include="ViewModels\GPUViewModel.cs" />
     <Compile Include="ViewModels\HomeViewModel.cs" />
     <Compile Include="ViewModels\MainWindowViewModel.cs" />
-    <Compile Include="ViewModels\MotherboardListingViewModelcs.cs" />
     <Compile Include="ViewModels\MotherboardViewModel.cs" />
     <Compile Include="ViewModels\PowerSupplyViewModel.cs" />
     <Compile Include="ViewModels\RAMViewModel.cs" />
     <Compile Include="ViewModels\ROMViewModel.cs" />
+    <Compile Include="ViewModels\SelectedCPUViewModel.cs" />
+    <Compile Include="ViewModels\SelectedMotherboardViewModel.cs" />
+    <Compile Include="ViewModels\SelectedPartViewModel.cs" />
     <Compile Include="Views\CPUCoolerView.xaml.cs">
       <DependentUpon>CPUCoolerView.xaml</DependentUpon>
     </Compile>
@@ -135,8 +142,11 @@
     <Compile Include="Views\ROMView.xaml.cs">
       <DependentUpon>ROMView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\SelectedMotherboard.xaml.cs">
-      <DependentUpon>SelectedMotherboard.xaml</DependentUpon>
+    <Compile Include="Views\SelectedCPUView.xaml.cs">
+      <DependentUpon>SelectedCPUView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SelectedMotherboardView.xaml.cs">
+      <DependentUpon>SelectedMotherboardView.xaml</DependentUpon>
     </Compile>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -150,6 +160,10 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="SelectedPart.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Styles\ButtonStyles.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -190,7 +204,11 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\SelectedMotherboard.xaml">
+    <Page Include="Views\SelectedCPUView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\SelectedMotherboardView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -228,9 +246,7 @@
     </Resource>
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Assets\motherboard.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
+    <Resource Include="Assets\motherboard.png" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Assets\delete.png">
@@ -246,6 +262,27 @@
     <Resource Include="home.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\cpu.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\graphic-card.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\cooler.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\ram-memory.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\power-supply.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\memory.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\megaphone.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -9,15 +9,16 @@ using System.Text.Json;
 using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 using System.Windows;
+using System.Windows.Input;
 using System.Windows.Interop;
+using PC_Builder.Commands;
 using PC_Builder.Models;
 
 
 namespace PC_Builder.ViewModels
 {
     public class MotherboardViewModel : BaseViewModel
-    {
-
+    {     
         private ObservableCollection<MotherboardtoGrid> motherboardList = new ObservableCollection<MotherboardtoGrid>();
 
         public ObservableCollection<MotherboardtoGrid> Motherboards
@@ -25,11 +26,12 @@ namespace PC_Builder.ViewModels
             get { return motherboardList; }
         }
 
-
+        public ICommand SelectViewCommand { get; }
 
         public MotherboardViewModel()
         {
             getDatas();
+            SelectViewCommand = new SelectViewCommand(new SelectedPartViewModel());
         }
 
         public async void getDatas()

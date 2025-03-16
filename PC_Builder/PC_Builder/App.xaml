@@ -38,6 +38,12 @@
             <DataTemplate DataType="{x:Type viewmodels:PowerSupplyViewModel}">
                 <views:PowerSupplyView/>
             </DataTemplate>
+            <DataTemplate DataType="{x:Type viewmodels:SelectedMotherboardViewModel}">
+                <views:SelectedMotherboardView/>
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type viewmodels:SelectedCPUViewModel}">
+                <views:SelectedCPUView/>
+            </DataTemplate>
         </ResourceDictionary>
     </Application.Resources>
 </Application>

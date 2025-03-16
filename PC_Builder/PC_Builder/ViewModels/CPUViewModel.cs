@@ -9,6 +9,8 @@ using System.Text.Json;
 using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 using System.Windows;
+using System.Windows.Input;
+using PC_Builder.Commands;
 using PC_Builder.Models;
 
 namespace PC_Builder.ViewModels
@@ -23,9 +25,11 @@ namespace PC_Builder.ViewModels
             set { cpusToView = value; }
         }
 
+        public ICommand SelectViewCommand { get; }
         public CPUViewModel()
         {
             getDatas();
+            SelectViewCommand = new SelectViewCommand(new SelectedPartViewModel());
         }
 
         private async void getDatas()

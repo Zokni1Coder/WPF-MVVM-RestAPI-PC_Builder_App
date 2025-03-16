@@ -56,8 +56,8 @@
 
                     <MenuItem.Icon>
 
-                        <Image Source="/Assets/home.png"
-                            Stretch="None" />
+                        <Image Source="/Assets/megaphone.png"
+                            Stretch="UniformToFill" />
 
                     </MenuItem.Icon>
 
@@ -70,8 +70,8 @@
 
                     <MenuItem.Icon>
 
-                        <Image Source="/Assets/home.png"
-                        Stretch="None"/>
+                        <Image Source="/Assets/motherboard.png"
+                        Stretch="UniformToFill"/>
 
                     </MenuItem.Icon>
 
@@ -84,8 +84,8 @@
 
                     <MenuItem.Icon>
 
-                        <Image Source="/Assets/home.png"
-                            Stretch="None"/>
+                        <Image Source="/Assets/cpu.png"
+                            Stretch="UniformToFill"/>
 
                     </MenuItem.Icon>
 
@@ -98,8 +98,8 @@
 
                     <MenuItem.Icon>
 
-                        <Image Source="/Assets/home.png"
-                            Stretch="None"/>
+                        <Image Source="/Assets/cooler.png"
+                            Stretch="UniformToFill"/>
 
                     </MenuItem.Icon>
 
@@ -112,8 +112,8 @@
 
                     <MenuItem.Icon>
 
-                        <Image Source="/Assets/home.png"
-                            Stretch="None"/>
+                        <Image Source="/Assets/graphic-card.png"
+                            Stretch="UniformToFill"/>
 
                     </MenuItem.Icon>
 
@@ -127,8 +127,8 @@
 
                     <MenuItem.Icon>
 
-                        <Image Source="/Assets/home.png"
-                            Stretch="None"/>
+                        <Image Source="/Assets/ram-memory.png"
+                            Stretch="UniformToFill"/>
 
                     </MenuItem.Icon>
 
@@ -142,8 +142,8 @@
 
                     <MenuItem.Icon>
 
-                        <Image Source="/Assets/home.png"
-                            Stretch="None"/>
+                        <Image Source="/Assets/memory.png"
+                            Stretch="UniformToFill"/>
 
                     </MenuItem.Icon>
 
@@ -157,7 +157,7 @@
 
                     <MenuItem.Icon>
 
-                        <Image Source="pack://application:,,,/Assets/home.png" Stretch="None"/>
+                        <Image Source="/Assets/power-supply.png" Stretch="UniformToFill"/>
 
                     </MenuItem.Icon>
 

@@ -10,19 +10,20 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
+using PC_Builder.ViewModels;
 
-namespace PC_Builder.Views
+namespace PC_Builder
 {
     /// <summary>
-    /// Interaction logic for SelectedMotherboard.xaml
+    /// Interaction logic for SelectedPart.xaml
     /// </summary>
-    public partial class SelectedMotherboard : UserControl
+    public partial class SelectedPart : Window
     {
-        public SelectedMotherboard()
+        public SelectedPart()
         {
             InitializeComponent();
+            DataContext = new SelectedPartViewModel();
         }
     }
 }
