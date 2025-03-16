@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PC_Builder"
         mc:Ignorable="d"
-        Title="SelectedPart" Height="450" Width="800"
+        Title="SelectedPart" Height="650" Width="550"
         BorderBrush="#23262B">
     <Grid>
         <ContentControl Content="{Binding SelectedViewModel}" Margin="0, 0, 0, 0"/>

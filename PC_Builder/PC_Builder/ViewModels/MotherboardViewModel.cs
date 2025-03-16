@@ -47,6 +47,7 @@ namespace PC_Builder.ViewModels
                 {
                     Motherboards.Add(new MotherboardtoGrid
                     {
+                        ID = m.Id,
                         Model = m.Manufacturer + " " + m.Info,
                         Chipset = m.Chipset,
                         Socket = m.Socket,
@@ -70,6 +71,7 @@ namespace PC_Builder.ViewModels
 
         public class MotherboardtoGrid
         {
+            public int ID { get; set; }
             public string Model { get; set; }
             public string Chipset { get; set; }
             public string Socket { get; set; }

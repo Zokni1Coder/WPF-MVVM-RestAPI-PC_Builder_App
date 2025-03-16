@@ -6,7 +6,7 @@
              xmlns:local="clr-namespace:PC_Builder.Views"
              xmlns:viewmodels="clr-namespace:PC_Builder.ViewModels"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800"           
+             d:DesignHeight="650" d:DesignWidth="550"           
              >
     <Grid>
         <Grid.Background>
@@ -49,6 +49,42 @@
                 VerticalAlignment="Bottom"
                 HorizontalAlignment="Right"
                 Margin="0,0,0,8"/>
+        </Grid>
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="2*"/>
+                <ColumnDefinition Width="2*"/>
+            </Grid.ColumnDefinitions>
+            <StackPanel Grid.Column="0" Orientation="Vertical">
+                <TextBlock Text="Manufacturer:" HorizontalAlignment="Right" Margin="0,0,20,15" FontSize="13" Foreground="White"/>
+                <TextBlock Text="Socket:" HorizontalAlignment="Right" Margin="0,0,20,15" FontSize="13" Foreground="White"/>
+                <TextBlock Text="Form Factor:" HorizontalAlignment="Right" Margin="0,0,20,15" FontSize="13" Foreground="White"/>
+                <TextBlock Text="Max Memory:" HorizontalAlignment="Right" Margin="0,0,20,15" FontSize="13" Foreground="White"/>
+                <TextBlock Text="Ram Type:" HorizontalAlignment="Right" Margin="0,0,20,15" FontSize="13" Foreground="White"/>
+                <TextBlock Text="Memory Slots No.:" HorizontalAlignment="Right" Margin="0,0,20,15" FontSize="13" Foreground="White"/>
+                <TextBlock Text="Sata 60gbs No.:" HorizontalAlignment="Right" Margin="0,0,20,15" FontSize="13" Foreground="White"/>
+                <TextBlock Text="Onboard Ethernet:" HorizontalAlignment="Right" Margin="0,0,20,15" FontSize="13" Foreground="White"/>
+                <TextBlock Text="Wifi:" HorizontalAlignment="Right" Margin="0,0,20,15" FontSize="13" Foreground="White"/>
+                <TextBlock Text="Raid support:" HorizontalAlignment="Right" Margin="0,0,20,15" FontSize="13" Foreground="White"/>
+                <TextBlock Text="Price:" HorizontalAlignment="Right" Margin="0,0,20,15" FontSize="13" Foreground="White"/>
+                <TextBlock Text="M2 Compatible:" HorizontalAlignment="Right" Margin="0,0,20,15" FontSize="13" Foreground="White"/>
+                <TextBlock Text="USB Headers:" HorizontalAlignment="Right" Margin="0,0,20,15" FontSize="13" Foreground="White"/>
+            </StackPanel>
+            <StackPanel Grid.Column="1" Orientation="Vertical">
+                <TextBlock Text="Manufacturer:" HorizontalAlignment="Left" Margin="0,0,20,15" FontSize="13" Foreground="White"/>
+                <TextBlock Text="Socket:" HorizontalAlignment="Left" Margin="0,0,20,15" FontSize="13" Foreground="White"/>
+                <TextBlock Text="Form Factor:"/>
+                <TextBlock Text="Max Memory:"/>
+                <TextBlock Text="Ram Type:"/>
+                <TextBlock Text="Memory Slots No.:"/>
+                <TextBlock Text="Sata 60gbs No.:"/>
+                <TextBlock Text="Onboard Ethernet:"/>
+                <TextBlock Text="Wifi:"/>
+                <TextBlock Text="Raid support:"/>
+                <TextBlock Text="Price:"/>
+                <TextBlock Text="M2 Compatible:"/>
+                <TextBlock Text="USB Headers:"/>
+            </StackPanel>
         </Grid>
     </Grid>
 </UserControl>

@@ -100,6 +100,7 @@
     <Compile Include="Models\Power_Supply.cs" />
     <Compile Include="Models\RAM.cs" />
     <Compile Include="Models\ROM.cs" />
+    <Compile Include="Models\TupleConverter.cs" />
     <Compile Include="Models\USBHeader.cs" />
     <Compile Include="SelectedPart.xaml.cs">
       <DependentUpon>SelectedPart.xaml</DependentUpon>

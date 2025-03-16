@@ -122,9 +122,7 @@ namespace PC_Builder.Models
         public int Wifi
         {
             get { return wifi; }
-            set { wifi = value; }
         }
-
         public string GetWifi()
         {
             return wifi == 1 ? "Yes" : "No";
@@ -135,7 +133,6 @@ namespace PC_Builder.Models
         [JsonPropertyName("raid_supp")]
         public int Raid_supp
         {
-            get { return raid_supp; }
             set { raid_supp = value; }
         }
         public string GetRaidSupport()
