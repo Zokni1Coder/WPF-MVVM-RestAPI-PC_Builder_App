@@ -89,6 +89,7 @@
     </ApplicationDefinition>
     <Compile Include="Commands\SelectViewCommand.cs" />
     <Compile Include="Commands\UpdateViewCommand.cs" />
+    <Compile Include="Interfaces\IComputer_Part.cs" />
     <Compile Include="Interfaces\IConfig.cs" />
     <Compile Include="Interfaces\IPC.cs" />
     <Compile Include="Models\CPU.cs" />
@@ -124,6 +125,9 @@
     <Compile Include="ViewModels\SelectedPowerSupplyViewModel.cs" />
     <Compile Include="ViewModels\SelectedRAMViewModel.cs" />
     <Compile Include="ViewModels\SelectedROMViewModel.cs" />
+    <Compile Include="Views\BaseSelectedView.xaml.cs">
+      <DependentUpon>BaseSelectedView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\CPUCoolerView.xaml.cs">
       <DependentUpon>CPUCoolerView.xaml</DependentUpon>
     </Compile>
@@ -190,6 +194,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Templates.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\BaseSelectedView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

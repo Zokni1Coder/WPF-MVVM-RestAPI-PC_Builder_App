@@ -7,6 +7,9 @@ using System.Text;
 using System.Text.Json;
 using System.Text.Json.Serialization;
 using System.Threading.Tasks;
+using System.Windows;
+using System.Windows.Input;
+using PC_Builder.Commands;
 using PC_Builder.Models;
 
 namespace PC_Builder.ViewModels
@@ -18,28 +21,46 @@ namespace PC_Builder.ViewModels
         public MotherboardtoGrid SelectedMotherboard
         {
             get { return selectedMotherboard; }
+            set
+            {
+                selectedMotherboard = value;
+                OnPropertyChanged(nameof(SelectedMotherboard));
+            }
         }
 
-        private int motherboardID;
+        public ICommand SelectViewCommand { get; }
+
+        private int motherboardID = 1;
 
         public SelectedMotherboardViewModel(int ID)
         {
-             getData();
             this.motherboardID = ID;
+            LoadDataAsync(ID);
+            SelectViewCommand = new SelectViewCommand(new SelectedPartViewModel());
         }
-        public SelectedMotherboardViewModel()
+        public async Task LoadDataAsync(int ID)
         {
-            
+            await getData(ID);
         }
 
-        public async void getData()
+        public async Task getData(int id)
         {
+            //MessageBox.Show(motherboardID.ToString());
             HttpClient client = new HttpClient();
-            var response = await client.GetStringAsync($"http://localhost:3000/motherboards/{motherboardID}");
+            var response = await client.GetStringAsync($"http://localhost:3000/motherboards/{id}");
             var option = new JsonSerializerOptions { PropertyNameCaseInsensitive = true };
             Structure structure = JsonSerializer.Deserialize<Structure>(response, option);
-            MotherboardtoGrid motherboardtoGrid = new MotherboardtoGrid(structure.motherboard);
-            this.selectedMotherboard = motherboardtoGrid;           
+            //MotherboardtoGrid motherboardtoGrid = new MotherboardtoGrid(structure.motherboard);
+            //this.selectedMotherboard = motherboardtoGrid;
+            if (structure?.motherboard != null)
+            {
+                MotherboardtoGrid motherboardtoGrid = new MotherboardtoGrid(structure.motherboard);
+                this.SelectedMotherboard = motherboardtoGrid;  // Setter hívása
+            }
+            else
+            {
+                MessageBox.Show("No motherboard data found.");
+            }
         }
         public class Structure
         {
@@ -47,7 +68,7 @@ namespace PC_Builder.ViewModels
             public Motherboard motherboard { get; set; }
             [JsonPropertyName("usb_headers")]
             public List<USBHeader> usbHeaders { get; set; }
-            [JsonPropertyName("m2types")]
+            [JsonPropertyName("m2s")]
             public List<M2> m2s { get; set; }
         }
 
@@ -56,6 +77,7 @@ namespace PC_Builder.ViewModels
             public MotherboardtoGrid(Motherboard motherboard)
             {
                 Model = motherboard.Manufacturer + " " + motherboard.Info;
+                MessageBox.Show(Model);
                 Chipset = motherboard.Chipset;
                 Socket = motherboard.Socket;
                 Form_factor = motherboard.Form_factor;

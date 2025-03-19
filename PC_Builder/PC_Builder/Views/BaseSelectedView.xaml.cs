@@ -12,24 +12,17 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using PC_Builder.ViewModels;
 
 namespace PC_Builder.Views
 {
     /// <summary>
-    /// Interaction logic for SelectedMotherboard.xaml
+    /// Interaction logic for BaseSelectedView.xaml
     /// </summary>
-    public partial class SelectedMotherboardView : UserControl 
+    public partial class BaseSelectedView : UserControl
     {
-        public SelectedMotherboardView(int id)
+        public BaseSelectedView()
         {
             InitializeComponent();
-            DataContext = new SelectedMotherboardViewModel(id);
-        }       
-
-        private void BtnClose_Click(object sender, RoutedEventArgs e)
-        {
-            
         }
     }
 }

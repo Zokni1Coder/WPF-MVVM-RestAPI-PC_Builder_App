@@ -8,6 +8,6 @@
         Title="SelectedPart" Height="650" Width="550"
         BorderBrush="#23262B">
     <Grid>
-        <ContentControl Content="{Binding SelectedViewModel}" Margin="0, 0, 0, 0"/>
+        <ContentControl x:Name="CControll" Content="{Binding SelectedViewModel}" Margin="0, 0, 0, 0"/>
     </Grid>
 </Window>

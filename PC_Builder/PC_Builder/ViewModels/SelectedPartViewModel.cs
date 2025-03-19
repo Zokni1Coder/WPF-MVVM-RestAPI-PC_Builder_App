@@ -12,11 +12,14 @@ namespace PC_Builder.ViewModels
 {
     public class SelectedPartViewModel : BaseSelectedViewModel
     {
-        private BaseSelectedViewModel selectedViewModel = new SelectedMotherboardViewModel();
+        private BaseSelectedViewModel selectedViewModel;
 
         public BaseSelectedViewModel SelectedViewModel
         {
-            get { return selectedViewModel; }
+            get
+            {
+                return selectedViewModel;
+            }
             set
             {
                 selectedViewModel = value;

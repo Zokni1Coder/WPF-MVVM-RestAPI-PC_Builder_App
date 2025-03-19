@@ -6,7 +6,7 @@
              xmlns:local="clr-namespace:PC_Builder.Views"
              xmlns:viewmodels="clr-namespace:PC_Builder.ViewModels"
              mc:Ignorable="d" 
-             d:DesignHeight="650" d:DesignWidth="550"           
+             d:DesignHeight="650" d:DesignWidth="550"                
              >
     <Grid>
         <Grid.Background>
@@ -33,7 +33,7 @@
                 VerticalAlignment="Center"
                 HorizontalAlignment="Right"
                 />
-            <TextBlock Text="asd" Foreground="White" FontSize="20" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="1"/>
+            <TextBlock Text="{Binding SelectedMotherboard.Model, TargetNullValue='asd', FallbackValue='asd1'}" Foreground="White" FontSize="20" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="1"/>
             <StackPanel Grid.Column="0" Orientation="Horizontal">
                 <Image Source="/Assets/motherboard.png" Margin="20,0,0,0" Height="100"/>
                 <TextBlock Text="MOTHERBOARD" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="15" Foreground="White" Margin="20,0,0,0" />
@@ -72,7 +72,7 @@
             </StackPanel>
             <StackPanel Grid.Column="1" Orientation="Vertical">
                 <TextBlock Text="Manufacturer:" HorizontalAlignment="Left" Margin="0,0,20,15" FontSize="13" Foreground="White"/>
-                <TextBlock Text="Socket:" HorizontalAlignment="Left" Margin="0,0,20,15" FontSize="13" Foreground="White"/>
+                <TextBlock Text="{Binding SelectedMotherboard.Model}" HorizontalAlignment="Left" Margin="0,0,20,15" FontSize="13" Foreground="White"/>
                 <TextBlock Text="Form Factor:"/>
                 <TextBlock Text="Max Memory:"/>
                 <TextBlock Text="Ram Type:"/>
