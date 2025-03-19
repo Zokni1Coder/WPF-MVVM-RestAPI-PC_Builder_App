@@ -87,17 +87,17 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Commands\SelectPartCommand.cs" />
     <Compile Include="Commands\SelectViewCommand.cs" />
     <Compile Include="Commands\UpdateViewCommand.cs" />
-    <Compile Include="Interfaces\IComputer_Part.cs" />
-    <Compile Include="Interfaces\IConfig.cs" />
-    <Compile Include="Interfaces\IPC.cs" />
+    <Compile Include="Interfaces\IComputer.cs" />
     <Compile Include="Models\CPU.cs" />
     <Compile Include="Models\CPU_Cooler.cs" />
     <Compile Include="Models\CPU_Cooler_Compatibility.cs" />
     <Compile Include="Models\GPU.cs" />
     <Compile Include="Models\M2.cs" />
     <Compile Include="Models\Motherboard.cs" />
+    <Compile Include="Models\PC.cs" />
     <Compile Include="Models\Power_Supply.cs" />
     <Compile Include="Models\RAM.cs" />
     <Compile Include="Models\ROM.cs" />
@@ -108,6 +108,7 @@
     </Compile>
     <Compile Include="ViewModels\BaseSelectedViewModel.cs" />
     <Compile Include="ViewModels\BaseViewModel.cs" />
+    <Compile Include="ViewModels\ConfigWindowViewModel.cs" />
     <Compile Include="ViewModels\CPUCoolerViewModel.cs" />
     <Compile Include="ViewModels\CPUViewModel.cs" />
     <Compile Include="ViewModels\GPUViewModel.cs" />
@@ -127,6 +128,9 @@
     <Compile Include="ViewModels\SelectedROMViewModel.cs" />
     <Compile Include="Views\BaseSelectedView.xaml.cs">
       <DependentUpon>BaseSelectedView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ConfigWindow.xaml.cs">
+      <DependentUpon>ConfigWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\CPUCoolerView.xaml.cs">
       <DependentUpon>CPUCoolerView.xaml</DependentUpon>
@@ -198,6 +202,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\BaseSelectedView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\ConfigWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -323,5 +331,6 @@
   <ItemGroup>
     <Resource Include="Assets\megaphone.png" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

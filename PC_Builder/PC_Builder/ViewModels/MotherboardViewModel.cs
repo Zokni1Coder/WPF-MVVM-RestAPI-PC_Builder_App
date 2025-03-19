@@ -27,11 +27,13 @@ namespace PC_Builder.ViewModels
         }
 
         public ICommand SelectViewCommand { get; }
+        public ICommand SelectPartCommand { get; }
 
         public MotherboardViewModel()
         {
             getDatas();
-            SelectViewCommand = new SelectViewCommand(new SelectedPartViewModel());
+            SelectViewCommand = new SelectViewCommand();
+            //SelectPartCommand = new SelectPartCommand();           
         }
 
         public async void getDatas()

@@ -26,7 +26,7 @@ namespace PC_Builder.ViewModels
         public PowerSupplyViewModel()
         {
             getDatas();
-            SelectViewCommand = new SelectViewCommand(new SelectedPartViewModel());
+            SelectViewCommand = new SelectViewCommand();
         }
 
         private async void getDatas()

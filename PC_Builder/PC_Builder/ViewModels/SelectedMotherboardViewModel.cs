@@ -36,7 +36,7 @@ namespace PC_Builder.ViewModels
         {
             this.motherboardID = ID;
             LoadDataAsync(ID);
-            SelectViewCommand = new SelectViewCommand(new SelectedPartViewModel());
+            SelectViewCommand = new SelectViewCommand();
         }
         public async Task LoadDataAsync(int ID)
         {

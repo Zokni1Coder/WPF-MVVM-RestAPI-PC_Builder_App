@@ -31,7 +31,7 @@ namespace PC_Builder.ViewModels
 
         public SelectedPartViewModel()
         {
-            SelectViewCommand = new SelectViewCommand(this);
+            SelectViewCommand = new SelectViewCommand();
         }
     }
 }

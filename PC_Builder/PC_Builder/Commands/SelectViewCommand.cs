@@ -13,10 +13,9 @@ namespace PC_Builder.Commands
 {
     public class SelectViewCommand : ICommand
     {
-        //private BaseSelectedViewModel viewModel;
-        public SelectViewCommand(SelectedPartViewModel viewModel)
+        public SelectViewCommand()
         {
-            //this.viewModel = viewModel;
+
         }
 
         public event EventHandler CanExecuteChanged;
@@ -50,41 +49,7 @@ namespace PC_Builder.Commands
 
             SelectedPart selectedPartWindow = new SelectedPart();
             selectedPartWindow.Content = selectedView;
-            selectedPartWindow.Show();
-
-            //switch (VM)
-            //{
-            //    case "Motherboard":
-            //        var motherboardView = new SelectedMotherboardView(ID);
-
-            //        SelectedPart selectedPartWindow = new SelectedPart();
-            //        selectedPartWindow.Content = motherboardView; 
-            //        selectedPartWindow.Show();
-            //        break;
-            //    case "CPU":
-            //        viewModel.SelectedViewModel = new SelectedCPUViewModel();
-            //        break;
-            //    case "GPU":
-            //        viewModel.SelectedViewModel = new SelectedGPUViewModel();
-            //        break;
-            //    case "CPU Cooler":
-            //        viewModel.SelectedViewModel = new SelectedCPUCoolerViewModel();
-            //        break;
-            //    case "RAM":
-            //        viewModel.SelectedViewModel = new SelectedRAMViewModel();
-            //        break;
-            //    case "ROM":
-            //        viewModel.SelectedViewModel = new SelectedROMViewModel();
-            //        break;
-            //    case "PS":
-            //        viewModel.SelectedViewModel = new SelectedPowerSupplyViewModel();
-            //        break;
-            //    default:
-            //        break;
-            //}
-            //SelectedPart selectedPartWindow = new SelectedPart();
-            //selectedPartWindow.DataContext = viewModel;
-            //selectedPartWindow.Show();         
+            selectedPartWindow.Show();                    
         }
     }
 }

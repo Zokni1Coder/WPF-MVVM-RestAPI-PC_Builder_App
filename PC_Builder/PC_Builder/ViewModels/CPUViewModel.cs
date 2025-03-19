@@ -28,7 +28,7 @@ namespace PC_Builder.ViewModels
         public CPUViewModel()
         {
             getDatas();
-            SelectViewCommand = new SelectViewCommand(new SelectedPartViewModel());
+            SelectViewCommand = new SelectViewCommand();
         }
 
         private async void getDatas()
