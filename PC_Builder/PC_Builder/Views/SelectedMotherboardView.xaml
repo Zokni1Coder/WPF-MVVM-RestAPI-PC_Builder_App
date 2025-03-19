@@ -56,34 +56,34 @@
                 <ColumnDefinition Width="2*"/>
             </Grid.ColumnDefinitions>
             <StackPanel Grid.Column="0" Orientation="Vertical">
-                <TextBlock Text="Manufacturer:" HorizontalAlignment="Right" Margin="0,0,20,15" FontSize="13" Foreground="White"/>
-                <TextBlock Text="Socket:" HorizontalAlignment="Right" Margin="0,0,20,15" FontSize="13" Foreground="White"/>
-                <TextBlock Text="Form Factor:" HorizontalAlignment="Right" Margin="0,0,20,15" FontSize="13" Foreground="White"/>
-                <TextBlock Text="Max Memory:" HorizontalAlignment="Right" Margin="0,0,20,15" FontSize="13" Foreground="White"/>
-                <TextBlock Text="Ram Type:" HorizontalAlignment="Right" Margin="0,0,20,15" FontSize="13" Foreground="White"/>
-                <TextBlock Text="Memory Slots No.:" HorizontalAlignment="Right" Margin="0,0,20,15" FontSize="13" Foreground="White"/>
-                <TextBlock Text="Sata 60gbs No.:" HorizontalAlignment="Right" Margin="0,0,20,15" FontSize="13" Foreground="White"/>
-                <TextBlock Text="Onboard Ethernet:" HorizontalAlignment="Right" Margin="0,0,20,15" FontSize="13" Foreground="White"/>
-                <TextBlock Text="Wifi:" HorizontalAlignment="Right" Margin="0,0,20,15" FontSize="13" Foreground="White"/>
-                <TextBlock Text="Raid support:" HorizontalAlignment="Right" Margin="0,0,20,15" FontSize="13" Foreground="White"/>
-                <TextBlock Text="Price:" HorizontalAlignment="Right" Margin="0,0,20,15" FontSize="13" Foreground="White"/>
-                <TextBlock Text="M2 Compatible:" HorizontalAlignment="Right" Margin="0,0,20,15" FontSize="13" Foreground="White"/>
-                <TextBlock Text="USB Headers:" HorizontalAlignment="Right" Margin="0,0,20,15" FontSize="13" Foreground="White"/>
+                <TextBlock Text="Manufacturer:" Style="{StaticResource SelectedPartDatas}"/>
+                <TextBlock Text="Socket:" Style="{StaticResource SelectedPartDatas}"/>
+                <TextBlock Text="Form Factor:" Style="{StaticResource SelectedPartDatas}"/>
+                <TextBlock Text="Max Memory:" Style="{StaticResource SelectedPartDatas}"/>
+                <TextBlock Text="Ram Type:" Style="{StaticResource SelectedPartDatas}"/>
+                <TextBlock Text="Memory Slots No.:" Style="{StaticResource SelectedPartDatas}"/>
+                <TextBlock Text="Sata 60gbs No.:" Style="{StaticResource SelectedPartDatas}"/>
+                <TextBlock Text="Onboard Ethernet:" Style="{StaticResource SelectedPartDatas}"/>
+                <TextBlock Text="Wifi:" Style="{StaticResource SelectedPartDatas}"/>
+                <TextBlock Text="Raid support:" Style="{StaticResource SelectedPartDatas}"/>
+                <TextBlock Text="Price:" Style="{StaticResource SelectedPartDatas}"/>
+                <TextBlock Text="M2 Compatible:" Style="{StaticResource SelectedPartDatas}"/>
+                <TextBlock Text="USB Headers:" Style="{StaticResource SelectedPartDatas}"/>
             </StackPanel>
             <StackPanel Grid.Column="1" Orientation="Vertical">
-                <TextBlock Text="Manufacturer:" HorizontalAlignment="Left" Margin="0,0,20,15" FontSize="13" Foreground="White"/>
-                <TextBlock Text="{Binding SelectedMotherboard.Model}" HorizontalAlignment="Left" Margin="0,0,20,15" FontSize="13" Foreground="White"/>
-                <TextBlock Text="Form Factor:"/>
-                <TextBlock Text="Max Memory:"/>
-                <TextBlock Text="Ram Type:"/>
-                <TextBlock Text="Memory Slots No.:"/>
-                <TextBlock Text="Sata 60gbs No.:"/>
-                <TextBlock Text="Onboard Ethernet:"/>
-                <TextBlock Text="Wifi:"/>
-                <TextBlock Text="Raid support:"/>
-                <TextBlock Text="Price:"/>
-                <TextBlock Text="M2 Compatible:"/>
-                <TextBlock Text="USB Headers:"/>
+                <TextBlock Text="{Binding SelectedMotherboard.Manufacturer}" Style="{StaticResource SelectedPartValues}"/>
+                <TextBlock Text="{Binding SelectedMotherboard.Socket}" Style="{StaticResource SelectedPartValues}"/>
+                <TextBlock Text="{Binding SelectedMotherboard.Form_factor}" Style="{StaticResource SelectedPartValues}"/>
+                <TextBlock Text="{Binding SelectedMotherboard.Memory_Max}" Style="{StaticResource SelectedPartValues}"/>
+                <TextBlock Text="{Binding SelectedMotherboard.Ram_type}" Style="{StaticResource SelectedPartValues}"/>
+                <TextBlock Text="{Binding SelectedMotherboard.Memory_Slots_No}" Style="{StaticResource SelectedPartValues}"/>
+                <TextBlock Text="{Binding SelectedMotherboard.Sata_60gbs_no}" Style="{StaticResource SelectedPartValues}"/>
+                <TextBlock Text="{Binding SelectedMotherboard.Onboard_Ethernet}" Style="{StaticResource SelectedPartValues}"/>
+                <TextBlock Text="{Binding SelectedMotherboard.Wifi}" Style="{StaticResource SelectedPartValues}"/>
+                <TextBlock Text="{Binding SelectedMotherboard.Raid_Supp}" Style="{StaticResource SelectedPartValues}"/>
+                <TextBlock Text="{Binding SelectedMotherboard.Price}" Style="{StaticResource SelectedPartValues}"/>
+                <TextBlock Text="{Binding SelectedMotherboard.M2_Connections}" Style="{StaticResource SelectedPartValues}"/>
+                <TextBlock Text="{Binding SelectedMotherboard.Usb_headers}" Style="{StaticResource SelectedPartValues}"/>
             </StackPanel>
         </Grid>
     </Grid>

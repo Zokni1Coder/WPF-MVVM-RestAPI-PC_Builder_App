@@ -54,8 +54,8 @@ namespace PC_Builder.ViewModels
             //this.selectedMotherboard = motherboardtoGrid;
             if (structure?.motherboard != null)
             {
-                MotherboardtoGrid motherboardtoGrid = new MotherboardtoGrid(structure.motherboard);
-                this.SelectedMotherboard = motherboardtoGrid;  // Setter hívása
+                MotherboardtoGrid motherboardtoGrid = new MotherboardtoGrid(structure.motherboard, structure?.m2s, structure?.usbHeaders);
+                this.SelectedMotherboard = motherboardtoGrid; 
             }
             else
             {
@@ -74,7 +74,7 @@ namespace PC_Builder.ViewModels
 
         public class MotherboardtoGrid
         {
-            public MotherboardtoGrid(Motherboard motherboard)
+            public MotherboardtoGrid(Motherboard motherboard, List<M2> m2s, List<USBHeader> usbHeaders)
             {
                 Model = motherboard.Manufacturer + " " + motherboard.Info;
                 MessageBox.Show(Model);
@@ -83,13 +83,21 @@ namespace PC_Builder.ViewModels
                 Form_factor = motherboard.Form_factor;
                 Ram_type = motherboard.Ram_type;
                 Manufacturer = motherboard.Manufacturer;
-                Price = motherboard.Price.ToString();
-                Memory_Max = motherboard.Max_memory.ToString();
+                Price = motherboard.Price.ToString() + "€";
+                Memory_Max = motherboard.Max_memory.ToString()+ "GB";
                 Memory_Slots_No = motherboard.Memory_slot_no.ToString();
                 Sata_60gbs_no = motherboard.Sata_60gbs_no.ToString();
                 Onboard_Ethernet = motherboard.GetOnboardEthernet();
                 Wifi = motherboard.GetWifi();
                 Raid_Supp = motherboard.GetRaidSupport();
+                foreach (var item in m2s)
+                {
+                    M2_Connections += $" {item.Form_factor}";
+                }
+                foreach (var item in usbHeaders)
+                {
+                    Usb_headers += $" {item.Version}({item.GetHeaderCount()})";
+                }
             }
             public string Model { get; set; }
             public string Chipset { get; set; }
@@ -104,6 +112,8 @@ namespace PC_Builder.ViewModels
             public string Onboard_Ethernet { get; set; }
             public string Wifi { get; set; }
             public string Raid_Supp { get; set; }
+            public string M2_Connections { get; set; }
+            public string Usb_headers { get; set; }
         }
     }
 }

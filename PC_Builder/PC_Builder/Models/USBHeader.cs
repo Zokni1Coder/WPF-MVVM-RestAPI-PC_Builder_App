@@ -27,10 +27,13 @@ namespace PC_Builder.Models
         private int header_count;
         [JsonPropertyName("header_count")]
         public int Header_count
-        {
-            get { return header_count; }
+        {            
             set { header_count = value; }
         }
 
+        public string GetHeaderCount()
+        {
+            return this.header_count.ToString();
+        }
     }
 }
