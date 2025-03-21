@@ -32,7 +32,7 @@ namespace PC_Builder.Commands
                 case "Motherboard":
                     return new SelectedMotherboardView(id);
                 case "CPU":
-                    //return new SelectedCPUView(id); // Hozzáadhatod a többi nézetet is
+                    return new SelectedCPUView(id); 
                 case "GPU":
                     //return new SelectedGPUView(id);
                 default:

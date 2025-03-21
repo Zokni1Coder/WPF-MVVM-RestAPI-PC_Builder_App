@@ -55,7 +55,15 @@ namespace PC_Builder.ViewModels
                         Socket = m.Socket,
                         Form_factor = m.Form_factor,
                         Ram_type = m.Ram_type,
-                        Price = m.Price + "€"
+                        Price = m.Price,
+                        Manufacturer = m.Manufacturer,
+                        Info = m.Info,
+                        Memory_max = m.Max_memory,
+                        Memory_slots_no = m.Memory_slot_no,
+                        Sata_60gbs_no = m.Sata_60gbs_no,
+                        Onboard_ethernet = m.Onboard_ethernet,
+                        Wifi = m.Wifi,
+                        Raid_supp = m.Raid_supp
                     });
                 }                
             }
@@ -79,8 +87,15 @@ namespace PC_Builder.ViewModels
             public string Socket { get; set; }
             public string Form_factor { get; set; }
             public string Ram_type { get; set; }
-            public string Price { get; set; }
-
+            public int Price { get; set; }
+            public string Manufacturer { get; set; }
+            public string Info { get; set; }
+            public int Memory_max { get; set; }
+            public int Memory_slots_no { get; set; }
+            public int Sata_60gbs_no { get; set; }
+            public int Onboard_ethernet { get; set; }
+            public int Wifi { get; set; }
+            public int Raid_supp { get; set; }
         }
     }
 }

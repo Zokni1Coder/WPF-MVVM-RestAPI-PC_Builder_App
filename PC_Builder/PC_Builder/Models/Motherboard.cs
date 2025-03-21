@@ -109,6 +109,7 @@ namespace PC_Builder.Models
         public int Onboard_ethernet
         {
             set { onboard_ethernet = value; }
+            get { return onboard_ethernet; }
         }
 
         public string GetOnboardEthernet()
@@ -134,6 +135,7 @@ namespace PC_Builder.Models
         public int Raid_supp
         {
             set { raid_supp = value; }
+            get { return raid_supp; }
         }
         public string GetRaidSupport()
         {

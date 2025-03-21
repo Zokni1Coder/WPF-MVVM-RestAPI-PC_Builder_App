@@ -4,12 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using PC_Builder.Interfaces;
+using PC_Builder.ViewModels;
 
 namespace PC_Builder.Models
 {
     public class PC : IComputer
     {
-        public Motherboard motherboard { get; set; }
+        public MotherboardViewModel.MotherboardtoGrid motherboard { get; set; }
         public CPU cpu { get; set; }
         public CPU_Cooler cpu_Cooler { get; set; }
         public List<CPU_Cooler_Compatibility> cpu_Cooler_Compatibilities { get; set; }

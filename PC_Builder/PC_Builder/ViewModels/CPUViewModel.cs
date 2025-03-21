@@ -59,5 +59,14 @@ namespace PC_Builder.ViewModels
         public string Boost_Clock { get; set; }
         public string Microarchitecture { get; set; }
         public string Price { get; set; }
+        public int ID { get; set; }
+        public string Socket { get; set; }
+        public string Manufacturer { get; set; }
+        public string Series { get; set; }
+        public int TDP { get; set; }
+        public string Integrated_Graphics { get; set; }
+        public int Thread_Count { get; set; }
+        public double L2_Cache { get; set; }
+        public double L3_Cache { get; set; }
     }
 }

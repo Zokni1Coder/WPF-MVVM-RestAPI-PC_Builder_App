@@ -27,14 +27,10 @@ namespace PC_Builder.ViewModels
                 OnPropertyChanged(nameof(SelectedMotherboard));
             }
         }
-
         public ICommand SelectViewCommand { get; }
-
-        private int motherboardID = 1;
 
         public SelectedMotherboardViewModel(int ID)
         {
-            this.motherboardID = ID;
             LoadDataAsync(ID);
             SelectViewCommand = new SelectViewCommand();
         }
@@ -45,13 +41,10 @@ namespace PC_Builder.ViewModels
 
         public async Task getData(int id)
         {
-            //MessageBox.Show(motherboardID.ToString());
             HttpClient client = new HttpClient();
             var response = await client.GetStringAsync($"http://localhost:3000/motherboards/{id}");
             var option = new JsonSerializerOptions { PropertyNameCaseInsensitive = true };
             Structure structure = JsonSerializer.Deserialize<Structure>(response, option);
-            //MotherboardtoGrid motherboardtoGrid = new MotherboardtoGrid(structure.motherboard);
-            //this.selectedMotherboard = motherboardtoGrid;
             if (structure?.motherboard != null)
             {
                 MotherboardtoGrid motherboardtoGrid = new MotherboardtoGrid(structure.motherboard, structure?.m2s, structure?.usbHeaders);
@@ -77,7 +70,6 @@ namespace PC_Builder.ViewModels
             public MotherboardtoGrid(Motherboard motherboard, List<M2> m2s, List<USBHeader> usbHeaders)
             {
                 Model = motherboard.Manufacturer + " " + motherboard.Info;
-                MessageBox.Show(Model);
                 Chipset = motherboard.Chipset;
                 Socket = motherboard.Socket;
                 Form_factor = motherboard.Form_factor;

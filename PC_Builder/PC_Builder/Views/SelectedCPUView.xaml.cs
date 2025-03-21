@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using PC_Builder.ViewModels;
 
 namespace PC_Builder.Views
 {
@@ -20,9 +21,10 @@ namespace PC_Builder.Views
     /// </summary>
     public partial class SelectedCPUView : UserControl
     {
-        public SelectedCPUView()
+        public SelectedCPUView(int id)
         {
             InitializeComponent();
+            DataContext = new SelectedCPUViewModel(id);
         }
     }
 }

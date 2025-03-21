@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 using System.Windows.Input;
 using PC_Builder.Commands;
 using PC_Builder.Interfaces;
@@ -14,14 +15,28 @@ namespace PC_Builder.ViewModels
     {
         private IComputer computer;
 
-        public static MainWindowViewModel viewModel { get; private set; }
-
-        public void SetMotherboard(Motherboard motherboard)
+        public IComputer Computer
         {
-            this.computer.motherboard = motherboard;
+            get
+            {
+                if (computer == null)
+                {
+                    computer = new PC();
+                }
+                return computer;
+            }
         }
 
-        public Motherboard GetMotherboard()
+
+        public static MainWindowViewModel viewModel { get; private set; }
+
+        public void SetMotherboard(MotherboardViewModel.MotherboardtoGrid motherboard)
+        {
+            this.Computer.motherboard = motherboard;
+            //MessageBox.Show(this.Computer.motherboard.Chipset);
+        }
+
+        public MotherboardViewModel.MotherboardtoGrid GetMotherboard()
         {
             return this.computer.motherboard;
         }

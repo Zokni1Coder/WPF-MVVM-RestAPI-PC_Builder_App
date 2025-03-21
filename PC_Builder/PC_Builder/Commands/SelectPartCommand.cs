@@ -25,13 +25,13 @@ namespace PC_Builder.Commands
 
         public void Execute(object parameter)
         {
-            MessageBox.Show("Bent van");
+            //MessageBox.Show("Bent van");
             var viewModel = MainWindowViewModel.viewModel;
+            //MessageBox.Show((parameter is MotherboardViewModel.MotherboardtoGrid).ToString());
             switch (parameter)
             {
-                case Motherboard motherboard:
-                    MessageBox.Show(motherboard.Manufacturer);
-                    viewModel.SetMotherboard(parameter as Motherboard);
+                case MotherboardViewModel.MotherboardtoGrid motherboard:
+                    viewModel.SetMotherboard(motherboard);
                     break;
                 default:
                     break;

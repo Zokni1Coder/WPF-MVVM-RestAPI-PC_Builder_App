@@ -34,7 +34,7 @@
                 <DataGridTextColumn Header="Socket" CellStyle="{StaticResource GridCellStyle}" Binding="{Binding Socket}" IsReadOnly="True" Width="*"/>
                 <DataGridTextColumn Header="Form factor" CellStyle="{StaticResource GridCellStyle}" Binding="{Binding Form_factor}" IsReadOnly="True" Width="*"/>
                 <DataGridTextColumn Header="Memory type" CellStyle="{StaticResource GridCellStyle}" Binding="{Binding Ram_type}" IsReadOnly="True" Width="*"/>
-                <DataGridTextColumn Header="Price" CellStyle="{StaticResource GridCellStyle}" Binding="{Binding Price}" IsReadOnly="True" Width="*"/>
+                <DataGridTextColumn Header="Price" CellStyle="{StaticResource GridCellStyle}" Binding="{Binding Price, StringFormat={}{0} €}" IsReadOnly="True" Width="*"/>
                 <DataGridTemplateColumn IsReadOnly="True" Width="*">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
@@ -47,7 +47,7 @@
                                         </MultiBinding>
                                     </Button.CommandParameter>
                                 </Button>
-                                <Button x:Name="BtnSelect" Content="Select" Command="{Binding DataContext.SelectPartCommand, RelativeSource={RelativeSource AncestorType=Window}}" Style="{StaticResource GridSelectButtonStyle}"/>
+                                <Button x:Name="BtnSelect" Content="Select" CommandParameter="{Binding DataContext, RelativeSource={RelativeSource AncestorType=DataGridRow}}" Command="{Binding DataContext.SelectPartCommand, RelativeSource={RelativeSource AncestorType=Window}}" Style="{StaticResource GridSelectButtonStyle}"/>
                             </StackPanel>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
