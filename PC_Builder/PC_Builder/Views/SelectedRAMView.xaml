@@ -5,7 +5,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:PC_Builder.Views"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800">
+             d:DesignHeight="650" d:DesignWidth="550">
     <Grid>
         <Grid.Background>
             <LinearGradientBrush StartPoint="0,0" EndPoint="0,5">
@@ -31,7 +31,7 @@
             VerticalAlignment="Center"
             HorizontalAlignment="Right"
             />
-            <TextBlock Text="asd" Foreground="White" FontSize="20" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="1"/>
+            <TextBlock Text="{Binding SelectedRAM.Model, TargetNullValue='asd', FallbackValue='asd1'}" Foreground="White" FontSize="20" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="1"/>
             <StackPanel Grid.Column="0" Orientation="Horizontal">
                 <Image Source="/Assets/ram-memory.png" Margin="20,0,0,0" Height="100"/>
                 <TextBlock Text="RAM MEMORY" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="15" Foreground="White" Margin="20,0,0,0" />
@@ -47,6 +47,34 @@
             VerticalAlignment="Bottom"
             HorizontalAlignment="Right"
             Margin="0,0,0,8"/>
+        </Grid>
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="2*"/>
+                <ColumnDefinition Width="2*"/>
+            </Grid.ColumnDefinitions>
+            <StackPanel Grid.Column="0" Orientation="Vertical">
+                <TextBlock Text="Manufacturer:" Style="{StaticResource SelectedPartDatas}"/>
+                <TextBlock Text="Model:" Style="{StaticResource SelectedPartDatas}"/>
+                <TextBlock Text="Type:" Style="{StaticResource SelectedPartDatas}"/>
+                <TextBlock Text="Speed:" Style="{StaticResource SelectedPartDatas}"/>
+                <TextBlock Text="Size:" Style="{StaticResource SelectedPartDatas}"/>
+                <TextBlock Text="Modul:" Style="{StaticResource SelectedPartDatas}"/>
+                <TextBlock Text="CAS Latency:" Style="{StaticResource SelectedPartDatas}"/>
+                <TextBlock Text="Voltage:" Style="{StaticResource SelectedPartDatas}"/>
+                <TextBlock Text="Price:" Style="{StaticResource SelectedPartDatas}"/>
+            </StackPanel>
+            <StackPanel Grid.Column="1" Orientation="Vertical">
+                <TextBlock Text="{Binding SelectedRAM.Manufacturer}" Style="{StaticResource SelectedPartValues}"/>
+                <TextBlock Text="{Binding SelectedRAM.Model}" Style="{StaticResource SelectedPartValues}"/>
+                <TextBlock Text="{Binding SelectedRAM.Type}" Style="{StaticResource SelectedPartValues}"/>
+                <TextBlock Text="{Binding SelectedRAM.Speed, StringFormat='{}{0} MHz'}" Style="{StaticResource SelectedPartValues}"/>
+                <TextBlock Text="{Binding SelectedRAM.Size, StringFormat='{}{0} GB'}" Style="{StaticResource SelectedPartValues}"/>
+                <TextBlock Text="{Binding SelectedRAM.Modul}" Style="{StaticResource SelectedPartValues}"/>
+                <TextBlock Text="{Binding SelectedRAM.Cas_latency}" Style="{StaticResource SelectedPartValues}"/>
+                <TextBlock Text="{Binding SelectedRAM.Voltage, StringFormat='{}{0} V'}" Style="{StaticResource SelectedPartValues}"/>
+                <TextBlock Text="{Binding SelectedRAM.Price, StringFormat='{}{0} €'}" Style="{StaticResource SelectedPartValues}"/>
+            </StackPanel>
         </Grid>
     </Grid>
 </UserControl>

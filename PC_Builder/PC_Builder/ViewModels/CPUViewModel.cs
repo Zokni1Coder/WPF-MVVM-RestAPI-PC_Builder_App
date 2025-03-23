@@ -45,7 +45,16 @@ namespace PC_Builder.ViewModels
                     Boost_Clock = cpu.Boost_core_clock.ToString() + "GHz",
                     Core_Clock = cpu.Core_clock.ToString() + "GHz",
                     Microarchitecture = cpu.Microarchitecture,
-                    Price = cpu.Price.ToString() + "€"
+                    Price = cpu.Price.ToString() + "€",
+                    ID = cpu.Id,
+                    Socket = cpu.Socket,
+                    Manufacturer = cpu.Manufacturer,
+                    Series = cpu.Series,
+                    TDP = cpu.Tdp,
+                    Integrated_Graphics = cpu.Integrated_graphics,
+                    Thread_Count = cpu.Thread_count,
+                    L2_Cache = cpu.L2_Cache,
+                    L3_Cache = cpu.L3_Cache
                 });
             }
         }

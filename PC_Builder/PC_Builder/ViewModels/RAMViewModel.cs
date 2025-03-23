@@ -45,13 +45,15 @@ namespace PC_Builder.ViewModels
                     Slot_Type = ram.Type,
                     Speed = ram.Speed.ToString() + "MHz",
                     Cas_Latency = ram.Cas_latency.ToString(),
-                    Price = ram.Price.ToString() + "€"
+                    Price = ram.Price.ToString() + "€",
+                    ID = ram.Id
                 });
             }
         }
 
         public class RAMToView
         {
+            public int ID { get; set; }
             public string Model { get; set; }
             public string Memory_Size { get; set; }
             public string Slot_Type { get; set; }

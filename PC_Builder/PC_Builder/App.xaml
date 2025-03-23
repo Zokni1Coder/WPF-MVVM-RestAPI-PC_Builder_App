@@ -46,7 +46,7 @@
                 <views:SelectedCPUView/>
             </DataTemplate>
             <DataTemplate DataType="{x:Type viewmodels:SelectedCPUCoolerViewModel}">
-                <views:SelectedCPUCooler/>
+                <views:SelectedCPUCoolerView/>
             </DataTemplate>
             <DataTemplate DataType="{x:Type viewmodels:SelectedGPUViewModel}">
                 <views:SelectedGPUView/>

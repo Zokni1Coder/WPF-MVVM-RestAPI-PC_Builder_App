@@ -43,7 +43,17 @@ namespace PC_Builder.ViewModels
                     Memory_Type = gpu.Ram_type,
                     Core_Clock = gpu.Core_clock.ToString() + "MHz", 
                     Slot = gpu.INterface,
-                    Price = gpu.Price.ToString() + "€"
+                    Price = gpu.Price.ToString() + "€",
+                    ID = gpu.Id,
+                    Info = gpu.Info,
+                    Manufacturer = gpu.Manufacturer,
+                    Brand = gpu.Brand,
+                    Technology = gpu.Technology,
+                    Boost_clock = gpu.Boost_clock,
+                    Frame_sync = gpu.Frame_sync,
+                    TDP = gpu.Tdp,
+                    Hdmi_ouput = gpu.Hdmi_ouput,
+                    Dp_port_output = gpu.Dp_port_output
                 });
             }
         }
@@ -58,6 +68,16 @@ namespace PC_Builder.ViewModels
             public string Core_Clock { get; set; }
             public string Slot { get; set; }
             public string Price { get; set; }
+            public int ID { get; set; }
+            public string Info { get; set; }
+            public string Manufacturer { get; set; }
+            public string Brand { get; set; }
+            public string Technology { get; set; }
+            public int Boost_clock { get; set; }
+            public string Frame_sync { get; set; }
+            public int TDP { get; set; }
+            public int Hdmi_ouput { get; set; }
+            public int Dp_port_output { get; set; }
         }
     }
 }

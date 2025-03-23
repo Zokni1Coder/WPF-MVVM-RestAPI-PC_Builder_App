@@ -44,10 +44,19 @@ namespace PC_Builder.ViewModels
             HttpClient client = new HttpClient();
             var response = await client.GetStringAsync($"http://localhost:3000/cpus/{id}");
             var option = new JsonSerializerOptions { PropertyNameCaseInsensitive = true };
-            CPU tempCPU = JsonSerializer.Deserialize<CPU>(response, option);
-            CPUtoGrid cputoGrid = new CPUtoGrid(
-                tempCPU.Id, tempCPU.Socket, tempCPU.Manufacturer, tempCPU.Series, (tempCPU.Manufacturer), tempCPU.Tdp, tempCPU.Integrated_graphics, tempCPU.Thread_count, tempCPU.Core_count,tempCPU.L2_Cache, tempCPU.L3_Cache, tempCPU.Core_clock, tempCPU.Boost_core_clock, tempCPU.Microarchitecture, tempCPU.Price
+            List<CPU> cpuList = JsonSerializer.Deserialize<List<CPU>>(response, option);
+
+            if (cpuList != null && cpuList.Count > 0)
+            {
+                CPU tempCPU = cpuList[0];
+                this.SelectedCPU = new CPUtoGrid(
+                    tempCPU.Id, tempCPU.Socket, tempCPU.Manufacturer, tempCPU.Series,
+                    (tempCPU.Manufacturer + " " + tempCPU.Series), tempCPU.Tdp,
+                    tempCPU.Integrated_graphics, tempCPU.Thread_count, tempCPU.Core_count,
+                    tempCPU.L2_Cache, tempCPU.L3_Cache, tempCPU.Core_clock, tempCPU.Boost_core_clock,
+                    tempCPU.Microarchitecture, tempCPU.Price
                 );
+            }
         }
 
         public class CPUtoGrid

@@ -69,7 +69,10 @@ namespace PC_Builder.Models
         [JsonPropertyName("rpm")]
         public int? Rpm
         {
-            get { return rpm; }
+            get
+            {                
+                return rpm;
+            }
             set { rpm = value; }
         }
 

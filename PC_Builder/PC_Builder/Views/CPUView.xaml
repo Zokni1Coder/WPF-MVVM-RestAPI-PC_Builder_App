@@ -45,7 +45,7 @@
                                     <Button.CommandParameter>
                                         <MultiBinding Converter="{StaticResource TupleConverter}">
                                             <Binding Path="ID"/>
-                                            <Binding Source="CPU"/>
+                                            <Binding Source="CpusToView"/>
                                         </MultiBinding>
                                     </Button.CommandParameter>
                                 </Button>

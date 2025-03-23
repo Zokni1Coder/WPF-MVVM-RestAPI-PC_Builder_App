@@ -12,17 +12,19 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using PC_Builder.ViewModels;
 
 namespace PC_Builder.Views
 {
     /// <summary>
     /// Interaction logic for SelectedCPUCooler.xaml
     /// </summary>
-    public partial class SelectedCPUCooler : UserControl
+    public partial class SelectedCPUCoolerView : UserControl
     {
-        public SelectedCPUCooler()
+        public SelectedCPUCoolerView(int id)
         {
             InitializeComponent();
+            DataContext = new SelectedCPUCoolerViewModel(id);
         }
     }
 }

@@ -31,10 +31,18 @@ namespace PC_Builder.Commands
             {
                 case "Motherboard":
                     return new SelectedMotherboardView(id);
-                case "CPU":
-                    return new SelectedCPUView(id); 
-                case "GPU":
-                    //return new SelectedGPUView(id);
+                case "CpusToView":
+                    return new SelectedCPUView(id);
+                case "Gpus":
+                    return new SelectedGPUView(id);
+                case "Rams":
+                    return new SelectedRAMView(id);
+                case "Roms":
+                    return new SelectedROMView(id);
+                case "Supplies":
+                    return new SelectedPSView(id);
+                case "Coolers":
+                    return new SelectedCPUCoolerView(id);
                 default:
                     return null;
             }
@@ -49,7 +57,7 @@ namespace PC_Builder.Commands
 
             SelectedPart selectedPartWindow = new SelectedPart();
             selectedPartWindow.Content = selectedView;
-            selectedPartWindow.Show();                    
+            selectedPartWindow.Show();
         }
     }
 }

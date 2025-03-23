@@ -44,6 +44,7 @@ namespace PC_Builder.ViewModels
                     Efficiency_Rating = supply.Rating,
                     Wattage = supply.Wattage.ToString() + "W",
                     Modularity = supply.Modularity,
+                    ID = supply.Id,
                     Price = supply.Price.ToString() + "€"
                 });
             }
@@ -51,6 +52,7 @@ namespace PC_Builder.ViewModels
 
         public class SupplyToView
         {
+            public int ID { get; set; }
             public string Model { get; set; }
             public string Type { get; set; }
             public string Efficiency_Rating { get; set; }

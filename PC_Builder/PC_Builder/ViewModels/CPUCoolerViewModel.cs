@@ -45,6 +45,9 @@ namespace PC_Builder.ViewModels
                     Fan_RPM = cooler.Fan_RPM.ToString(),
                     Noise_level = cooler.Noise_level.ToString() + "dB",
                     Water_cooled = cooler.GetWaterCooled(),
+                    ID = cooler.Id,
+                    Compatibilities = structure.compatibilities,
+                    Height = cooler.Height,
                     Price = cooler.Price.ToString() + "€"
                 });
             }
@@ -52,12 +55,15 @@ namespace PC_Builder.ViewModels
 
         public class CPU_CoolerToView
         {
+            public int ID { get; set; }
             public string Model { get; set; }
             public string Manufacturer { get; set; }
             public string Fan_RPM { get; set; }
             public string Noise_level { get; set; }
+            public int Height { get; set; }
             public string Water_cooled { get; set; }
             public string Price { get; set; }
+            public List<CPU_Cooler_Compatibility> Compatibilities { get; set; }
         }
 
         public class Structure

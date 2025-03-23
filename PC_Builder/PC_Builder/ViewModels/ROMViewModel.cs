@@ -19,10 +19,13 @@ namespace PC_Builder.ViewModels
         public ObservableCollection<ROMToView> Roms
         {
             get { return roms; }
-            set { roms = value; }
+            set
+            {
+                roms = value;
+            }
         }
 
-        public ICommand SelectViewCommand { get; }        
+        public ICommand SelectViewCommand { get; }
         public ROMViewModel()
         {
             getDatas();
@@ -44,13 +47,14 @@ namespace PC_Builder.ViewModels
                     Type = rom.Type,
                     Form_Factor = rom.Form_factor,
                     Manufacturer = rom.Manufacturer,
-                    Price = rom.Price.ToString() + "€"
+                    Price = rom.Price.ToString() + "€",
+                    ID = rom.Id
                 });
             }
         }
-
         public class ROMToView
         {
+            public int ID { get; set; }
             public string Model { get; set; }
             public string Capacity { get; set; }
             public string Type { get; set; }
