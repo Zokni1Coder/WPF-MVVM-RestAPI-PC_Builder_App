@@ -41,11 +41,11 @@ namespace PC_Builder.ViewModels
                 Rams.Add(new RAMToView
                 {
                     Model = ram.Manufacturer + " " + ram.Model + " " + ram.Size.ToString() + "GB",
-                    Memory_Size = ram.Size.ToString() + "GB",
+                    Memory_Size = ram.Size,
                     Slot_Type = ram.Type,
-                    Speed = ram.Speed.ToString() + "MHz",
-                    Cas_Latency = ram.Cas_latency.ToString(),
-                    Price = ram.Price.ToString() + "€",
+                    Speed = ram.Speed,
+                    Cas_Latency = ram.Cas_latency,
+                    Price = ram.Price,
                     ID = ram.Id
                 });
             }
@@ -55,11 +55,11 @@ namespace PC_Builder.ViewModels
         {
             public int ID { get; set; }
             public string Model { get; set; }
-            public string Memory_Size { get; set; }
+            public int Memory_Size { get; set; }
             public string Slot_Type { get; set; }
-            public string Speed { get; set; }
-            public string Cas_Latency { get; set; }
-            public string Price { get; set; }
+            public int Speed { get; set; }
+            public int Cas_Latency { get; set; }
+            public int Price { get; set; }
         }
     }
 }

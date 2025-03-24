@@ -46,7 +46,7 @@
                                         </MultiBinding>
                                     </Button.CommandParameter>
                                 </Button>
-                                <Button x:Name="BtnSelect" Style="{StaticResource GridSelectButtonStyle}" Content="Select" Cursor="Hand"/>
+                                <Button x:Name="BtnSelect" CommandParameter="{Binding DataContext, RelativeSource={RelativeSource AncestorType=DataGridRow}}" Command="{Binding DataContext.SelectPartCommand, RelativeSource={RelativeSource AncestorType=Window}}" Style="{StaticResource GridSelectButtonStyle}" Content="Select" Cursor="Hand"/>
                             </StackPanel>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>

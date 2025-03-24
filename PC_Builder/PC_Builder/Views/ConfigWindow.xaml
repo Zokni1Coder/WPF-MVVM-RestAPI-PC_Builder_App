@@ -38,43 +38,50 @@
         <Grid Grid.Row="1">
             <StackPanel Orientation="Horizontal">
                 <Image Source="/Assets/motherboard.png" Stretch="UniformToFill" Margin="20,2,20,2"/>
-                <TextBlock Text="Motherboard: " Style="{StaticResource SeelctedModels}"/>
+                <TextBlock Text="Motherboard: " MinWidth="100" Style="{StaticResource SeelctedModels}"/>
+                <TextBlock Text="{Binding MotherboardModel}" MaxWidth="330" TextWrapping="Wrap" Style="{StaticResource SeelctedModels}"/>
             </StackPanel>
         </Grid>
         <Grid Grid.Row="2">
             <StackPanel Orientation="Horizontal">
                 <Image Source="/Assets/cpu.png" Stretch="UniformToFill" Margin="20,2,20,2"/>
-                <TextBlock Text="CPU: " Style="{StaticResource SeelctedModels}"/>
+                <TextBlock Text="CPU: " MinWidth="100" Style="{StaticResource SeelctedModels}"/>
+                <TextBlock Text="{Binding CPUModel}" MaxWidth="330" TextWrapping="Wrap" Style="{StaticResource SeelctedModels}"/>
             </StackPanel>
         </Grid>
         <Grid Grid.Row="3">
             <StackPanel Orientation="Horizontal">
                 <Image Source="/Assets/cooler.png" Stretch="UniformToFill" Margin="20,2,20,2"/>
-                <TextBlock Text="CPU-Cooler: " Style="{StaticResource SeelctedModels}"/>
+                <TextBlock Text="CPU-Cooler: " MinWidth="100" Style="{StaticResource SeelctedModels}"/>
+                <TextBlock Text="{Binding CPUCoolerModel}" MaxWidth="330" TextWrapping="Wrap" Style="{StaticResource SeelctedModels}"/>
             </StackPanel>
         </Grid>
         <Grid Grid.Row="4">
             <StackPanel Orientation="Horizontal">
                 <Image Source="/Assets/graphic-card.png" Stretch="UniformToFill" Margin="20,2,20,2"/>
-                <TextBlock Text="GPU: " Style="{StaticResource SeelctedModels}"/>
+                <TextBlock Text="GPU: " MinWidth="100" Style="{StaticResource SeelctedModels}"/>
+                <TextBlock Text="{Binding GPUModel}" MaxWidth="330" TextWrapping="Wrap" Style="{StaticResource SeelctedModels}"/>
             </StackPanel>
         </Grid>
         <Grid Grid.Row="5">
             <StackPanel Orientation="Horizontal">
                 <Image Source="/Assets/ram-memory.png" Stretch="UniformToFill" Margin="20,2,20,2"/>
-                <TextBlock Text="RAM: " Style="{StaticResource SeelctedModels}"/>
+                <TextBlock Text="RAM: " MinWidth="100" Style="{StaticResource SeelctedModels}"/>
+                <TextBlock Text="{Binding RAMModel}" MaxWidth="330" TextWrapping="Wrap" Style="{StaticResource SeelctedModels}"/>
             </StackPanel>
         </Grid>
         <Grid Grid.Row="6">
             <StackPanel Orientation="Horizontal">
                 <Image Source="/Assets/memory.png" Stretch="UniformToFill" Margin="20,2,20,2"/>
-                <TextBlock Text="ROM: " Style="{StaticResource SeelctedModels}"/>
+                <TextBlock Text="ROM: " MinWidth="100" Style="{StaticResource SeelctedModels}"/>
+                <TextBlock Text="{Binding ROMModel}" MaxWidth="330" TextWrapping="Wrap" Style="{StaticResource SeelctedModels}"/>
             </StackPanel>
         </Grid>
         <Grid Grid.Row="7">
             <StackPanel Orientation="Horizontal">
                 <Image Source="/Assets/power-supply.png" Stretch="UniformToFill" Margin="20,2,20,2"/>
                 <TextBlock Text="Power Supply: " Style="{StaticResource SeelctedModels}"/>
+                <TextBlock Text="{Binding PSModel}" MaxWidth="330" TextWrapping="Wrap" Style="{StaticResource SeelctedModels}"/>
             </StackPanel>
         </Grid>
         <Border Grid.Row="7" Background="Red"

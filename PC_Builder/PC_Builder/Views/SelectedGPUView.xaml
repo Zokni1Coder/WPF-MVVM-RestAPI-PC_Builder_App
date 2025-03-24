@@ -74,7 +74,7 @@
                 <TextBlock Text="{Binding SelectedGPU.Brand}" Style="{StaticResource SelectedPartValues}"/>
                 <TextBlock Text="{Binding SelectedGPU.Technology}" Style="{StaticResource SelectedPartValues}"/>
                 <TextBlock Text="{Binding SelectedGPU.Model}" Style="{StaticResource SelectedPartValues}"/>
-                <TextBlock Text="{Binding SelectedGPU.VRAM, StringFormat='{}{0}GB'}" Style="{StaticResource SelectedPartValues}"/>
+                <TextBlock Text="{Binding SelectedGPU.VRAM, StringFormat='{}{0} GB'}" Style="{StaticResource SelectedPartValues}"/>
                 <TextBlock Text="{Binding SelectedGPU.RAM_Type}" Style="{StaticResource SelectedPartValues}"/>
                 <TextBlock Text="{Binding SelectedGPU.Core_clock, StringFormat='{}{0} MHz'}" Style="{StaticResource SelectedPartValues}"/>
                 <TextBlock Text="{Binding SelectedGPU.Boost_clock, StringFormat='{}{0} MHz'}" Style="{StaticResource SelectedPartValues}"/>

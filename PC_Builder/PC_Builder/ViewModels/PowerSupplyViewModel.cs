@@ -42,10 +42,10 @@ namespace PC_Builder.ViewModels
                     Model = supply.Manufacturer + " " + supply.Model,
                     Type = supply.Type,
                     Efficiency_Rating = supply.Rating,
-                    Wattage = supply.Wattage.ToString() + "W",
+                    Wattage = supply.Wattage,
                     Modularity = supply.Modularity,
                     ID = supply.Id,
-                    Price = supply.Price.ToString() + "€"
+                    Price = supply.Price
                 });
             }
         }
@@ -56,9 +56,9 @@ namespace PC_Builder.ViewModels
             public string Model { get; set; }
             public string Type { get; set; }
             public string Efficiency_Rating { get; set; }
-            public string Wattage { get; set; }
+            public int Wattage { get; set; }
             public string Modularity { get; set; }
-            public string Price { get; set; }
+            public int Price { get; set; }
         }
     }
 }

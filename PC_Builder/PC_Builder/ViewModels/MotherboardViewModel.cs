@@ -18,12 +18,13 @@ using PC_Builder.Models;
 namespace PC_Builder.ViewModels
 {
     public class MotherboardViewModel : BaseViewModel
-    {     
+    {
         private ObservableCollection<MotherboardtoGrid> motherboardList = new ObservableCollection<MotherboardtoGrid>();
 
         public ObservableCollection<MotherboardtoGrid> Motherboards
         {
             get { return motherboardList; }
+            set { motherboardList = value; }
         }
 
         public ICommand SelectViewCommand { get; }
@@ -44,28 +45,29 @@ namespace PC_Builder.ViewModels
             Structure structure = JsonSerializer.Deserialize<Structure>(response, option);
 
             if (structure?.motherboards != null)
-            {
+            {               
                 foreach (var m in structure.motherboards)
                 {
-                    Motherboards.Add(new MotherboardtoGrid
-                    {
-                        ID = m.Id,
-                        Model = m.Manufacturer + " " + m.Info,
-                        Chipset = m.Chipset,
-                        Socket = m.Socket,
-                        Form_factor = m.Form_factor,
-                        Ram_type = m.Ram_type,
-                        Price = m.Price,
-                        Manufacturer = m.Manufacturer,
-                        Info = m.Info,
-                        Memory_max = m.Max_memory,
-                        Memory_slots_no = m.Memory_slot_no,
-                        Sata_60gbs_no = m.Sata_60gbs_no,
-                        Onboard_ethernet = m.Onboard_ethernet,
-                        Wifi = m.Wifi,
-                        Raid_supp = m.Raid_supp
-                    });
-                }                
+                    MotherboardtoGrid tempMotherboard = new MotherboardtoGrid();
+                    tempMotherboard.ID = m.Id;
+                    tempMotherboard.Model = m.Manufacturer + " " + m.Info;
+                    tempMotherboard.Chipset = m.Chipset;
+                    tempMotherboard.Socket = m.Socket;
+                    tempMotherboard.Form_factor = m.Form_factor;
+                    tempMotherboard.Ram_type = m.Ram_type;
+                    tempMotherboard.Price = m.Price;
+                    tempMotherboard.Manufacturer = m.Manufacturer;
+                    tempMotherboard.Info = m.Info;
+                    tempMotherboard.Memory_max = m.Max_memory;
+                    tempMotherboard.Memory_slots_no = m.Memory_slot_no;
+                    tempMotherboard.Sata_60gbs_no = m.Sata_60gbs_no;
+                    tempMotherboard.Onboard_ethernet = m.Onboard_ethernet;
+                    tempMotherboard.Wifi = m.Wifi;
+                    tempMotherboard.Raid_supp = m.Raid_supp;
+                    tempMotherboard.M2Compatibilites = structure.m2s;
+                    tempMotherboard.USBHeaders = structure.usbHeaders;
+                    Motherboards.Add(tempMotherboard);
+                }               
             }
         }
 
@@ -81,6 +83,8 @@ namespace PC_Builder.ViewModels
 
         public class MotherboardtoGrid
         {
+            public List<M2> M2Compatibilites { get; set; }
+            public List<USBHeader> USBHeaders { get; set; }
             public int ID { get; set; }
             public string Model { get; set; }
             public string Chipset { get; set; }

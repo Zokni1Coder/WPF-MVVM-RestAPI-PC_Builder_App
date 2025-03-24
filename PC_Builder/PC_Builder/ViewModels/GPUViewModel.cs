@@ -39,11 +39,11 @@ namespace PC_Builder.ViewModels
                 this.gpus.Add(new GpuToView
                 {
                     Model =gpu.Manufacturer + " " + gpu.Info + " " + gpu.Model,
-                    Memory_Size = gpu.Vram.ToString() + "GB",
+                    Memory_Size = gpu.Vram,
                     Memory_Type = gpu.Ram_type,
-                    Core_Clock = gpu.Core_clock.ToString() + "MHz", 
+                    Core_Clock = gpu.Core_clock, 
                     Slot = gpu.INterface,
-                    Price = gpu.Price.ToString() + "€",
+                    Price = gpu.Price,
                     ID = gpu.Id,
                     Info = gpu.Info,
                     Manufacturer = gpu.Manufacturer,
@@ -63,11 +63,11 @@ namespace PC_Builder.ViewModels
         public class GpuToView
         {
             public string Model { get; set; }
-            public string Memory_Size { get; set; }
+            public int Memory_Size { get; set; }
             public string Memory_Type { get; set; }
-            public string Core_Clock { get; set; }
+            public int Core_Clock { get; set; }
             public string Slot { get; set; }
-            public string Price { get; set; }
+            public int Price { get; set; }
             public int ID { get; set; }
             public string Info { get; set; }
             public string Manufacturer { get; set; }

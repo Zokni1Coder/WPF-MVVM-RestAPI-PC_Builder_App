@@ -25,6 +25,7 @@ namespace PC_Builder.ViewModels
             set { cpusToView = value; }
         }
         public ICommand SelectViewCommand { get; }
+        public ICommand SelectPartCommand { get; }
         public CPUViewModel()
         {
             getDatas();
@@ -41,11 +42,11 @@ namespace PC_Builder.ViewModels
                 CpusToView.Add(new CPUS
                 {
                     Model = cpu.Manufacturer + " " + cpu.Series,
-                    Core_Count = cpu.Core_count.ToString(),
-                    Boost_Clock = cpu.Boost_core_clock.ToString() + "GHz",
-                    Core_Clock = cpu.Core_clock.ToString() + "GHz",
+                    Core_Count = cpu.Core_count,
+                    Boost_Clock = cpu.Boost_core_clock,
+                    Core_Clock = cpu.Core_clock,
                     Microarchitecture = cpu.Microarchitecture,
-                    Price = cpu.Price.ToString() + "€",
+                    Price = cpu.Price,
                     ID = cpu.Id,
                     Socket = cpu.Socket,
                     Manufacturer = cpu.Manufacturer,
@@ -58,24 +59,23 @@ namespace PC_Builder.ViewModels
                 });
             }
         }
-    }
-
-    public class CPUS
-    {
-        public string Model { get; set; }
-        public string Core_Count { get; set; }
-        public string Core_Clock { get; set; }
-        public string Boost_Clock { get; set; }
-        public string Microarchitecture { get; set; }
-        public string Price { get; set; }
-        public int ID { get; set; }
-        public string Socket { get; set; }
-        public string Manufacturer { get; set; }
-        public string Series { get; set; }
-        public int TDP { get; set; }
-        public string Integrated_Graphics { get; set; }
-        public int Thread_Count { get; set; }
-        public double L2_Cache { get; set; }
-        public double L3_Cache { get; set; }
+        public class CPUS
+        {
+            public string Model { get; set; }
+            public int Core_Count { get; set; }
+            public double Core_Clock { get; set; }
+            public double Boost_Clock { get; set; }
+            public string Microarchitecture { get; set; }
+            public int Price { get; set; }
+            public int ID { get; set; }
+            public string Socket { get; set; }
+            public string Manufacturer { get; set; }
+            public string Series { get; set; }
+            public int TDP { get; set; }
+            public string Integrated_Graphics { get; set; }
+            public int Thread_Count { get; set; }
+            public double L2_Cache { get; set; }
+            public double L3_Cache { get; set; }
+        }
     }
 }

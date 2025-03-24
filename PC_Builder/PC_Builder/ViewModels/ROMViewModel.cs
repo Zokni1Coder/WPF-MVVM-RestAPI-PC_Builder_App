@@ -43,11 +43,11 @@ namespace PC_Builder.ViewModels
                 Roms.Add(new ROMToView
                 {
                     Model = rom.Manufacturer + " " + rom.Model,
-                    Capacity = rom.Capacity.ToString() + "GB",
+                    Capacity = rom.Capacity,
                     Type = rom.Type,
                     Form_Factor = rom.Form_factor,
                     Manufacturer = rom.Manufacturer,
-                    Price = rom.Price.ToString() + "€",
+                    Price = rom.Price,
                     ID = rom.Id
                 });
             }
@@ -56,11 +56,11 @@ namespace PC_Builder.ViewModels
         {
             public int ID { get; set; }
             public string Model { get; set; }
-            public string Capacity { get; set; }
+            public int Capacity { get; set; }
             public string Type { get; set; }
             public string Form_Factor { get; set; }
             public string Manufacturer { get; set; }
-            public string Price { get; set; }
+            public int Price { get; set; }
         }
     }
 }

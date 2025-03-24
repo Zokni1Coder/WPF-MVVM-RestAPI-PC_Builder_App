@@ -74,7 +74,7 @@
                 <TextBlock Text="{Binding SelectedMotherboard.Manufacturer}" Style="{StaticResource SelectedPartValues}"/>
                 <TextBlock Text="{Binding SelectedMotherboard.Socket}" Style="{StaticResource SelectedPartValues}"/>
                 <TextBlock Text="{Binding SelectedMotherboard.Form_factor}" Style="{StaticResource SelectedPartValues}"/>
-                <TextBlock Text="{Binding SelectedMotherboard.Memory_Max}" Style="{StaticResource SelectedPartValues}"/>
+                <TextBlock Text="{Binding SelectedMotherboard.Memory_Max, StringFormat='{}{0} GB' }" Style="{StaticResource SelectedPartValues}"/>
                 <TextBlock Text="{Binding SelectedMotherboard.Ram_type}" Style="{StaticResource SelectedPartValues}"/>
                 <TextBlock Text="{Binding SelectedMotherboard.Memory_Slots_No}" Style="{StaticResource SelectedPartValues}"/>
                 <TextBlock Text="{Binding SelectedMotherboard.Sata_60gbs_no}" Style="{StaticResource SelectedPartValues}"/>
@@ -82,8 +82,8 @@
                 <TextBlock Text="{Binding SelectedMotherboard.Wifi}" Style="{StaticResource SelectedPartValues}"/>
                 <TextBlock Text="{Binding SelectedMotherboard.Raid_Supp}" Style="{StaticResource SelectedPartValues}"/>
                 <TextBlock Text="{Binding SelectedMotherboard.Price}" Style="{StaticResource SelectedPartValues}"/>
-                <TextBlock Text="{Binding SelectedMotherboard.M2_Connections}" Style="{StaticResource SelectedPartValues}"/>
-                <TextBlock Text="{Binding SelectedMotherboard.Usb_headers}" Style="{StaticResource SelectedPartValues}"/>
+                <TextBlock Text="{Binding SelectedMotherboard.M2_Connections}" TextWrapping="Wrap" Style="{StaticResource SelectedPartValues}"/>
+                <TextBlock Text="{Binding SelectedMotherboard.Usb_headers}" TextWrapping="Wrap" Style="{StaticResource SelectedPartValues}"/>
             </StackPanel>
         </Grid>
     </Grid>

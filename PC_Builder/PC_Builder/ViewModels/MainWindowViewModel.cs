@@ -33,7 +33,6 @@ namespace PC_Builder.ViewModels
         public void SetMotherboard(MotherboardViewModel.MotherboardtoGrid motherboard)
         {
             this.Computer.motherboard = motherboard;
-            //MessageBox.Show(this.Computer.motherboard.Chipset);
         }
 
         public MotherboardViewModel.MotherboardtoGrid GetMotherboard()
@@ -41,73 +40,73 @@ namespace PC_Builder.ViewModels
             return this.computer.motherboard;
         }
 
-        public void SetCPU(CPU cpu)
+        public void SetCPU(CPUViewModel.CPUS cpu)
         {
-            this.computer.cpu = cpu;
+            this.Computer.cpu = cpu;
         }
 
-        public CPU GetCPU()
+        public CPUViewModel.CPUS GetCPU()
         {
             return this.computer.cpu;
         }
 
-        public void SetCPUCooler(CPU_Cooler cooler)
+        public void SetCPUCooler(CPUCoolerViewModel.CPU_CoolerToView cooler)
         {
-            this.computer.cpu_Cooler = cooler;
+            this.Computer.cpu_Cooler = cooler;
         }
-        public CPU_Cooler getCPUCooler()
+        public CPUCoolerViewModel.CPU_CoolerToView getCPUCooler()
         {
-            return this.computer.cpu_Cooler;
-        }
-
-        public void SetGPU(GPU gpu)
-        {
-            this.computer.gpu = gpu;
+            return this.Computer.cpu_Cooler;
         }
 
-        public GPU GetGPU()
+        public void SetGPU(GPUViewModel.GpuToView gpu)
         {
-            return this.computer.gpu;
+            this.Computer.gpu = gpu;
         }
 
-        public List<M2> GetM2s()
+        public GPUViewModel.GpuToView GetGPU()
         {
-            return this.computer.m2s;
+            return this.Computer.gpu;
         }
 
-        public void SetM2s(List<M2> m2s)
+        //public List<M2> GetM2s()
+        //{
+        //    return this.Computer.m2s;
+        //}
+
+        //public void SetM2s(List<M2> m2s)
+        //{
+        //    this.Computer.m2s = m2s;
+        //}
+
+        public void SetPowerSupply(PowerSupplyViewModel.SupplyToView powerSupply)
         {
-            this.computer.m2s = m2s;
+            this.Computer.power_supply = powerSupply;
         }
 
-        public void SetPowerSupply(Power_Supply powerSupply)
+        public PowerSupplyViewModel.SupplyToView GetPower_Supply()
         {
-            this.computer.power_supply = powerSupply;
+            return this.Computer.power_supply;
         }
 
-        public Power_Supply GetPower_Supply()
+        public void SetRAM(RAMViewModel.RAMToView ram)
         {
-            return this.computer.power_supply;
+            this.Computer.ram = ram;
         }
 
-        public void SetRAM(RAM ram)
+        public RAMViewModel.RAMToView GetRAM()
         {
-            this.computer.ram = ram;
+            return this.Computer.ram;
         }
 
-        public RAM GetRAM()
+        public void SetROM(ROMViewModel.ROMToView rom)
         {
-            return this.computer.ram;
+            this.Computer.rom = rom;
         }
 
-        public void SetROM(ROM rom)
+        public ROMViewModel.ROMToView GetROM()
         {
-            this.computer.rom = rom;
-        }
-
-        public ROM GetROM()
-        {
-            return this.computer.rom;
+            return this.Computer.rom;
         }
 
         public void SetUSBHeaders(List<USBHeader> headers)
@@ -131,7 +130,6 @@ namespace PC_Builder.ViewModels
                 OnPropertyChanged(nameof(SelectedViewModel));
             }
         }
-
         public ICommand SelectPartCommand { get; set; }
         public ICommand UpdateViewCommand { get; set; }
 

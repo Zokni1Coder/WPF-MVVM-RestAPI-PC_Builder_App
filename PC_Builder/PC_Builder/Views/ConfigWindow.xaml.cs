@@ -25,7 +25,7 @@ namespace PC_Builder.Views
             InitializeComponent();
             this.Left = Left + 950;
             this.Top = Height;
-            DataContext = new ConfigWindowViewModel();
+            DataContext = ConfigWindowViewModel.viewModel;
         }
     }
 }

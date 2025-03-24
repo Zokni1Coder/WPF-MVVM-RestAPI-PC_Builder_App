@@ -29,11 +29,11 @@
             </DataGrid.Background>
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Model" CellStyle="{StaticResource GridCellStyle}" Binding="{Binding Model}" IsReadOnly="True" Width="*"/>
-                <DataGridTextColumn Header="Capacity" CellStyle="{StaticResource GridCellStyle}" Binding="{Binding Capacity}" IsReadOnly="True" Width="*"/>
+                <DataGridTextColumn Header="Capacity" CellStyle="{StaticResource GridCellStyle}" Binding="{Binding Capacity, StringFormat='{}{0} GB'}" IsReadOnly="True" Width="*"/>
                 <DataGridTextColumn Header="Type" CellStyle="{StaticResource GridCellStyle}" Binding="{Binding Type}" IsReadOnly="True" Width="*"/>
                 <DataGridTextColumn Header="Form Factor" CellStyle="{StaticResource GridCellStyle}" Binding="{Binding Form_Factor}" IsReadOnly="True" Width="*"/>
                 <DataGridTextColumn Header="Manufacturer" CellStyle="{StaticResource GridCellStyle}" Binding="{Binding Manufacturer}" IsReadOnly="True" Width="*"/>
-                <DataGridTextColumn Header="Price" CellStyle="{StaticResource GridCellStyle}" Binding="{Binding Price}" IsReadOnly="True" Width="*"/>
+                <DataGridTextColumn Header="Price" CellStyle="{StaticResource GridCellStyle}" Binding="{Binding Price, StringFormat='{}{0} €'}" IsReadOnly="True" Width="*"/>
                 <DataGridTemplateColumn IsReadOnly="True" Width="auto">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
@@ -46,7 +46,7 @@
                                         </MultiBinding>
                                     </Button.CommandParameter>
                                 </Button>
-                                <Button x:Name="BtnSelect" Style="{StaticResource GridSelectButtonStyle}" Content="Select" Cursor="Hand"/>
+                                <Button x:Name="BtnSelect" CommandParameter="{Binding DataContext, RelativeSource={RelativeSource AncestorType=DataGridRow}}" Command="{Binding DataContext.SelectPartCommand, RelativeSource={RelativeSource AncestorType=Window}}" Style="{StaticResource GridSelectButtonStyle}" Content="Select" Cursor="Hand"/>
                             </StackPanel>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
