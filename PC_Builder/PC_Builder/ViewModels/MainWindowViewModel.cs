@@ -26,8 +26,6 @@ namespace PC_Builder.ViewModels
                 return computer;
             }
         }
-
-
         public static MainWindowViewModel viewModel { get; private set; }
 
         public void SetMotherboard(MotherboardViewModel.MotherboardtoGrid motherboard)
@@ -109,15 +107,15 @@ namespace PC_Builder.ViewModels
             return this.Computer.rom;
         }
 
-        public void SetUSBHeaders(List<USBHeader> headers)
-        {
-            this.computer.usbHeaders = headers;
-        }
+        //public void SetUSBHeaders(List<USBHeader> headers)
+        //{
+        //    this.computer.usbHeaders = headers;
+        //}
 
-        public List<USBHeader> GetUSBHeaders()
-        {
-            return this.computer.usbHeaders;
-        }
+        //public List<USBHeader> GetUSBHeaders()
+        //{
+        //    return this.computer.usbHeaders;
+        //}
 
         private BaseViewModel selectedViewModel = new HomeViewModel();
 

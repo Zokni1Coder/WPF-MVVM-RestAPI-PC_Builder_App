@@ -14,10 +14,10 @@ namespace PC_Builder.Interfaces
         CPUViewModel.CPUS cpu { get; set; }
         CPUCoolerViewModel.CPU_CoolerToView cpu_Cooler { get; set; }
         GPUViewModel.GpuToView gpu { get; set; }
-        List<M2> m2s { get; set; }
+        //List<M2> m2s { get; set; }
         PowerSupplyViewModel.SupplyToView power_supply { get; set; }
         RAMViewModel.RAMToView ram { get; set; }
         ROMViewModel.ROMToView rom { get; set; }
-        List<USBHeader> usbHeaders { get; set; }
+        //List<USBHeader> usbHeaders { get; set; }
     }
 }

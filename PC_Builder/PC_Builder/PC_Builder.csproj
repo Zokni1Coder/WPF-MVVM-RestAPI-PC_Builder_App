@@ -89,8 +89,10 @@
     </ApplicationDefinition>
     <Compile Include="Commands\SelectPartCommand.cs" />
     <Compile Include="Commands\SelectViewCommand.cs" />
+    <Compile Include="Commands\TestCommand.cs" />
     <Compile Include="Commands\UpdateViewCommand.cs" />
     <Compile Include="Interfaces\IComputer.cs" />
+    <Compile Include="Interfaces\IComputerPartVisitor.cs" />
     <Compile Include="Models\CPU.cs" />
     <Compile Include="Models\CPU_Cooler.cs" />
     <Compile Include="Models\CPU_Cooler_Compatibility.cs" />
@@ -105,6 +107,9 @@
     <Compile Include="Models\USBHeader.cs" />
     <Compile Include="SelectedPart.xaml.cs">
       <DependentUpon>SelectedPart.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="TestResultPopupWindow.xaml.cs">
+      <DependentUpon>TestResultPopupWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="ViewModels\BaseSelectedViewModel.cs" />
     <Compile Include="ViewModels\BaseViewModel.cs" />
@@ -126,6 +131,7 @@
     <Compile Include="ViewModels\SelectedPowerSupplyViewModel.cs" />
     <Compile Include="ViewModels\SelectedRAMViewModel.cs" />
     <Compile Include="ViewModels\SelectedROMViewModel.cs" />
+    <Compile Include="ViewModels\TestResultPopupWindowViewModel.cs" />
     <Compile Include="Views\BaseSelectedView.xaml.cs">
       <DependentUpon>BaseSelectedView.xaml</DependentUpon>
     </Compile>
@@ -137,6 +143,9 @@
     </Compile>
     <Compile Include="Views\CPUView.xaml.cs">
       <DependentUpon>CPUView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\FailedTestResultPopupWindowView.xaml.cs">
+      <DependentUpon>FailedTestResultPopupWindowView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\GPUView.xaml.cs">
       <DependentUpon>GPUView.xaml</DependentUpon>
@@ -177,6 +186,9 @@
     <Compile Include="Views\SelectedROMView.xaml.cs">
       <DependentUpon>SelectedROMView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\TestResultPopupWindowView.xaml.cs">
+      <DependentUpon>TestResultPopupWindowView.xaml</DependentUpon>
+    </Compile>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -201,6 +213,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="TestResultPopupWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\BaseSelectedView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -214,6 +230,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\CPUView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\FailedTestResultPopupWindowView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -266,6 +286,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\SelectedROMView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\TestResultPopupWindowView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -331,6 +355,11 @@
   <ItemGroup>
     <Resource Include="Assets\megaphone.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Resource Include="Assets\OKBG.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\failedTestBG.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

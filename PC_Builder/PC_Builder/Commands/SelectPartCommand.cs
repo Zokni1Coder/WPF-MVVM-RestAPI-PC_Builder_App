@@ -39,7 +39,6 @@ namespace PC_Builder.Commands
                     break;
                 case CPUCoolerViewModel.CPU_CoolerToView SelectedCPUCooler:
                     viewModel.SetCPUCooler(SelectedCPUCooler);
-                    //compatibility
                     configViewModel.CPUCoolerModel = SelectedCPUCooler.Model + " " + SelectedCPUCooler.Fan_RPM + "RPM " + SelectedCPUCooler.Noise_level + "dB Water cooled: " + SelectedCPUCooler.Water_cooled + " ";
                     break;
                 case GPUViewModel.GpuToView SelectedGPU:
