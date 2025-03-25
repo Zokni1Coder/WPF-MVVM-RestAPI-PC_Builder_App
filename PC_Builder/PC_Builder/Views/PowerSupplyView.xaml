@@ -33,7 +33,7 @@
                 <DataGridTextColumn Header="Efficiency Rating" Binding="{Binding Rating}" CellStyle="{StaticResource GridCellStyle}" IsReadOnly="True" Width="*"/>
                 <DataGridTextColumn Header="Wattage" Binding="{Binding Wattage}" CellStyle="{StaticResource GridCellStyle}" IsReadOnly="True" Width="*"/>
                 <DataGridTextColumn Header="Modularity" Binding="{Binding Modularity}" CellStyle="{StaticResource GridCellStyle}" IsReadOnly="True" Width="*"/>
-                <DataGridTextColumn Header="Price" Binding="{Binding Price}" CellStyle="{StaticResource GridCellStyle}" IsReadOnly="True" Width="*"/>
+                <DataGridTextColumn Header="Price" Binding="{Binding Price, StringFormat='{}{0} €'}" CellStyle="{StaticResource GridCellStyle}" IsReadOnly="True" Width="*"/>
                 <DataGridTemplateColumn CellStyle="{StaticResource GridCellStyle}" IsReadOnly="True" Width="*">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>

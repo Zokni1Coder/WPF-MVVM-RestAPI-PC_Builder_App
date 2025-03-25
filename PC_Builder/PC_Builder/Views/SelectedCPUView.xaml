@@ -75,14 +75,14 @@
                 <TextBlock Text="{Binding SelectedCPU.Model}" Style="{StaticResource SelectedPartValues}"/>
                 <TextBlock Text="{Binding SelectedCPU.Microarchitecture}" Style="{StaticResource SelectedPartValues}"/>
                 <TextBlock Text="{Binding SelectedCPU.Socket}" Style="{StaticResource SelectedPartValues}"/>
-                <TextBlock Text="{Binding SelectedCPU.Core_Count}" Style="{StaticResource SelectedPartValues}"/>
-                <TextBlock Text="{Binding SelectedCPU.Thread_Count}" Style="{StaticResource SelectedPartValues}"/>
-                <TextBlock Text="{Binding SelectedCPU.Core_Clock, StringFormat='{}{0} GHz'}" Style="{StaticResource SelectedPartValues}"/>
-                <TextBlock Text="{Binding SelectedCPU.Boost_Clock, StringFormat='{}{0} GHz'}" Style="{StaticResource SelectedPartValues}"/>
+                <TextBlock Text="{Binding SelectedCPU.Core_count}" Style="{StaticResource SelectedPartValues}"/>
+                <TextBlock Text="{Binding SelectedCPU.Thread_count}" Style="{StaticResource SelectedPartValues}"/>
+                <TextBlock Text="{Binding SelectedCPU.Core_clock, StringFormat='{}{0} GHz'}" Style="{StaticResource SelectedPartValues}"/>
+                <TextBlock Text="{Binding SelectedCPU.Boost_core_clock, StringFormat='{}{0} GHz'}" Style="{StaticResource SelectedPartValues}"/>
                 <TextBlock Text="{Binding SelectedCPU.L2_Cache, StringFormat='{}{0} MB'}" Style="{StaticResource SelectedPartValues}"/>
                 <TextBlock Text="{Binding SelectedCPU.L3_Cache, StringFormat='{}{0} MB'}" Style="{StaticResource SelectedPartValues}"/>
-                <TextBlock Text="{Binding SelectedCPU.TDP, StringFormat='{}{0} W'}" Style="{StaticResource SelectedPartValues}"/>
-                <TextBlock Text="{Binding SelectedCPU.Integrated_Graphics}" Style="{StaticResource SelectedPartValues}"/>
+                <TextBlock Text="{Binding SelectedCPU.Tdp, StringFormat='{}{0} W'}" Style="{StaticResource SelectedPartValues}"/>
+                <TextBlock Text="{Binding SelectedCPU.Integrated_graphics}" Style="{StaticResource SelectedPartValues}"/>
                 <TextBlock Text="{Binding SelectedCPU.Price, StringFormat='{}{0} €'}" Style="{StaticResource SelectedPartValues}"/>
             </StackPanel>
         </Grid>

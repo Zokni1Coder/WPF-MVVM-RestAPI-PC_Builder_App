@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using PC_Builder.Interfaces;
 using PC_Builder.ViewModels;
 
 namespace PC_Builder.Views
@@ -21,10 +22,10 @@ namespace PC_Builder.Views
     /// </summary>
     public partial class SelectedGPUView : UserControl
     {
-        public SelectedGPUView(int id)
+        public SelectedGPUView(IComputerPart component)
         {
             InitializeComponent();
-            DataContext = new SelectedGPUViewModel(id);
+            DataContext = new SelectedGPUViewModel(component);
         }
     }
 }

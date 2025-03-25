@@ -74,15 +74,15 @@
                 <TextBlock Text="{Binding SelectedGPU.Brand}" Style="{StaticResource SelectedPartValues}"/>
                 <TextBlock Text="{Binding SelectedGPU.Technology}" Style="{StaticResource SelectedPartValues}"/>
                 <TextBlock Text="{Binding SelectedGPU.Model}" Style="{StaticResource SelectedPartValues}"/>
-                <TextBlock Text="{Binding SelectedGPU.VRAM, StringFormat='{}{0} GB'}" Style="{StaticResource SelectedPartValues}"/>
-                <TextBlock Text="{Binding SelectedGPU.RAM_Type}" Style="{StaticResource SelectedPartValues}"/>
+                <TextBlock Text="{Binding SelectedGPU.Vram, StringFormat='{}{0} GB'}" Style="{StaticResource SelectedPartValues}"/>
+                <TextBlock Text="{Binding SelectedGPU.Ram_type}" Style="{StaticResource SelectedPartValues}"/>
                 <TextBlock Text="{Binding SelectedGPU.Core_clock, StringFormat='{}{0} MHz'}" Style="{StaticResource SelectedPartValues}"/>
                 <TextBlock Text="{Binding SelectedGPU.Boost_clock, StringFormat='{}{0} MHz'}" Style="{StaticResource SelectedPartValues}"/>
-                <TextBlock Text="{Binding SelectedGPU.Interface}" Style="{StaticResource SelectedPartValues}"/>
+                <TextBlock Text="{Binding SelectedGPU.INterface}" Style="{StaticResource SelectedPartValues}"/>
                 <TextBlock Text="{Binding SelectedGPU.Frame_sync}" Style="{StaticResource SelectedPartValues}"/>
                 <TextBlock Text="{Binding SelectedGPU.Hdmi_ouput}" Style="{StaticResource SelectedPartValues}"/>
                 <TextBlock Text="{Binding SelectedGPU.Dp_port_output}" Style="{StaticResource SelectedPartValues}"/>
-                <TextBlock Text="{Binding SelectedGPU.TDP, StringFormat='{}{0} W'}" Style="{StaticResource SelectedPartValues}"/>
+                <TextBlock Text="{Binding SelectedGPU.Tdp, StringFormat='{}{0} W'}" Style="{StaticResource SelectedPartValues}"/>
                 <TextBlock Text="{Binding SelectedGPU.Price, StringFormat='{}{0} €'}" Style="{StaticResource SelectedPartValues}"/>
             </StackPanel>
         </Grid>

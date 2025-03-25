@@ -69,7 +69,7 @@
                 <TextBlock Text="{Binding SelectedCPUCooler.Fan_RPM, StringFormat='{}{0} RPM'}" Style="{StaticResource SelectedPartValues}"/>
                 <TextBlock Text="{Binding SelectedCPUCooler.Noise_level, StringFormat='{}{0} dB'}" Style="{StaticResource SelectedPartValues}"/>
                 <TextBlock Text="{Binding SelectedCPUCooler.Height, StringFormat='{}{0} mm'}" Style="{StaticResource SelectedPartValues}"/>
-                <TextBlock Text="{Binding water_cooled}" Style="{StaticResource SelectedPartValues}"/>
+                <TextBlock Text="{Binding SelectedCPUCooler.WaterCooledToGrid}" Style="{StaticResource SelectedPartValues}"/>
                 <TextBlock Text="{Binding SelectedCPUCooler.Price, StringFormat='{}{0} €'}" Style="{StaticResource SelectedPartValues}"/>
                 <TextBlock Text="{Binding Compatibilities}" TextWrapping="Wrap" Style="{StaticResource SelectedPartValues}"/>
             </StackPanel>

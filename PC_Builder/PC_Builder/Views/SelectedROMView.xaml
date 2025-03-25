@@ -76,10 +76,10 @@
                 <TextBlock Text="{Binding SelectedROM.Model}" Style="{StaticResource SelectedPartValues}"/>
                 <TextBlock Text="{Binding SelectedROM.Type}" Style="{StaticResource SelectedPartValues}"/>
                 <TextBlock Text="{Binding SelectedROM.Capacity, StringFormat='{}{0}GB'}" Style="{StaticResource SelectedPartValues}"/>
-                <TextBlock Text="{Binding SelectedROM.Form_Factor}" Style="{StaticResource SelectedPartValues}"/>
+                <TextBlock Text="{Binding SelectedROM.Form_factor}" Style="{StaticResource SelectedPartValues}"/>
                 <TextBlock Text="{Binding NVMEText}" Style="{StaticResource SelectedPartValues}"/>
-                <TextBlock Text="{Binding SelectedROM.RPM, StringFormat='{}{0} MHz'}" Style="{StaticResource SelectedPartValues}"/>
-                <TextBlock Text="{Binding SelectedROM.Interface, StringFormat='{}{0} MHz'}" Style="{StaticResource SelectedPartValues}"/>
+                <TextBlock Text="{Binding SelectedROM.Rpm, StringFormat='{}{0} MHz'}" Style="{StaticResource SelectedPartValues}"/>
+                <TextBlock Text="{Binding SelectedROM.INterface, StringFormat='{}{0} MHz'}" Style="{StaticResource SelectedPartValues}"/>
                 <TextBlock Text="{Binding SelectedROM.Price, StringFormat='{}{0} €'}" Style="{StaticResource SelectedPartValues}"/>
             </StackPanel>
         </Grid>

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,6 +13,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using PC_Builder.Interfaces;
 using PC_Builder.ViewModels;
 
 namespace PC_Builder.Views
@@ -21,10 +23,10 @@ namespace PC_Builder.Views
     /// </summary>
     public partial class SelectedRAMView : UserControl
     {
-        public SelectedRAMView(int id)
+        public SelectedRAMView(IComputerPart component)
         {
             InitializeComponent();
-            DataContext = new SelectedRAMViewModel(id);
+            DataContext = new SelectedRAMViewModel(component);
         }
     }
 }

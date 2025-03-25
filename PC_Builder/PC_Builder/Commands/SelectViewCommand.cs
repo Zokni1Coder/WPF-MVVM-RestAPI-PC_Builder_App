@@ -35,15 +35,15 @@ namespace PC_Builder.Commands
                 case "CPU":
                     return new SelectedCPUView(viewName);
                 case "GPU":
-                    //return new SelectedGPUView(viewName);
+                    return new SelectedGPUView(viewName);
                 case "RAM":
-                    //return new SelectedRAMView(viewName);
+                    return new SelectedRAMView(viewName);
                 case "ROM":
-                    //return new SelectedROMView(viewName);
+                    return new SelectedROMView(viewName);
                 case "PS":
-                    //return new SelectedPSView(iviewNamed);
+                    return new SelectedPSView(viewName);
                 case "Cooler":
-                    //return new SelectedCPUCoolerView(viewName);
+                    return new SelectedCPUCoolerView(viewName);
                 default:
                     return null;
             }
