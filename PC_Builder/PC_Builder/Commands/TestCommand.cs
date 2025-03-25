@@ -25,7 +25,7 @@ namespace PC_Builder.Commands
 
         public void Execute(object parameter)
         {
-            throw new NotImplementedException();
+            //var checker = new Compatibility_Checker();
         }
     }
 }

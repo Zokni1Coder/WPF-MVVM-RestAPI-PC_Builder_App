@@ -9,6 +9,7 @@ using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 using System.Windows.Input;
 using PC_Builder.Commands;
+using PC_Builder.Interfaces;
 using PC_Builder.Models;
 
 namespace PC_Builder.ViewModels
@@ -52,7 +53,7 @@ namespace PC_Builder.ViewModels
                 });
             }
         }
-        public class CPU_CoolerToView
+        public class CPU_CoolerToView : IComputerPart
         {
             public int ID { get; set; }
             public string Model { get; set; }
@@ -63,6 +64,11 @@ namespace PC_Builder.ViewModels
             public string Water_cooled { get; set; }
             public int Price { get; set; }
             public List<CPU_Cooler_Compatibility> Compatibilities { get; set; }
+
+            public void Accept(IComputerPartVisitor visitor)
+            {
+                visitor.VisitCPUCooler(this);
+            }
         }
 
         public class Structure

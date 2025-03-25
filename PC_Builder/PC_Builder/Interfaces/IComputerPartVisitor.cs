@@ -16,6 +16,5 @@ namespace PC_Builder.Interfaces
         void VisitPS(PowerSupplyViewModel.SupplyToView ps);
         void VisitRAM(RAMViewModel.RAMToView ram);
         void VisitROM(ROMViewModel.ROMToView rom);
-
     }
 }

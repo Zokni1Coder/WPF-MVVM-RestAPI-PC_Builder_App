@@ -8,6 +8,7 @@ using System.Text.Json;
 using System.Threading.Tasks;
 using System.Windows.Input;
 using PC_Builder.Commands;
+using PC_Builder.Interfaces;
 using PC_Builder.Models;
 
 namespace PC_Builder.ViewModels
@@ -60,7 +61,7 @@ namespace PC_Builder.ViewModels
 
 
 
-        public class GpuToView
+        public class GpuToView : IComputerPart
         {
             public string Model { get; set; }
             public int Memory_Size { get; set; }
@@ -78,6 +79,11 @@ namespace PC_Builder.ViewModels
             public int TDP { get; set; }
             public int Hdmi_ouput { get; set; }
             public int Dp_port_output { get; set; }
+
+            public void Accept(IComputerPartVisitor visitor)
+            {
+                visitor.VisitGPU(this);
+            }
         }
     }
 }

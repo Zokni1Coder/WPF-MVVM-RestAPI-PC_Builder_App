@@ -8,6 +8,7 @@ using System.Text.Json;
 using System.Threading.Tasks;
 using System.Windows.Input;
 using PC_Builder.Commands;
+using PC_Builder.Interfaces;
 using PC_Builder.Models;
 
 namespace PC_Builder.ViewModels
@@ -48,11 +49,12 @@ namespace PC_Builder.ViewModels
                     Form_Factor = rom.Form_factor,
                     Manufacturer = rom.Manufacturer,
                     Price = rom.Price,
-                    ID = rom.Id
+                    ID = rom.Id,
+                    Interface = rom.INterface
                 });
             }
         }
-        public class ROMToView
+        public class ROMToView : IComputerPart
         {
             public int ID { get; set; }
             public string Model { get; set; }
@@ -61,6 +63,12 @@ namespace PC_Builder.ViewModels
             public string Form_Factor { get; set; }
             public string Manufacturer { get; set; }
             public int Price { get; set; }
+            public string Interface { get; set; }
+
+            public void Accept(IComputerPartVisitor visitor)
+            {
+                visitor.VisitROM(this);
+            }
         }
     }
 }

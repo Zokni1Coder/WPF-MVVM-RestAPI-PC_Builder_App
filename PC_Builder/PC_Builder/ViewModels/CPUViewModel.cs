@@ -11,6 +11,7 @@ using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Input;
 using PC_Builder.Commands;
+using PC_Builder.Interfaces;
 using PC_Builder.Models;
 
 namespace PC_Builder.ViewModels
@@ -59,7 +60,7 @@ namespace PC_Builder.ViewModels
                 });
             }
         }
-        public class CPUS
+        public class CPUS : IComputerPart
         {
             public string Model { get; set; }
             public int Core_Count { get; set; }
@@ -76,6 +77,11 @@ namespace PC_Builder.ViewModels
             public int Thread_Count { get; set; }
             public double L2_Cache { get; set; }
             public double L3_Cache { get; set; }
+
+            public void Accept(IComputerPartVisitor visitor)
+            {
+                visitor.VisitCPU(this);
+            }
         }
     }
 }

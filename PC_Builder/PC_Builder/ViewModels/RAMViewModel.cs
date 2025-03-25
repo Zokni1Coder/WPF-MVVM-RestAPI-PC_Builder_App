@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 using PC_Builder.Models;
 using PC_Builder.Commands;
 using System.Windows.Input;
+using PC_Builder.Interfaces;
 
 namespace PC_Builder.ViewModels
 {
@@ -51,7 +52,7 @@ namespace PC_Builder.ViewModels
             }
         }
 
-        public class RAMToView
+        public class RAMToView : IComputerPart
         {
             public int ID { get; set; }
             public string Model { get; set; }
@@ -60,6 +61,11 @@ namespace PC_Builder.ViewModels
             public int Speed { get; set; }
             public int Cas_Latency { get; set; }
             public int Price { get; set; }
+
+            public void Accept(IComputerPartVisitor visitor)
+            {
+               visitor.VisitRAM(this);
+            }
         }
     }
 }

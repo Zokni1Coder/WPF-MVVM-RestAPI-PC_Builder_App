@@ -12,6 +12,7 @@ using System.Windows;
 using System.Windows.Input;
 using System.Windows.Interop;
 using PC_Builder.Commands;
+using PC_Builder.Interfaces;
 using PC_Builder.Models;
 
 
@@ -81,7 +82,7 @@ namespace PC_Builder.ViewModels
             public List<M2> m2s { get; set; }
         }
 
-        public class MotherboardtoGrid
+        public class MotherboardtoGrid : IComputerPart
         {
             public List<M2> M2Compatibilites { get; set; }
             public List<USBHeader> USBHeaders { get; set; }
@@ -100,6 +101,11 @@ namespace PC_Builder.ViewModels
             public int Onboard_ethernet { get; set; }
             public int Wifi { get; set; }
             public int Raid_supp { get; set; }
+
+            public void Accept(IComputerPartVisitor visitor)
+            {
+                visitor.VisitMotherboard(this);
+            }
         }
     }
 }

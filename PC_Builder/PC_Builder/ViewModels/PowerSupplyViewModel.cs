@@ -8,6 +8,7 @@ using System.Text.Json;
 using System.Threading.Tasks;
 using System.Windows.Input;
 using PC_Builder.Commands;
+using PC_Builder.Interfaces;
 using PC_Builder.Models;
 
 namespace PC_Builder.ViewModels
@@ -50,7 +51,7 @@ namespace PC_Builder.ViewModels
             }
         }
 
-        public class SupplyToView
+        public class SupplyToView : IComputerPart
         {
             public int ID { get; set; }
             public string Model { get; set; }
@@ -59,6 +60,11 @@ namespace PC_Builder.ViewModels
             public int Wattage { get; set; }
             public string Modularity { get; set; }
             public int Price { get; set; }
+
+            public void Accept(IComputerPartVisitor visitor)
+            {
+                visitor.VisitPS(this);
+            }
         }
     }
 }
