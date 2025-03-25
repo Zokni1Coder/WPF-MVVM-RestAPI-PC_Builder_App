@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using PC_Builder.Interfaces;
 using PC_Builder.ViewModels;
 
 namespace PC_Builder.Views
@@ -21,10 +22,10 @@ namespace PC_Builder.Views
     /// </summary>
     public partial class SelectedMotherboardView : UserControl 
     {
-        public SelectedMotherboardView(int id)
+        public SelectedMotherboardView(IComputerPart component)
         {
             InitializeComponent();
-            DataContext = new SelectedMotherboardViewModel(id);
+            DataContext = new SelectedMotherboardViewModel(component);
         }       
 
         private void BtnClose_Click(object sender, RoutedEventArgs e)

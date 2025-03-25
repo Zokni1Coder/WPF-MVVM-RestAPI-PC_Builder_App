@@ -136,5 +136,10 @@ namespace PC_Builder.Models
         {
             visitor.VisitCPU(this);
         }
+
+        public string Name()
+        {
+            return "CPU";
+        }
     }
 }

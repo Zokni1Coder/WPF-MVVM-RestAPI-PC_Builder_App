@@ -93,5 +93,10 @@ namespace PC_Builder.Models
         {
             visitor.VisitCPUCooler(this);
         }
+
+        public string Name()
+        {
+           return "Cooler";
+        }
     }
 }

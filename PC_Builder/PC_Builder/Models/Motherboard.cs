@@ -148,6 +148,11 @@ namespace PC_Builder.Models
             visitor.VisitMotherboard(this);
         }
 
+        public string Name()
+        {
+            return "Motherboard";
+        }
+
         private int price;
 
         [JsonPropertyName("price")]
@@ -180,6 +185,9 @@ namespace PC_Builder.Models
             get { return model; }
             set { model = value; }
         }
+        public string EthernetToView { get { return this.GetOnboardEthernet(); } }
+        public string WifiToView { get { return this.GetWifi(); } }
+        public string Raid_SuppToView { get { return this.GetRaidSupport(); } }
 
         public Motherboard()
         {

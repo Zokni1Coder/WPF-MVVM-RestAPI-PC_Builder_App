@@ -142,5 +142,10 @@ namespace PC_Builder.Models
         {
             visitor.VisitGPU(this);
         }
+
+        public string Name()
+        {
+            return "GPU";
+        }
     }
 }

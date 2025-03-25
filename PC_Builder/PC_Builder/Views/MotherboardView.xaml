@@ -42,7 +42,7 @@
                                 <Button x:Name="BtnOpen"  Command="{Binding DataContext.SelectViewCommand, RelativeSource={RelativeSource AncestorType=UserControl}}" Content="More details" Style="{StaticResource GridDetailsButtonStyle}">
                                     <Button.CommandParameter>
                                         <MultiBinding Converter="{StaticResource TupleConverter}">
-                                            <Binding Path="Id"/>
+                                            <Binding Path="."/>
                                             <Binding Source="Motherboards"/>
                                         </MultiBinding>
                                     </Button.CommandParameter>

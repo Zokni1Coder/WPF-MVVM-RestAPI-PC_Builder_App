@@ -77,5 +77,10 @@ namespace PC_Builder.Models
         {
             visitor.VisitPS(this);
         }
+
+        public string Name()
+        {
+            return "PS";
+        }
     }
 }

@@ -98,5 +98,10 @@ namespace PC_Builder.Models
         {
             visitor.VisitROM(this);
         }
+
+        public string Name()
+        {
+            return "ROM";
+        }
     }
 }

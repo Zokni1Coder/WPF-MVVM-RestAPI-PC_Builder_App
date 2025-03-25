@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Data;
+using PC_Builder.Interfaces;
 
 namespace PC_Builder.Models
 {
@@ -13,11 +14,20 @@ namespace PC_Builder.Models
     {
         public object Convert(object[] values, Type targetType, object parameter, CultureInfo culture)
         {
-            if (values.Length == 2 && values[0] is int id && values[1] is string type)
+            //if (values.Length == 2 && values[0] is int id && values[1] is string type)
+            //{
+            //    if (!string.IsNullOrEmpty(type) && id > 0)
+            //    {
+            //        return new Tuple<string, int>(type, id);
+            //    }
+            //    return null;
+            //}
+           /* else*/ 
+            if (values.Length == 2 && values[0] is IComputerPart computerPart && values[1] is string type1)
             {
-                if (!string.IsNullOrEmpty(type) && id > 0)
+                if (!string.IsNullOrEmpty(type1) && computerPart != null)
                 {
-                    return new Tuple<string, int>(type, id);            
+                    return new Tuple<IComputerPart, int>(computerPart, 5);
                 }
                 return null;
             }

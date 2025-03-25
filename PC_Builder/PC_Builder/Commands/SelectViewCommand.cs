@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.Web.UI;
 using System.Windows;
 using System.Windows.Input;
+using PC_Builder.Interfaces;
 using PC_Builder.ViewModels;
 using PC_Builder.Views;
 
@@ -25,24 +26,24 @@ namespace PC_Builder.Commands
             return true;
         }
 
-        private System.Windows.Controls.UserControl CreateView(string viewName, int id)
+        private System.Windows.Controls.UserControl CreateView(IComputerPart viewName, int id)
         {
-            switch (viewName)
+            switch (viewName.Name())
             {
-                case "Motherboards":
-                    return new SelectedMotherboardView(id);
-                case "CpusToView":
-                    return new SelectedCPUView(id);
-                case "Gpus":
-                    return new SelectedGPUView(id);
-                case "Rams":
-                    return new SelectedRAMView(id);
-                case "Roms":
-                    return new SelectedROMView(id);
-                case "Supplies":
-                    return new SelectedPSView(id);
-                case "Coolers":
-                    return new SelectedCPUCoolerView(id);
+                case "Motherboard":
+                    return new SelectedMotherboardView(viewName);
+                case "CPU":
+                    return new SelectedCPUView(viewName);
+                case "GPU":
+                    //return new SelectedGPUView(viewName);
+                case "RAM":
+                    //return new SelectedRAMView(viewName);
+                case "ROM":
+                    //return new SelectedROMView(viewName);
+                case "PS":
+                    //return new SelectedPSView(iviewNamed);
+                case "Cooler":
+                    //return new SelectedCPUCoolerView(viewName);
                 default:
                     return null;
             }
@@ -50,8 +51,8 @@ namespace PC_Builder.Commands
 
         public void Execute(object parameter)
         {
-            Tuple<string, int> paramTuple = (Tuple<string, int>)parameter;
-            string VM = paramTuple.Item1;
+            Tuple<IComputerPart, int> paramTuple = (Tuple<IComputerPart, int>)parameter;
+            IComputerPart VM = paramTuple.Item1;
             int ID = paramTuple.Item2;
             var selectedView = CreateView(VM, ID);
 

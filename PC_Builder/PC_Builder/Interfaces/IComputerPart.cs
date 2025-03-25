@@ -9,5 +9,6 @@ namespace PC_Builder.Interfaces
     public interface IComputerPart
     {
         void Accept(IComputerPartVisitor visitor);
+        string Name();
     }
 }

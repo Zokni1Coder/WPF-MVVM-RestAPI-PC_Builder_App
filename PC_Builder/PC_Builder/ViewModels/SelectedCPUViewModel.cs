@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Input;
 using PC_Builder.Commands;
+using PC_Builder.Interfaces;
 using PC_Builder.Models;
 
 namespace PC_Builder.ViewModels
@@ -28,10 +29,10 @@ namespace PC_Builder.ViewModels
 
         public ICommand SelectViewCommand { get; }
 
-        public SelectedCPUViewModel(int ID)
+        public SelectedCPUViewModel(IComputerPart component)
         {
             SelectViewCommand = new SelectViewCommand();
-            LoadDataAsync(ID);
+            LoadDataAsync(5);
         }
 
         public async Task LoadDataAsync(int ID)

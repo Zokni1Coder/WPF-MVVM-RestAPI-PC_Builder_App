@@ -95,5 +95,10 @@ namespace PC_Builder.Models
         {
             visitor.VisitRAM(this);
         }
+
+        public string Name()
+        {
+            return "RAM";
+        }
     }
 }
