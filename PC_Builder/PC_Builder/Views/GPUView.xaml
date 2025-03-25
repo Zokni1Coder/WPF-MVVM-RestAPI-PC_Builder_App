@@ -29,10 +29,10 @@
             </DataGrid.Background>
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Model" CellStyle="{StaticResource GridCellStyle}" Binding="{Binding Model}" IsReadOnly="True" Width="*"/>
-                <DataGridTextColumn Header="Memory Size" CellStyle="{StaticResource GridCellStyle}" Binding="{Binding Memory_Size, StringFormat='{}{0} GB'}" IsReadOnly="True" Width="*"/>
-                <DataGridTextColumn Header="Memory Type" CellStyle="{StaticResource GridCellStyle}" Binding="{Binding Memory_Type}" IsReadOnly="True" Width="*"/>
-                <DataGridTextColumn Header="Core Clock" CellStyle="{StaticResource GridCellStyle}" Binding="{Binding Core_Clock, StringFormat='{}{0} MHz'}" IsReadOnly="True" Width="*"/>
-                <DataGridTextColumn Header="Slot" CellStyle="{StaticResource GridCellStyle}" Binding="{Binding Slot}" IsReadOnly="True" Width="*"/>
+                <DataGridTextColumn Header="Memory Size" CellStyle="{StaticResource GridCellStyle}" Binding="{Binding Vram, StringFormat='{}{0} GB'}" IsReadOnly="True" Width="*"/>
+                <DataGridTextColumn Header="Memory Type" CellStyle="{StaticResource GridCellStyle}" Binding="{Binding Ram_type}" IsReadOnly="True" Width="*"/>
+                <DataGridTextColumn Header="Core Clock" CellStyle="{StaticResource GridCellStyle}" Binding="{Binding Core_clock, StringFormat='{}{0} MHz'}" IsReadOnly="True" Width="*"/>
+                <DataGridTextColumn Header="Slot" CellStyle="{StaticResource GridCellStyle}" Binding="{Binding INterface}" IsReadOnly="True" Width="*"/>
                 <DataGridTextColumn Header="Price" CellStyle="{StaticResource GridCellStyle}" Binding="{Binding Price, StringFormat='{}{0} €'}" IsReadOnly="True" Width="*"/>
                 <DataGridTemplateColumn Header="a" IsReadOnly="True" Width="*">
                     <DataGridTemplateColumn.CellTemplate>
@@ -41,7 +41,7 @@
                                 <Button x:Name="BtnOpen" Command="{Binding DataContext.SelectViewCommand, RelativeSource={RelativeSource AncestorType=UserControl}}" Style="{StaticResource GridDetailsButtonStyle}" Content="More details" Cursor="Hand">
                                     <Button.CommandParameter>
                                         <MultiBinding Converter="{StaticResource TupleConverter}">
-                                            <Binding Path="ID"/>
+                                            <Binding Path="Id"/>
                                             <Binding Source="Gpus"/>
                                         </MultiBinding>
                                     </Button.CommandParameter>

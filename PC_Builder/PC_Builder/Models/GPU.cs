@@ -4,10 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Text.Json.Serialization;
 using System.Threading.Tasks;
+using PC_Builder.Interfaces;
 
 namespace PC_Builder.Models
 {
-    public class GPU
+    public class GPU : IComputerPart
     {
         private int id;
         [JsonPropertyName("id")]
@@ -53,7 +54,7 @@ namespace PC_Builder.Models
         [JsonPropertyName("model")]
         public string Model
         {
-            get { return model; }
+            get { return this.Manufacturer + " " + this.Info + " " + this.model; }
             set { model = value; }
         }
 
@@ -135,6 +136,11 @@ namespace PC_Builder.Models
         {
             get { return price; }
             set { price = value; }
+        }
+
+        public void Accept(IComputerPartVisitor visitor)
+        {
+            visitor.VisitGPU(this);
         }
     }
 }

@@ -163,8 +163,8 @@
                 </MenuItem>
                 <MenuItem Header="Test"
                     Template="{StaticResource Test_Template}"
-                    Command="{Binding UpdateViewCommand}"
-                    CommandParameter="PS"      
+                    Command="{Binding TestCommand}"
+                    CommandParameter="{Binding Computer}"      
                     >
                     <MenuItem.Icon>
 

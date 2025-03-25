@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using PC_Builder.ViewModels;
 
 namespace PC_Builder
 {
@@ -22,6 +23,7 @@ namespace PC_Builder
         public TestResultPopupWindow()
         {
             InitializeComponent();
+            DataContext = new TestResultPopupWindowViewModel();
         }
     }
 }

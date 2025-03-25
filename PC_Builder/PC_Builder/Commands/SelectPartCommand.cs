@@ -29,33 +29,33 @@ namespace PC_Builder.Commands
             var configViewModel = ConfigWindowViewModel.viewModel;
             switch (parameter)
             {
-                case MotherboardViewModel.MotherboardtoGrid motherboard:
+                case Motherboard motherboard:
                     viewModel.SetMotherboard(motherboard);
                     configViewModel.MotherboardModel = motherboard.Model + " " + motherboard.Chipset + " " + motherboard.Socket + " " + motherboard.Ram_type;
                     break;
-                case CPUViewModel.CPUS SelectedCPU:
+                case CPU SelectedCPU:
                     viewModel.SetCPU(SelectedCPU);
-                    configViewModel.CPUModel = SelectedCPU.Model + " " + SelectedCPU.Core_Count + " " + SelectedCPU.Core_Clock + "GHz " + SelectedCPU.Boost_Clock + "GHz " + SelectedCPU.Microarchitecture;
+                    configViewModel.CPUModel = SelectedCPU.Model + " " + SelectedCPU.Core_count + " " + SelectedCPU.Core_clock + "GHz " + SelectedCPU.Boost_core_clock + "GHz " + SelectedCPU.Microarchitecture;
                     break;
-                case CPUCoolerViewModel.CPU_CoolerToView SelectedCPUCooler:
+                case CPU_Cooler SelectedCPUCooler:
                     viewModel.SetCPUCooler(SelectedCPUCooler);
-                    configViewModel.CPUCoolerModel = SelectedCPUCooler.Model + " " + SelectedCPUCooler.Fan_RPM + "RPM " + SelectedCPUCooler.Noise_level + "dB Water cooled: " + SelectedCPUCooler.Water_cooled + " ";
+                    configViewModel.CPUCoolerModel = SelectedCPUCooler.Model + " " + SelectedCPUCooler.Fan_RPM + "RPM " + SelectedCPUCooler.Noise_level + "dB Water cooled: " + SelectedCPUCooler.WaterCooledToGrid + " ";
                     break;
-                case GPUViewModel.GpuToView SelectedGPU:
+                case GPU SelectedGPU:
                     viewModel.SetGPU(SelectedGPU);
-                    configViewModel.GPUModel = SelectedGPU.Model + " " + SelectedGPU.Memory_Type + " " + SelectedGPU.Memory_Size + "GB " + SelectedGPU.Core_Clock + "MHz " + SelectedGPU.Slot;
+                    configViewModel.GPUModel = SelectedGPU.Model + " " + SelectedGPU.Ram_type + " " + SelectedGPU.Vram + "GB " + SelectedGPU.Core_clock + "MHz " + SelectedGPU.INterface;
                     break;
-                case RAMViewModel.RAMToView SelectedRAM:
+                case RAM SelectedRAM:
                     viewModel.SetRAM(SelectedRAM);
-                    configViewModel.RAMModel = SelectedRAM.Model + " " + SelectedRAM.Slot_Type + " " + SelectedRAM.Memory_Size + "GB " + SelectedRAM.Speed + "MHz " + SelectedRAM.Cas_Latency;  
+                    configViewModel.RAMModel = SelectedRAM.Model + " " + SelectedRAM.Type + " " + SelectedRAM.Size + "GB " + SelectedRAM.Speed + "MHz " + SelectedRAM.Cas_latency;
                     break;
-                case ROMViewModel.ROMToView SelectedROM:
+                case ROM SelectedROM:
                     viewModel.SetROM(SelectedROM);
-                    configViewModel.ROMModel = SelectedROM.Model + " " + SelectedROM.Type + " " + SelectedROM.Form_Factor + " " + SelectedROM.Capacity + "GB ";
+                    configViewModel.ROMModel = SelectedROM.Model + " " + SelectedROM.Type + " " + SelectedROM.Form_factor + " " + SelectedROM.Capacity + "GB ";
                     break;
-                case PowerSupplyViewModel.SupplyToView SelectedPS:
+                case Power_Supply SelectedPS:
                     viewModel.SetPowerSupply(SelectedPS);
-                    configViewModel.PSModel = SelectedPS.Model + " " + SelectedPS.Type + " " + SelectedPS.Wattage + "W " + SelectedPS.Efficiency_Rating + " " + SelectedPS.Modularity;
+                    configViewModel.PSModel = SelectedPS.Model + " " + SelectedPS.Type + " " + SelectedPS.Wattage + "W " + SelectedPS.Rating + " " + SelectedPS.Modularity;
                     break;
                 default:
                     break;

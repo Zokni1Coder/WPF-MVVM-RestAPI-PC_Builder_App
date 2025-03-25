@@ -16,9 +16,9 @@ namespace PC_Builder.ViewModels
 {
     public class RAMViewModel : BaseViewModel
     {
-        private ObservableCollection<RAMToView> rams = new ObservableCollection<RAMToView>();
+        private ObservableCollection<RAM> rams = new ObservableCollection<RAM>();
 
-        public ObservableCollection<RAMToView> Rams
+        public ObservableCollection<RAM> Rams
         {
             get { return rams; }
             set { rams = value; }
@@ -35,37 +35,12 @@ namespace PC_Builder.ViewModels
         {
             HttpClient client = new HttpClient();
             var response = await client.GetStringAsync("http://localhost:3000/rams");
-            List<RAM> tempRams = JsonSerializer.Deserialize<List<RAM>>(response);
+            List<Models.RAM> tempRams = JsonSerializer.Deserialize<List<Models.RAM>>(response);
 
             foreach (var ram in tempRams)
             {
-                Rams.Add(new RAMToView
-                {
-                    Model = ram.Manufacturer + " " + ram.Model + " " + ram.Size.ToString() + "GB",
-                    Memory_Size = ram.Size,
-                    Slot_Type = ram.Type,
-                    Speed = ram.Speed,
-                    Cas_Latency = ram.Cas_latency,
-                    Price = ram.Price,
-                    ID = ram.Id
-                });
+                Rams.Add(ram);               
             }
-        }
-
-        public class RAMToView : IComputerPart
-        {
-            public int ID { get; set; }
-            public string Model { get; set; }
-            public int Memory_Size { get; set; }
-            public string Slot_Type { get; set; }
-            public int Speed { get; set; }
-            public int Cas_Latency { get; set; }
-            public int Price { get; set; }
-
-            public void Accept(IComputerPartVisitor visitor)
-            {
-               visitor.VisitRAM(this);
-            }
-        }
+        }        
     }
 }

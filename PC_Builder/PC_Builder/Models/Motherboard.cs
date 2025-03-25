@@ -7,10 +7,11 @@ using System.Text.Json;
 using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 using System.Xaml;
+using PC_Builder.Interfaces;
 
 namespace PC_Builder.Models
 {
-    public class Motherboard
+    public class Motherboard : IComputerPart
     {        
         private int id;
 
@@ -142,6 +143,11 @@ namespace PC_Builder.Models
             return raid_supp == 1 ? "Yes" : "No";
         }
 
+        public void Accept(IComputerPartVisitor visitor)
+        {
+            visitor.VisitMotherboard(this);
+        }
+
         private int price;
 
         [JsonPropertyName("price")]
@@ -150,6 +156,31 @@ namespace PC_Builder.Models
             get { return price; }
             set { price = value; }
         }
+
+        private List<M2> m2Compatibilites;
+
+        public List<M2> M2Compatibilites
+        {
+            get { return m2Compatibilites; }
+            set { m2Compatibilites = value; }
+        }
+
+        private List<USBHeader> usbHeaders;
+
+        public List<USBHeader> USBHeaders
+        {
+            get { return usbHeaders; }
+            set { usbHeaders = value; }
+        }
+
+        private string model;
+
+        public string Model
+        {
+            get { return model; }
+            set { model = value; }
+        }
+
         public Motherboard()
         {
             

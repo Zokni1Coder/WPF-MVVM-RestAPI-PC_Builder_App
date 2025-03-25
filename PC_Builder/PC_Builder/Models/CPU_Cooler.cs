@@ -4,11 +4,20 @@ using System.Linq;
 using System.Text;
 using System.Text.Json.Serialization;
 using System.Threading.Tasks;
+using PC_Builder.Interfaces;
 
 namespace PC_Builder.Models
 {
-    public class CPU_Cooler
+    public class CPU_Cooler : IComputerPart
     {
+        private List<CPU_Cooler_Compatibility> compatibility;
+
+        public List<CPU_Cooler_Compatibility> Compatibility
+        {
+            get { return compatibility; }
+            set { compatibility = value; }
+        }
+
         private int id;
         [JsonPropertyName("id")]
         public int Id
@@ -65,10 +74,12 @@ namespace PC_Builder.Models
             set { water_cooled = value; }
         }
 
-        public string GetWaterCooled()
+        public string WaterCooledToGrid
         {
-            return water_cooled == 1 ? "Yes" : "No";
+            get { return this.Water_cooled == 1 ? "Yes" : "No"; }
         }
+
+
 
         private int price;
         [JsonPropertyName("price")]
@@ -78,5 +89,9 @@ namespace PC_Builder.Models
             set { price = value; }
         }
 
+        public void Accept(IComputerPartVisitor visitor)
+        {
+            visitor.VisitCPUCooler(this);
+        }
     }
 }

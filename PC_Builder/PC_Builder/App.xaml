@@ -60,6 +60,9 @@
             <DataTemplate DataType="{x:Type viewmodels:SelectedPowerSupplyViewModel}">
                 <views:SelectedPSView/>
             </DataTemplate>
+            <DataTemplate DataType="{x:Type viewmodels:TestResultPopupWindowViewModel}">
+                <ContentControl Content="{Binding ControlContent}" />
+            </DataTemplate>
             <local1:TupleConverter x:Key="TupleConverter"/>
         </ResourceDictionary>
     </Application.Resources>

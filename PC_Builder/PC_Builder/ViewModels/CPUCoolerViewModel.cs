@@ -16,9 +16,9 @@ namespace PC_Builder.ViewModels
 {
     public class CPUCoolerViewModel : BaseViewModel
     {
-        private ObservableCollection<CPU_CoolerToView> coolers = new ObservableCollection<CPU_CoolerToView>();
+        private ObservableCollection<CPU_Cooler> coolers = new ObservableCollection<CPU_Cooler>();
 
-        public ObservableCollection<CPU_CoolerToView> Coolers
+        public ObservableCollection<CPU_Cooler> Coolers
         {
             get { return coolers; }
             set { coolers = value; }
@@ -39,38 +39,12 @@ namespace PC_Builder.ViewModels
 
             foreach (var cooler in structure.Coolers)
             {
-                Coolers.Add(new CPU_CoolerToView
-                {
-                    Model = cooler.Model,
-                    Manufacturer = cooler.Manufacturer,
-                    Fan_RPM = cooler.Fan_RPM,
-                    Noise_level = cooler.Noise_level,
-                    Water_cooled = cooler.GetWaterCooled(),
-                    ID = cooler.Id,
-                    Compatibilities = structure.compatibilities,
-                    Height = cooler.Height,
-                    Price = cooler.Price
-                });
+                CPU_Cooler tempCooler = new CPU_Cooler();
+                tempCooler = cooler;
+                tempCooler.Compatibility = structure.compatibilities.Where(s=> s.Cooler_id == cooler.Id).ToList();
+                Coolers.Add(tempCooler);
             }
-        }
-        public class CPU_CoolerToView : IComputerPart
-        {
-            public int ID { get; set; }
-            public string Model { get; set; }
-            public string Manufacturer { get; set; }
-            public int Fan_RPM { get; set; }
-            public double Noise_level { get; set; }
-            public int Height { get; set; }
-            public string Water_cooled { get; set; }
-            public int Price { get; set; }
-            public List<CPU_Cooler_Compatibility> Compatibilities { get; set; }
-
-            public void Accept(IComputerPartVisitor visitor)
-            {
-                visitor.VisitCPUCooler(this);
-            }
-        }
-
+        }       
         public class Structure
         {
             [JsonPropertyName("cpu_coolers")]

@@ -15,9 +15,9 @@ namespace PC_Builder.ViewModels
 {
     public class ROMViewModel : BaseViewModel
     {
-        private ObservableCollection<ROMToView> roms = new ObservableCollection<ROMToView>();
+        private ObservableCollection<ROM> roms = new ObservableCollection<ROM>();
 
-        public ObservableCollection<ROMToView> Roms
+        public ObservableCollection<ROM> Roms
         {
             get { return roms; }
             set
@@ -41,34 +41,8 @@ namespace PC_Builder.ViewModels
 
             foreach (var rom in tempRoms)
             {
-                Roms.Add(new ROMToView
-                {
-                    Model = rom.Manufacturer + " " + rom.Model,
-                    Capacity = rom.Capacity,
-                    Type = rom.Type,
-                    Form_Factor = rom.Form_factor,
-                    Manufacturer = rom.Manufacturer,
-                    Price = rom.Price,
-                    ID = rom.Id,
-                    Interface = rom.INterface
-                });
+                Roms.Add(rom);
             }
-        }
-        public class ROMToView : IComputerPart
-        {
-            public int ID { get; set; }
-            public string Model { get; set; }
-            public int Capacity { get; set; }
-            public string Type { get; set; }
-            public string Form_Factor { get; set; }
-            public string Manufacturer { get; set; }
-            public int Price { get; set; }
-            public string Interface { get; set; }
-
-            public void Accept(IComputerPartVisitor visitor)
-            {
-                visitor.VisitROM(this);
-            }
-        }
+        }        
     }
 }

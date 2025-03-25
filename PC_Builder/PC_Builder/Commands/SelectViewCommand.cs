@@ -29,7 +29,7 @@ namespace PC_Builder.Commands
         {
             switch (viewName)
             {
-                case "Motherboard":
+                case "Motherboards":
                     return new SelectedMotherboardView(id);
                 case "CpusToView":
                     return new SelectedCPUView(id);

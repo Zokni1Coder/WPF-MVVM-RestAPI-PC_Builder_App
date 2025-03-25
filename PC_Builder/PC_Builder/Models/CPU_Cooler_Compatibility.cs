@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Text.Json.Serialization;
 using System.Threading.Tasks;
+using PC_Builder.Interfaces;
 
 namespace PC_Builder.Models
 {
@@ -24,6 +25,5 @@ namespace PC_Builder.Models
 			get { return socket; }
 			set { socket = value; }
 		}
-
-	}
+    }
 }

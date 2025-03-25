@@ -91,7 +91,7 @@
     <Compile Include="Commands\SelectViewCommand.cs" />
     <Compile Include="Commands\TestCommand.cs" />
     <Compile Include="Commands\UpdateViewCommand.cs" />
-    <Compile Include="Compatibility Checker\Compatibility_Checker.cs" />
+    <Compile Include="Checker\Compatibility_Checker.cs" />
     <Compile Include="Interfaces\IComputer.cs" />
     <Compile Include="Interfaces\IComputerPart.cs" />
     <Compile Include="Interfaces\IComputerPartVisitor.cs" />
@@ -118,6 +118,7 @@
     <Compile Include="ViewModels\ConfigWindowViewModel.cs" />
     <Compile Include="ViewModels\CPUCoolerViewModel.cs" />
     <Compile Include="ViewModels\CPUViewModel.cs" />
+    <Compile Include="ViewModels\FailedTestWindowViewModel.cs" />
     <Compile Include="ViewModels\GPUViewModel.cs" />
     <Compile Include="ViewModels\HomeViewModel.cs" />
     <Compile Include="ViewModels\MainWindowViewModel.cs" />

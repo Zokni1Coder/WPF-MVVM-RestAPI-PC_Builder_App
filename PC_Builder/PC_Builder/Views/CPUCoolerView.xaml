@@ -32,7 +32,7 @@
                 <DataGridTextColumn Header="Manufacturer" Binding="{Binding Manufacturer}" CellStyle="{StaticResource GridCellStyle}" IsReadOnly="True" Width="*"/>
                 <DataGridTextColumn Header="Fan RPM" Binding="{Binding Fan_RPM, StringFormat='{}{0} RPM'}" CellStyle="{StaticResource GridCellStyle}" IsReadOnly="True" Width="*"/>
                 <DataGridTextColumn Header="Noise Level" Binding="{Binding Noise_level, StringFormat='{}{0} dB'}" CellStyle="{StaticResource GridCellStyle}" IsReadOnly="True" Width="*"/>
-                <DataGridTextColumn Header="Water Cooled" Binding="{Binding Water_cooled}" CellStyle="{StaticResource GridCellStyle}" IsReadOnly="True" Width="*"/>
+                <DataGridTextColumn Header="Water Cooled" Binding="{Binding WaterCooledToGrid}" CellStyle="{StaticResource GridCellStyle}" IsReadOnly="True" Width="*"/>
                 <DataGridTextColumn Header="Price" Binding="{Binding Price, StringFormat='{}{0} €'}" CellStyle="{StaticResource GridCellStyle}" IsReadOnly="True" Width="*"/>
                 <DataGridTemplateColumn Header="" IsReadOnly="True" Width="*">
                     <DataGridTemplateColumn.CellTemplate>
@@ -41,7 +41,7 @@
                                 <Button x:Name="BtnOpen" Command="{Binding DataContext.SelectViewCommand, RelativeSource={RelativeSource AncestorType=UserControl}}" Style="{StaticResource GridDetailsButtonStyle}" Content="More details" Cursor="Hand">
                                     <Button.CommandParameter>
                                         <MultiBinding Converter="{StaticResource TupleConverter}">
-                                            <Binding Path="ID"/>
+                                            <Binding Path="Id"/>
                                             <Binding Source="Coolers"/>
                                         </MultiBinding>
                                     </Button.CommandParameter>

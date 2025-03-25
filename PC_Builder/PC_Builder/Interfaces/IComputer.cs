@@ -10,14 +10,12 @@ namespace PC_Builder.Interfaces
 {
     public interface IComputer
     {
-        MotherboardViewModel.MotherboardtoGrid motherboard { get; set; }
-        CPUViewModel.CPUS cpu { get; set; }
-        CPUCoolerViewModel.CPU_CoolerToView cpu_Cooler { get; set; }
-        GPUViewModel.GpuToView gpu { get; set; }
-        //List<M2> m2s { get; set; }
-        PowerSupplyViewModel.SupplyToView power_supply { get; set; }
-        RAMViewModel.RAMToView ram { get; set; }
-        ROMViewModel.ROMToView rom { get; set; }
-        //List<USBHeader> usbHeaders { get; set; }
+        Motherboard motherboard { get; set; }
+        CPU cpu { get; set; }
+        CPU_Cooler cpu_Cooler { get; set; }
+        GPU gpu { get; set; }
+        Power_Supply power_supply { get; set; }
+        RAM ram { get; set; }
+        ROM rom { get; set; }
     }
 }

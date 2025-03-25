@@ -29,10 +29,10 @@
             </DataGrid.Background>
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Model" Binding="{Binding Model}" CellStyle="{StaticResource GridCellStyle}" IsReadOnly="True" Width="*"/>
-                <DataGridTextColumn Header="Memory Size" Binding="{Binding Memory_Size, StringFormat='{}{0} GB'}" CellStyle="{StaticResource GridCellStyle}" IsReadOnly="True" Width="*"/>
-                <DataGridTextColumn Header="Slot Type" Binding="{Binding Slot_Type}" CellStyle="{StaticResource GridCellStyle}" IsReadOnly="True" Width="*"/>
+                <DataGridTextColumn Header="Memory Size" Binding="{Binding Size, StringFormat='{}{0} GB'}" CellStyle="{StaticResource GridCellStyle}" IsReadOnly="True" Width="*"/>
+                <DataGridTextColumn Header="Slot Type" Binding="{Binding Type}" CellStyle="{StaticResource GridCellStyle}" IsReadOnly="True" Width="*"/>
                 <DataGridTextColumn Header="Speed" Binding="{Binding Speed, StringFormat='{}{0} MHz'}" CellStyle="{StaticResource GridCellStyle}" IsReadOnly="True" Width="*"/>
-                <DataGridTextColumn Header="Cas Latency" Binding="{Binding Cas_Latency}" CellStyle="{StaticResource GridCellStyle}" IsReadOnly="True" Width="*"/>
+                <DataGridTextColumn Header="Cas Latency" Binding="{Binding Cas_latency}" CellStyle="{StaticResource GridCellStyle}" IsReadOnly="True" Width="*"/>
                 <DataGridTextColumn Header="Price" Binding="{Binding Price, StringFormat='{}{0} €'}" CellStyle="{StaticResource GridCellStyle}" IsReadOnly="True" Width="*"/>
                 <DataGridTemplateColumn IsReadOnly="True" Width="auto">
                     <DataGridTemplateColumn.CellTemplate>
@@ -41,7 +41,7 @@
                                 <Button x:Name="BtnOpen" Command="{Binding DataContext.SelectViewCommand, RelativeSource={RelativeSource AncestorType=UserControl}}" Style="{StaticResource GridDetailsButtonStyle}" Content="More details" Cursor="Hand">
                                     <Button.CommandParameter>
                                         <MultiBinding Converter="{StaticResource TupleConverter}">
-                                            <Binding Path="ID"/>
+                                            <Binding Path="Id"/>
                                             <Binding Source="Rams"/>
                                         </MultiBinding>
                                     </Button.CommandParameter>

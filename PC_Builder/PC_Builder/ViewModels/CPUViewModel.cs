@@ -18,9 +18,9 @@ namespace PC_Builder.ViewModels
 {
     public class CPUViewModel : BaseViewModel
     {
-        private ObservableCollection<CPUS> cpusToView = new ObservableCollection<CPUS>();
+        private ObservableCollection<CPU> cpusToView = new ObservableCollection<CPU>();
 
-        public ObservableCollection<CPUS> CpusToView
+        public ObservableCollection<CPU> CpusToView
         {
             get { return cpusToView; }
             set { cpusToView = value; }
@@ -40,48 +40,8 @@ namespace PC_Builder.ViewModels
             List<CPU> tempCPUS = JsonSerializer.Deserialize<List<CPU>>(response);
             foreach (CPU cpu in tempCPUS)
             {
-                CpusToView.Add(new CPUS
-                {
-                    Model = cpu.Manufacturer + " " + cpu.Series,
-                    Core_Count = cpu.Core_count,
-                    Boost_Clock = cpu.Boost_core_clock,
-                    Core_Clock = cpu.Core_clock,
-                    Microarchitecture = cpu.Microarchitecture,
-                    Price = cpu.Price,
-                    ID = cpu.Id,
-                    Socket = cpu.Socket,
-                    Manufacturer = cpu.Manufacturer,
-                    Series = cpu.Series,
-                    TDP = cpu.Tdp,
-                    Integrated_Graphics = cpu.Integrated_graphics,
-                    Thread_Count = cpu.Thread_count,
-                    L2_Cache = cpu.L2_Cache,
-                    L3_Cache = cpu.L3_Cache
-                });
-            }
-        }
-        public class CPUS : IComputerPart
-        {
-            public string Model { get; set; }
-            public int Core_Count { get; set; }
-            public double Core_Clock { get; set; }
-            public double Boost_Clock { get; set; }
-            public string Microarchitecture { get; set; }
-            public int Price { get; set; }
-            public int ID { get; set; }
-            public string Socket { get; set; }
-            public string Manufacturer { get; set; }
-            public string Series { get; set; }
-            public int TDP { get; set; }
-            public string Integrated_Graphics { get; set; }
-            public int Thread_Count { get; set; }
-            public double L2_Cache { get; set; }
-            public double L3_Cache { get; set; }
-
-            public void Accept(IComputerPartVisitor visitor)
-            {
-                visitor.VisitCPU(this);
-            }
-        }
+                cpusToView.Add(cpu);
+            }            
+        }        
     }
 }

@@ -1,13 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.AccessControl;
 using System.Text;
 using System.Text.Json.Serialization;
 using System.Threading.Tasks;
+using PC_Builder.Interfaces;
 
 namespace PC_Builder.Models
 {
-    public class CPU
+    public class CPU : IComputerPart
     {
         private int id;
         [JsonPropertyName("id")]
@@ -125,5 +127,14 @@ namespace PC_Builder.Models
             set { price = value; }
         }
 
+        public string Model
+        {
+            get { return $"{this.manufacturer} {this.series}"; }
+        }
+
+        public void Accept(IComputerPartVisitor visitor)
+        {
+            visitor.VisitCPU(this);
+        }
     }
 }

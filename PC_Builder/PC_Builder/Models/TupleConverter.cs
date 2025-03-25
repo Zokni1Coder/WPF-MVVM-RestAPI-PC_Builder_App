@@ -13,7 +13,6 @@ namespace PC_Builder.Models
     {
         public object Convert(object[] values, Type targetType, object parameter, CultureInfo culture)
         {
-            //MessageBox.Show("Tupleben");
             if (values.Length == 2 && values[0] is int id && values[1] is string type)
             {
                 if (!string.IsNullOrEmpty(type) && id > 0)
@@ -21,7 +20,6 @@ namespace PC_Builder.Models
                     return new Tuple<string, int>(type, id);            
                 }
                 return null;
-                //return new Tuple<string, int>(type, id);
             }
             return null;
         }

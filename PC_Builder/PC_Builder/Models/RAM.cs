@@ -4,13 +4,15 @@ using System.Linq;
 using System.Text;
 using System.Text.Json.Serialization;
 using System.Threading.Tasks;
+using PC_Builder.Interfaces;
+using static PC_Builder.ViewModels.RAMViewModel;
 
 namespace PC_Builder.Models
 {
-    public class RAM
+    public class RAM : IComputerPart
     {
         private int id;
-        [JsonPropertyName("id")]            
+        [JsonPropertyName("id")]
         public int Id
         {
             get { return id; }
@@ -21,7 +23,7 @@ namespace PC_Builder.Models
         [JsonPropertyName("model")]
         public string Model
         {
-            get { return model; }
+            get { return this.Manufacturer + " " + model + " " + this.Size.ToString() + "GB"; }
             set { model = value; }
         }
 
@@ -87,6 +89,11 @@ namespace PC_Builder.Models
         {
             get { return price; }
             set { price = value; }
+        }
+
+        public void Accept(IComputerPartVisitor visitor)
+        {
+            visitor.VisitRAM(this);
         }
     }
 }

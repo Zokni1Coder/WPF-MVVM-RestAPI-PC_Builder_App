@@ -4,10 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Text.Json.Serialization;
 using System.Threading.Tasks;
+using PC_Builder.Interfaces;
 
 namespace PC_Builder.Models
 {
-    public class Power_Supply
+    public class Power_Supply : IComputerPart
     {
         private int id;
         [JsonPropertyName("id")]
@@ -17,12 +18,12 @@ namespace PC_Builder.Models
             set { id = value; }
         }
 
-        private string model1;
+        private string model;
         [JsonPropertyName("model")]
         public string Model
         {
-            get { return model1; }
-            set { model1 = value; }
+            get { return this.Manufacturer + " " + this.model; }
+            set { model = value; }
         }
 
         private string manufacturer;
@@ -72,7 +73,9 @@ namespace PC_Builder.Models
             get { return price; }
             set { price = value; }
         }
-
-
+        public void Accept(IComputerPartVisitor visitor)
+        {
+            visitor.VisitPS(this);
+        }
     }
 }

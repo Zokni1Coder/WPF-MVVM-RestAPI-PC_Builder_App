@@ -4,10 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Text.Json.Serialization;
 using System.Threading.Tasks;
+using PC_Builder.Interfaces;
+using static PC_Builder.ViewModels.ROMViewModel;
 
 namespace PC_Builder.Models
 {
-    public class ROM
+    public class ROM : IComputerPart
     {
         private int id;
         [JsonPropertyName("id")]
@@ -21,7 +23,7 @@ namespace PC_Builder.Models
         [JsonPropertyName("model")]
         public string Model
         {
-            get { return model; }
+            get { return this.Manufacturer + " " + this.model; }
             set { model = value; }
         }
 
@@ -92,5 +94,9 @@ namespace PC_Builder.Models
             set { price = value; }
         }
 
+        public void Accept(IComputerPartVisitor visitor)
+        {
+            visitor.VisitROM(this);
+        }
     }
 }

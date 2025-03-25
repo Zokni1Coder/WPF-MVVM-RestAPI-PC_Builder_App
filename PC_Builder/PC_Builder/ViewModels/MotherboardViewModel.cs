@@ -20,9 +20,9 @@ namespace PC_Builder.ViewModels
 {
     public class MotherboardViewModel : BaseViewModel
     {
-        private ObservableCollection<MotherboardtoGrid> motherboardList = new ObservableCollection<MotherboardtoGrid>();
+        private ObservableCollection<Motherboard> motherboardList = new ObservableCollection<Motherboard>();
 
-        public ObservableCollection<MotherboardtoGrid> Motherboards
+        public ObservableCollection<Motherboard> Motherboards
         {
             get { return motherboardList; }
             set { motherboardList = value; }
@@ -33,12 +33,11 @@ namespace PC_Builder.ViewModels
 
         public MotherboardViewModel()
         {
-            getDatas();
-            SelectViewCommand = new SelectViewCommand();
-            //SelectPartCommand = new SelectPartCommand();           
+            GetDatas();
+            SelectViewCommand = new SelectViewCommand();           
         }
 
-        public async void getDatas()
+        public async void GetDatas()
         {
             HttpClient client = new HttpClient();
             var response = await client.GetStringAsync("http://localhost:3000/motherboards");
@@ -49,25 +48,11 @@ namespace PC_Builder.ViewModels
             {               
                 foreach (var m in structure.motherboards)
                 {
-                    MotherboardtoGrid tempMotherboard = new MotherboardtoGrid();
-                    tempMotherboard.ID = m.Id;
-                    tempMotherboard.Model = m.Manufacturer + " " + m.Info;
-                    tempMotherboard.Chipset = m.Chipset;
-                    tempMotherboard.Socket = m.Socket;
-                    tempMotherboard.Form_factor = m.Form_factor;
-                    tempMotherboard.Ram_type = m.Ram_type;
-                    tempMotherboard.Price = m.Price;
-                    tempMotherboard.Manufacturer = m.Manufacturer;
-                    tempMotherboard.Info = m.Info;
-                    tempMotherboard.Memory_max = m.Max_memory;
-                    tempMotherboard.Memory_slots_no = m.Memory_slot_no;
-                    tempMotherboard.Sata_60gbs_no = m.Sata_60gbs_no;
-                    tempMotherboard.Onboard_ethernet = m.Onboard_ethernet;
-                    tempMotherboard.Wifi = m.Wifi;
-                    tempMotherboard.Raid_supp = m.Raid_supp;
-                    tempMotherboard.M2Compatibilites = structure.m2s;
-                    tempMotherboard.USBHeaders = structure.usbHeaders;
-                    Motherboards.Add(tempMotherboard);
+                    Motherboard tempmotherboard = m;
+                    tempmotherboard.Model = m.Manufacturer + " " + m.Info;
+                    tempmotherboard.M2Compatibilites = structure.m2s.Where(s=>s.Motherboard == m.Id).ToList();
+                    tempmotherboard.USBHeaders = structure.usbHeaders.Where(s => s.Motherboard_id == m.Id).ToList();
+                    Motherboards.Add(tempmotherboard);
                 }               
             }
         }
@@ -80,32 +65,6 @@ namespace PC_Builder.ViewModels
             public List<USBHeader> usbHeaders { get; set; }
             [JsonPropertyName("m2types")]
             public List<M2> m2s { get; set; }
-        }
-
-        public class MotherboardtoGrid : IComputerPart
-        {
-            public List<M2> M2Compatibilites { get; set; }
-            public List<USBHeader> USBHeaders { get; set; }
-            public int ID { get; set; }
-            public string Model { get; set; }
-            public string Chipset { get; set; }
-            public string Socket { get; set; }
-            public string Form_factor { get; set; }
-            public string Ram_type { get; set; }
-            public int Price { get; set; }
-            public string Manufacturer { get; set; }
-            public string Info { get; set; }
-            public int Memory_max { get; set; }
-            public int Memory_slots_no { get; set; }
-            public int Sata_60gbs_no { get; set; }
-            public int Onboard_ethernet { get; set; }
-            public int Wifi { get; set; }
-            public int Raid_supp { get; set; }
-
-            public void Accept(IComputerPartVisitor visitor)
-            {
-                visitor.VisitMotherboard(this);
-            }
-        }
+        }        
     }
 }

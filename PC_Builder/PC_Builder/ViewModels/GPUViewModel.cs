@@ -15,9 +15,9 @@ namespace PC_Builder.ViewModels
 {
     public class GPUViewModel : BaseViewModel
     {
-        private ObservableCollection<GpuToView> gpus = new ObservableCollection<GpuToView>();
+        private ObservableCollection<GPU> gpus = new ObservableCollection<GPU>();
 
-        public ObservableCollection<GpuToView> Gpus
+        public ObservableCollection<GPU> Gpus
         {
             get { return gpus; }
             set { gpus = value; }
@@ -37,52 +37,7 @@ namespace PC_Builder.ViewModels
             List<GPU> tempgpus = JsonSerializer.Deserialize<List<GPU>>(response);
             foreach (GPU gpu in tempgpus)
             {
-                this.gpus.Add(new GpuToView
-                {
-                    Model =gpu.Manufacturer + " " + gpu.Info + " " + gpu.Model,
-                    Memory_Size = gpu.Vram,
-                    Memory_Type = gpu.Ram_type,
-                    Core_Clock = gpu.Core_clock, 
-                    Slot = gpu.INterface,
-                    Price = gpu.Price,
-                    ID = gpu.Id,
-                    Info = gpu.Info,
-                    Manufacturer = gpu.Manufacturer,
-                    Brand = gpu.Brand,
-                    Technology = gpu.Technology,
-                    Boost_clock = gpu.Boost_clock,
-                    Frame_sync = gpu.Frame_sync,
-                    TDP = gpu.Tdp,
-                    Hdmi_ouput = gpu.Hdmi_ouput,
-                    Dp_port_output = gpu.Dp_port_output
-                });
-            }
-        }
-
-
-
-        public class GpuToView : IComputerPart
-        {
-            public string Model { get; set; }
-            public int Memory_Size { get; set; }
-            public string Memory_Type { get; set; }
-            public int Core_Clock { get; set; }
-            public string Slot { get; set; }
-            public int Price { get; set; }
-            public int ID { get; set; }
-            public string Info { get; set; }
-            public string Manufacturer { get; set; }
-            public string Brand { get; set; }
-            public string Technology { get; set; }
-            public int Boost_clock { get; set; }
-            public string Frame_sync { get; set; }
-            public int TDP { get; set; }
-            public int Hdmi_ouput { get; set; }
-            public int Dp_port_output { get; set; }
-
-            public void Accept(IComputerPartVisitor visitor)
-            {
-                visitor.VisitGPU(this);
+                Gpus.Add(gpu);                
             }
         }
     }

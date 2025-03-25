@@ -15,9 +15,9 @@ namespace PC_Builder.ViewModels
 {
     public class PowerSupplyViewModel : BaseViewModel
     {
-        private ObservableCollection<SupplyToView> supplies = new ObservableCollection<SupplyToView>();
+        private ObservableCollection<Power_Supply> supplies = new ObservableCollection<Power_Supply>();
 
-        public ObservableCollection<SupplyToView> Supplies
+        public ObservableCollection<Power_Supply> Supplies
         {
             get { return supplies; }
             set { supplies = value; }
@@ -38,33 +38,8 @@ namespace PC_Builder.ViewModels
 
             foreach (var supply in tempSupplies)
             {
-                Supplies.Add(new SupplyToView
-                {
-                    Model = supply.Manufacturer + " " + supply.Model,
-                    Type = supply.Type,
-                    Efficiency_Rating = supply.Rating,
-                    Wattage = supply.Wattage,
-                    Modularity = supply.Modularity,
-                    ID = supply.Id,
-                    Price = supply.Price
-                });
+                Supplies.Add(supply);
             }
-        }
-
-        public class SupplyToView : IComputerPart
-        {
-            public int ID { get; set; }
-            public string Model { get; set; }
-            public string Type { get; set; }
-            public string Efficiency_Rating { get; set; }
-            public int Wattage { get; set; }
-            public string Modularity { get; set; }
-            public int Price { get; set; }
-
-            public void Accept(IComputerPartVisitor visitor)
-            {
-                visitor.VisitPS(this);
-            }
-        }
+        }       
     }
 }
