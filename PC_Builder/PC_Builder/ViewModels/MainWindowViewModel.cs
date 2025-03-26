@@ -116,7 +116,6 @@ namespace PC_Builder.ViewModels
             viewModel = this;
             UpdateViewCommand = new UpdateViewCommand(this);
             SelectPartCommand = new SelectPartCommand();
-            SelectedViewModel = new MotherboardViewModel();
             TestCommand = new TestCommand();
         }
     }

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
 using System.Net.Http;
+using System.Net.Sockets;
 using System.Runtime.InteropServices.ComTypes;
 using System.Text;
 using System.Text.Json;
@@ -35,13 +36,36 @@ namespace PC_Builder.ViewModels
 
         private async void getDatas()
         {
-            HttpClient client = new HttpClient();
-            var response = await client.GetStringAsync("http://localhost:3000/cpus");
-            List<CPU> tempCPUS = JsonSerializer.Deserialize<List<CPU>>(response);
-            foreach (CPU cpu in tempCPUS)
+            try
             {
-                cpusToView.Add(cpu);
-            }            
+                HttpClient client = new HttpClient();
+                var response = await client.GetStringAsync("http://localhost:3000/cpus");
+                List<CPU> tempCPUS = JsonSerializer.Deserialize<List<CPU>>(response);
+                foreach (CPU cpu in tempCPUS)
+                {
+                    cpusToView.Add(cpu);
+                }
+            }
+            catch (HttpRequestException)
+            {
+                ErrorWindow errorMessage = new ErrorWindow("Connection error: Unable to retrieve parts data. Please check your internet connection.");
+                errorMessage.Show();
+            }
+            catch (TaskCanceledException)
+            {
+                ErrorWindow errorMessage = new ErrorWindow("The request timed out. Please make sure the server is running.");
+                errorMessage.Show();
+            }
+            catch (SocketException)
+            {
+                ErrorWindow errorMessage = new ErrorWindow("Unable to reach the server. Please ensure the server is running and try again.");
+                errorMessage.Show();
+            }
+            catch (Exception)
+            {
+                ErrorWindow errorMessage = new ErrorWindow("An unexpected error occurred. Please restart the application and try again.");
+                errorMessage.Show();
+            }                       
         }        
     }
 }

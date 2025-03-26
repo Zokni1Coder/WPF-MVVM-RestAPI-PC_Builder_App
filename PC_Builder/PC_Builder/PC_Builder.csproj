@@ -92,6 +92,11 @@
     <Compile Include="Commands\TestCommand.cs" />
     <Compile Include="Commands\UpdateViewCommand.cs" />
     <Compile Include="Checker\Compatibility_Checker.cs" />
+    <Compile Include="ErrorWindow.xaml.cs">
+      <DependentUpon>ErrorWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Exceptions\ConnectionErrorException.cs" />
+    <Compile Include="Exceptions\EmptySelectedPartException.cs" />
     <Compile Include="Interfaces\IComputer.cs" />
     <Compile Include="Interfaces\IComputerPart.cs" />
     <Compile Include="Interfaces\IComputerPartVisitor.cs" />
@@ -118,6 +123,7 @@
     <Compile Include="ViewModels\ConfigWindowViewModel.cs" />
     <Compile Include="ViewModels\CPUCoolerViewModel.cs" />
     <Compile Include="ViewModels\CPUViewModel.cs" />
+    <Compile Include="ViewModels\ErrorWindowViewModel.cs" />
     <Compile Include="ViewModels\FailedTestWindowViewModel.cs" />
     <Compile Include="ViewModels\GPUViewModel.cs" />
     <Compile Include="ViewModels\HomeViewModel.cs" />
@@ -192,6 +198,10 @@
     <Compile Include="Views\TestResultPopupWindowView.xaml.cs">
       <DependentUpon>TestResultPopupWindowView.xaml</DependentUpon>
     </Compile>
+    <Page Include="ErrorWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
