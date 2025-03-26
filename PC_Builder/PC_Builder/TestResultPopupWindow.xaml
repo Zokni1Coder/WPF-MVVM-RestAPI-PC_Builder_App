@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PC_Builder"
         mc:Ignorable="d"
-        Title="TestResultPopupWindow" Height="450" Width="450">
+        Title="TestResultPopupWindow" Height="450" Width="450" AllowsTransparency="True" WindowStartupLocation="CenterScreen" WindowStyle="None">
     <Grid>
         <ContentControl Content="{Binding ControlContent}" />
     </Grid>

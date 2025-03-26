@@ -29,13 +29,15 @@ namespace PC_Builder.ViewModels
             }
         }
         public ICommand SelectViewCommand { get; }
+        public ICommand SelectPartCommand { get; }
 
         public SelectedMotherboardViewModel(IComputerPart component)
         {
             SelectViewCommand = new SelectViewCommand();
+            SelectPartCommand = new SelectPartCommand();
             SetHeaderAndM2s(component as Motherboard);
             this.SelectedMotherboard = component as Motherboard;
-        }        
+        }
         private void SetHeaderAndM2s(Motherboard component)
         {
             this.USBHeadersToView = string.Join(" ", component.USBHeaders.Select(u => $"{u.Version}({u.GetHeaderCount()})"));

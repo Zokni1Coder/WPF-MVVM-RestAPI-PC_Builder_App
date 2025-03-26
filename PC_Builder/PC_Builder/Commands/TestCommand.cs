@@ -32,7 +32,6 @@ namespace PC_Builder.Commands
             var checker = new PC_Builder.Checker.Compatibility_Checker();
             IComputer computer = parameter as IComputer;
             List<string> errors = checker.GetErrors();
-            string errorsToView = "";
 
             checker.VisitMotherboard(computer.motherboard);
             checker.VisitROM(computer.rom);

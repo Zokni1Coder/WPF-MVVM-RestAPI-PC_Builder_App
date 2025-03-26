@@ -17,6 +17,7 @@ namespace PC_Builder.ViewModels
         public SelectedROMViewModel(IComputerPart componenet)
         {
             SelectViewCommand = new SelectViewCommand();
+            SelectPartCommand = new SelectPartCommand();
             this.SelectedROM = componenet as ROM;
         }
 
@@ -32,6 +33,8 @@ namespace PC_Builder.ViewModels
             }
         }
         public ICommand SelectViewCommand { get; }
+        public ICommand SelectPartCommand { get; }
+
         public string NVMEText => SelectedROM != null && SelectedROM.Nvme == 1 ? "Yes" : "No";
     }
 }

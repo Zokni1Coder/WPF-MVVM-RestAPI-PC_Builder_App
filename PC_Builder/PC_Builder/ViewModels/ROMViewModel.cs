@@ -25,12 +25,11 @@ namespace PC_Builder.ViewModels
                 roms = value;
             }
         }
-
         public ICommand SelectViewCommand { get; }
         public ROMViewModel()
         {
             getDatas();
-            SelectViewCommand = new SelectViewCommand();
+            SelectViewCommand = new SelectViewCommand();            
         }
 
         private async void getDatas()

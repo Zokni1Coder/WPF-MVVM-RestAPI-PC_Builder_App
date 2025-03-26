@@ -38,13 +38,7 @@
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
                             <StackPanel>
-                                <Button x:Name="BtnOpen" Command="{Binding DataContext.SelectViewCommand, RelativeSource={RelativeSource AncestorType=UserControl}}" Style="{StaticResource GridDetailsButtonStyle}" Content="More details" Cursor="Hand">
-                                    <Button.CommandParameter>
-                                        <MultiBinding Converter="{StaticResource TupleConverter}">
-                                            <Binding Path="."/>
-                                            <Binding Source="Roms"/>
-                                        </MultiBinding>
-                                    </Button.CommandParameter>
+                                <Button x:Name="BtnOpen" CommandParameter="{Binding .}" Command="{Binding DataContext.SelectViewCommand, RelativeSource={RelativeSource AncestorType=UserControl}}" Style="{StaticResource GridDetailsButtonStyle}" Content="More details" Cursor="Hand">
                                 </Button>
                                 <Button x:Name="BtnSelect" CommandParameter="{Binding DataContext, RelativeSource={RelativeSource AncestorType=DataGridRow}}" Command="{Binding DataContext.SelectPartCommand, RelativeSource={RelativeSource AncestorType=Window}}" Style="{StaticResource GridSelectButtonStyle}" Content="Select" Cursor="Hand"/>
                             </StackPanel>

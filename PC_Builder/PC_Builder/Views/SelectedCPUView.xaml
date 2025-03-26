@@ -38,7 +38,7 @@
             </StackPanel>
         </Grid>
         <Grid Grid.Row="2">
-            <Button Content="Select" FontSize="15" Foreground="White" Cursor="Hand" Background="Red" Width="150" Height="50"/>
+            <Button Command="{Binding SelectPartCommand}" CommandParameter="{Binding SelectedCPU}" Content="Select" FontSize="15" Foreground="White" Cursor="Hand" Background="Red" Width="150" Height="50"/>
             <TextBlock Text="E R I K  K O V Á C S" HorizontalAlignment="Right" Foreground="#525965" FontSize="10" VerticalAlignment="Bottom" Margin="0,0,15,10"/>
             <Border Grid.Column="1" Background="Red"
             Height="15"

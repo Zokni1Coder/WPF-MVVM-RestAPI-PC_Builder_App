@@ -17,6 +17,7 @@ namespace PC_Builder.ViewModels
         public SelectedRAMViewModel(IComputerPart component)
         {
             SelectViewCommand = new SelectViewCommand();
+            SelectPartCommand = new SelectPartCommand();
             this.SelectedRAM = component as RAM;
         }
         private RAM selectedRAM;
@@ -31,5 +32,6 @@ namespace PC_Builder.ViewModels
             }
         }
         public ICommand SelectViewCommand { get; }            
+        public ICommand SelectPartCommand { get; }
     }
 }

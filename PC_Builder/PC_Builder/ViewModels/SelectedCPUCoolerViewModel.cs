@@ -19,6 +19,7 @@ namespace PC_Builder.ViewModels
         public SelectedCPUCoolerViewModel(IComputerPart componenet)
         {
             SelectViewCommand = new SelectViewCommand();
+            SelectPartCommand = new SelectPartCommand();
             this.SelectedCPUCooler = componenet as CPU_Cooler;
         }
 
@@ -34,6 +35,7 @@ namespace PC_Builder.ViewModels
             }
         }
         public ICommand SelectViewCommand { get; }        
+        public ICommand SelectPartCommand { get; }
 
         public string Compatibilities
         {

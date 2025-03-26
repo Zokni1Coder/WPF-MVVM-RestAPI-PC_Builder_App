@@ -28,10 +28,12 @@ namespace PC_Builder.ViewModels
         }
 
         public ICommand SelectViewCommand { get; }
+        public ICommand SelectPartCommand { get; }
 
         public SelectedCPUViewModel(IComputerPart component)
         {
             SelectViewCommand = new SelectViewCommand();
+            SelectPartCommand = new SelectPartCommand();
             this.SelectedCPU = component as CPU;
         }               
     }

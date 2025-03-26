@@ -18,6 +18,7 @@ namespace PC_Builder.ViewModels
         public SelectedPowerSupplyViewModel(IComputerPart component)
         {
             SelectViewCommand = new SelectViewCommand();
+            SelectPartCommand = new SelectPartCommand();
             this.SelectedPS = component as Power_Supply;
         }
 
@@ -33,5 +34,6 @@ namespace PC_Builder.ViewModels
             }
         }
         public ICommand SelectViewCommand { get; }                     
+        public ICommand SelectPartCommand { get; }
     }
 }

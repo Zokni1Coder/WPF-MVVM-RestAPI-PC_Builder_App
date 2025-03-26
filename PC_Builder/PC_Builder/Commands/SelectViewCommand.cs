@@ -26,7 +26,7 @@ namespace PC_Builder.Commands
             return true;
         }
 
-        private System.Windows.Controls.UserControl CreateView(IComputerPart viewName, int id)
+        private System.Windows.Controls.UserControl CreateView(IComputerPart viewName)
         {
             switch (viewName.Name())
             {
@@ -51,10 +51,7 @@ namespace PC_Builder.Commands
 
         public void Execute(object parameter)
         {
-            Tuple<IComputerPart, int> paramTuple = (Tuple<IComputerPart, int>)parameter;
-            IComputerPart VM = paramTuple.Item1;
-            int ID = paramTuple.Item2;
-            var selectedView = CreateView(VM, ID);
+            var selectedView = CreateView(parameter as IComputerPart);
 
             SelectedPart selectedPartWindow = new SelectedPart();
             selectedPartWindow.Content = selectedView;

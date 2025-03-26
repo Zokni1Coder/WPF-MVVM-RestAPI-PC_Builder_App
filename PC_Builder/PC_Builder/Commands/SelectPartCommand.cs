@@ -35,7 +35,7 @@ namespace PC_Builder.Commands
                     break;
                 case CPU SelectedCPU:
                     viewModel.SetCPU(SelectedCPU);
-                    configViewModel.CPUModel = SelectedCPU.Model + " " + SelectedCPU.Core_count + " " + SelectedCPU.Core_clock + "GHz " + SelectedCPU.Boost_core_clock + "GHz " + SelectedCPU.Microarchitecture;
+                    configViewModel.CPUModel = SelectedCPU.Model + " " + SelectedCPU.Core_count + "-core " + SelectedCPU.Core_clock + "GHz " + SelectedCPU.Boost_core_clock + "GHz " + SelectedCPU.Microarchitecture;
                     break;
                 case CPU_Cooler SelectedCPUCooler:
                     viewModel.SetCPUCooler(SelectedCPUCooler);
@@ -47,7 +47,7 @@ namespace PC_Builder.Commands
                     break;
                 case RAM SelectedRAM:
                     viewModel.SetRAM(SelectedRAM);
-                    configViewModel.RAMModel = SelectedRAM.Model + " " + SelectedRAM.Type + " " + SelectedRAM.Size + "GB " + SelectedRAM.Speed + "MHz " + SelectedRAM.Cas_latency;
+                    configViewModel.RAMModel = SelectedRAM.Model + " " + SelectedRAM.Type + " " + SelectedRAM.Size + "GB " + SelectedRAM.Speed + "MHz " + SelectedRAM.Cas_latency + "-Latency";
                     break;
                 case ROM SelectedROM:
                     viewModel.SetROM(SelectedROM);
