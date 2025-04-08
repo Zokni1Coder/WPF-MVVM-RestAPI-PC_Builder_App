@@ -5,7 +5,8 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:local="clr-namespace:PC_Builder"
              xmlns:views="clr-namespace:PC_Builder.Views"
-             xmlns:viewmodels="clr-namespace:PC_Builder.ViewModels"
+             xmlns:viewmodels="clr-namespace:PC_Builder.ViewModels" 
+             xmlns:local1="clr-namespace:PC_Builder.Models"
              mc:Ignorable="d"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
@@ -38,6 +39,31 @@
             <DataTemplate DataType="{x:Type viewmodels:PowerSupplyViewModel}">
                 <views:PowerSupplyView/>
             </DataTemplate>
+            <DataTemplate DataType="{x:Type viewmodels:SelectedMotherboardViewModel}">
+                <views:SelectedMotherboardView/>
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type viewmodels:SelectedCPUViewModel}">
+                <views:SelectedCPUView/>
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type viewmodels:SelectedCPUCoolerViewModel}">
+                <views:SelectedCPUCoolerView/>
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type viewmodels:SelectedGPUViewModel}">
+                <views:SelectedGPUView/>
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type viewmodels:SelectedRAMViewModel}">
+                <views:SelectedRAMView/>
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type viewmodels:SelectedROMViewModel}">
+                <views:SelectedROMView/>
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type viewmodels:SelectedPowerSupplyViewModel}">
+                <views:SelectedPSView/>
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type viewmodels:TestResultPopupWindowViewModel}">
+                <ContentControl Content="{Binding ControlContent}" />
+            </DataTemplate>
+            <local1:TupleConverter x:Key="TupleConverter"/>
         </ResourceDictionary>
     </Application.Resources>
 </Application>

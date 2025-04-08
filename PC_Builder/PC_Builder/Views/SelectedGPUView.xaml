@@ -1,0 +1,90 @@
+﻿<UserControl x:Class="PC_Builder.Views.SelectedGPUView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:PC_Builder.Views"
+             mc:Ignorable="d" 
+             d:DesignHeight="650" d:DesignWidth="550">
+    <Grid>
+        <Grid.Background>
+            <LinearGradientBrush StartPoint="0,0" EndPoint="0,5">
+                <GradientStop Color="#23262B" Offset="0.0"/>
+                <GradientStop Color="#404D5B" Offset="0.4"/>
+            </LinearGradientBrush>
+        </Grid.Background>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="120"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="100"/>
+        </Grid.RowDefinitions>
+
+        <Grid Grid.Row="0" Background="#23262B">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="250"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Border Grid.Column="1" Background="Red"
+            Height="50"
+            CornerRadius="3,0,0,3"
+            Width="5"
+            VerticalAlignment="Center"
+            HorizontalAlignment="Right"
+            />
+            <TextBlock Text="{Binding SelectedGPU.Info, TargetNullValue='asd', FallbackValue='asd1'}" Foreground="White" FontSize="20" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="1"/>
+            <StackPanel Grid.Column="0" Orientation="Horizontal">
+                <Image Source="/Assets/graphic-card.png" Margin="20,0,0,0" Height="100"/>
+                <TextBlock Text="GRAPHIC CARD" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="15" Foreground="White" Margin="20,0,0,0" />
+            </StackPanel>
+        </Grid>
+        <Grid Grid.Row="2">
+            <Button Command="{Binding SelectPartCommand}" CommandParameter="{Binding SelectedGPU}" Content="Select" FontSize="15" Foreground="White" Cursor="Hand" Background="Red" Width="150" Height="50"/>
+            <TextBlock Text="E R I K  K O V Á C S" HorizontalAlignment="Right" Foreground="#525965" FontSize="10" VerticalAlignment="Bottom" Margin="0,0,15,10"/>
+            <Border Grid.Column="1" Background="Red"
+            Height="15"
+            CornerRadius="3,0,0,3"
+            Width="5"
+            VerticalAlignment="Bottom"
+            HorizontalAlignment="Right"
+            Margin="0,0,0,8"/>
+        </Grid>
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="2*"/>
+                <ColumnDefinition Width="2*"/>
+            </Grid.ColumnDefinitions>
+            <StackPanel Grid.Column="0" Orientation="Vertical">
+                <TextBlock Text="Manufacturer:" Style="{StaticResource SelectedPartDatas}"/>
+                <TextBlock Text="Brand:" Style="{StaticResource SelectedPartDatas}"/>
+                <TextBlock Text="Technology:" Style="{StaticResource SelectedPartDatas}"/>
+                <TextBlock Text="Model:" Style="{StaticResource SelectedPartDatas}"/>
+                <TextBlock Text="VRAM:" Style="{StaticResource SelectedPartDatas}"/>
+                <TextBlock Text="Ram type:" Style="{StaticResource SelectedPartDatas}"/>
+                <TextBlock Text="Core clock:" Style="{StaticResource SelectedPartDatas}"/>
+                <TextBlock Text="Boost clock:" Style="{StaticResource SelectedPartDatas}"/>
+                <TextBlock Text="Interface:" Style="{StaticResource SelectedPartDatas}"/>
+                <TextBlock Text="Frame sync:" Style="{StaticResource SelectedPartDatas}"/>
+                <TextBlock Text="HDMI output:" Style="{StaticResource SelectedPartDatas}"/>
+                <TextBlock Text="DP port output:" Style="{StaticResource SelectedPartDatas}"/>
+                <TextBlock Text="Tdp:" Style="{StaticResource SelectedPartDatas}"/>
+                <TextBlock Text="Price:" Style="{StaticResource SelectedPartDatas}"/>
+            </StackPanel>
+            <StackPanel Grid.Column="1" Orientation="Vertical">
+                <TextBlock Text="{Binding SelectedGPU.Manufacturer}" Style="{StaticResource SelectedPartValues}"/>
+                <TextBlock Text="{Binding SelectedGPU.Brand}" Style="{StaticResource SelectedPartValues}"/>
+                <TextBlock Text="{Binding SelectedGPU.Technology}" Style="{StaticResource SelectedPartValues}"/>
+                <TextBlock Text="{Binding SelectedGPU.Model}" Style="{StaticResource SelectedPartValues}"/>
+                <TextBlock Text="{Binding SelectedGPU.Vram, StringFormat='{}{0} GB'}" Style="{StaticResource SelectedPartValues}"/>
+                <TextBlock Text="{Binding SelectedGPU.Ram_type}" Style="{StaticResource SelectedPartValues}"/>
+                <TextBlock Text="{Binding SelectedGPU.Core_clock, StringFormat='{}{0} MHz'}" Style="{StaticResource SelectedPartValues}"/>
+                <TextBlock Text="{Binding SelectedGPU.Boost_clock, StringFormat='{}{0} MHz'}" Style="{StaticResource SelectedPartValues}"/>
+                <TextBlock Text="{Binding SelectedGPU.INterface}" Style="{StaticResource SelectedPartValues}"/>
+                <TextBlock Text="{Binding SelectedGPU.Frame_sync}" Style="{StaticResource SelectedPartValues}"/>
+                <TextBlock Text="{Binding SelectedGPU.Hdmi_ouput}" Style="{StaticResource SelectedPartValues}"/>
+                <TextBlock Text="{Binding SelectedGPU.Dp_port_output}" Style="{StaticResource SelectedPartValues}"/>
+                <TextBlock Text="{Binding SelectedGPU.Tdp, StringFormat='{}{0} W'}" Style="{StaticResource SelectedPartValues}"/>
+                <TextBlock Text="{Binding SelectedGPU.Price, StringFormat='{}{0} €'}" Style="{StaticResource SelectedPartValues}"/>
+            </StackPanel>
+        </Grid>
+    </Grid>
+</UserControl>

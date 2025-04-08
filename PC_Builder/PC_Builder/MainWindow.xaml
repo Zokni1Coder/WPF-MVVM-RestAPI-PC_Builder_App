@@ -5,10 +5,9 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PC_Builder"
         mc:Ignorable="d"
-        Title="MainWindow" Height="600" Width="900"
+        Title="MainWindow" Height="600" Width="950"
         WindowStyle="None"
-        AllowsTransparency="True"
-        WindowStartupLocation="CenterScreen"
+        AllowsTransparency="True"        
         >
     <Grid Background="#23262B">
 
@@ -19,7 +18,7 @@
 
         <TextBlock Grid.Column="1" Text="E R I K  K O V Á C S" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0, 0, 15, 10" FontSize="10" Foreground="#525965"/>
 
-        <Border Grid.Column="1" Background="#D61734"
+        <Border Grid.Column="1" Background="Red"
             Height="15"
             CornerRadius="3,0,0,3"
             Width="5"
@@ -30,7 +29,7 @@
         <StackPanel Orientation="Vertical" HorizontalAlignment="Left" Width="230" >
             <Grid Height="50" VerticalAlignment="Top" Margin="0, 30, 0, 0">
                 <TextBlock Text="PC Builder" FontSize="15" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="White"/>
-                <Border Background="#D61734"
+                <Border Background="Red"
                     Height="25"
                     CornerRadius="3,0,0,3"
                     Width="5"
@@ -56,8 +55,8 @@
 
                     <MenuItem.Icon>
 
-                        <Image Source="/Assets/home.png"
-                            Stretch="None" />
+                        <Image Source="/Assets/megaphone.png"
+                            Stretch="UniformToFill" />
 
                     </MenuItem.Icon>
 
@@ -70,8 +69,8 @@
 
                     <MenuItem.Icon>
 
-                        <Image Source="/Assets/home.png"
-                        Stretch="None"/>
+                        <Image Source="/Assets/motherboard.png"
+                        Stretch="UniformToFill"/>
 
                     </MenuItem.Icon>
 
@@ -84,8 +83,8 @@
 
                     <MenuItem.Icon>
 
-                        <Image Source="/Assets/home.png"
-                            Stretch="None"/>
+                        <Image Source="/Assets/cpu.png"
+                            Stretch="UniformToFill"/>
 
                     </MenuItem.Icon>
 
@@ -98,8 +97,8 @@
 
                     <MenuItem.Icon>
 
-                        <Image Source="/Assets/home.png"
-                            Stretch="None"/>
+                        <Image Source="/Assets/cooler.png"
+                            Stretch="UniformToFill"/>
 
                     </MenuItem.Icon>
 
@@ -112,8 +111,8 @@
 
                     <MenuItem.Icon>
 
-                        <Image Source="/Assets/home.png"
-                            Stretch="None"/>
+                        <Image Source="/Assets/graphic-card.png"
+                            Stretch="UniformToFill"/>
 
                     </MenuItem.Icon>
 
@@ -127,8 +126,8 @@
 
                     <MenuItem.Icon>
 
-                        <Image Source="/Assets/home.png"
-                            Stretch="None"/>
+                        <Image Source="/Assets/ram-memory.png"
+                            Stretch="UniformToFill"/>
 
                     </MenuItem.Icon>
 
@@ -142,8 +141,8 @@
 
                     <MenuItem.Icon>
 
-                        <Image Source="/Assets/home.png"
-                            Stretch="None"/>
+                        <Image Source="/Assets/memory.png"
+                            Stretch="UniformToFill"/>
 
                     </MenuItem.Icon>
 
@@ -157,15 +156,15 @@
 
                     <MenuItem.Icon>
 
-                        <Image Source="pack://application:,,,/Assets/home.png" Stretch="None"/>
+                        <Image Source="/Assets/power-supply.png" Stretch="UniformToFill"/>
 
                     </MenuItem.Icon>
 
                 </MenuItem>
                 <MenuItem Header="Test"
                     Template="{StaticResource Test_Template}"
-                    Command="{Binding UpdateViewCommand}"
-                    CommandParameter="PS"      
+                    Command="{Binding TestCommand}"
+                    CommandParameter="{Binding Computer}"      
                     >
                     <MenuItem.Icon>
 

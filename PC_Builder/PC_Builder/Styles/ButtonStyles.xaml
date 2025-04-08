@@ -3,6 +3,25 @@
 
     <ImageBrush x:Key="closeBtn" ImageSource="pack://application:,,,/Assets/delete.png"/>
 
+    <Style x:Key="SeelctedModels" TargetType="TextBlock">
+        <Setter Property="FontSize" Value="15"/>
+        <Setter Property="Foreground" Value="White"/>
+        <Setter Property="Margin" Value="20,2,20,2"/>
+    </Style>
+    
+    <Style x:Key="SelectedPartDatas" TargetType="TextBlock">
+        <Setter Property="HorizontalAlignment" Value="Right"/>
+        <Setter Property="Foreground" Value="White"/>
+        <Setter Property="Margin" Value="0,0,20,10"/>
+        <Setter Property="FontSize" Value="13"/>
+    </Style>
+    <Style x:Key="SelectedPartValues" TargetType="TextBlock">
+        <Setter Property="HorizontalAlignment" Value="Left"/>
+        <Setter Property="Foreground" Value="White"/>
+        <Setter Property="Margin" Value="15,0,20,10"/>
+        <Setter Property="FontSize" Value="13"/>
+    </Style>
+
     <Style x:Key="ButtonCloseStyle" TargetType="{x:Type Button}">
         <Setter Property="Height" Value="25"/>
         <Setter Property="Width" Value="25"/>
@@ -24,11 +43,68 @@
     </Style>
 
     <Style x:Key="GridHeaderStyle" TargetType="DataGridColumnHeader">
-        <Setter Property="Background" Value="#404D5B"/>
+        <Setter Property="Background" Value="#2E333A"/> 
         <Setter Property="Foreground" Value="White"/>
         <Setter Property="Height" Value="50"/>
         <Setter Property="FontSize" Value="15"/>
         <Setter Property="HorizontalContentAlignment" Value="Center"/>
     </Style>
-    
+
+    <Style x:Key="GridCellStyle" TargetType="DataGridCell">
+        <Setter Property="TextBlock.TextAlignment" Value="Center"/>
+        <Setter Property="FontSize" Value="15"/>
+        <Setter Property="FontWeight" Value="Bold"/>
+        <Setter Property="Foreground" Value="#2E333A"/>
+        <Setter Property="TextBlock.Height" Value="auto"/>
+        <Setter Property="HorizontalContentAlignment" Value="Center"/>
+        <Setter Property="VerticalContentAlignment" Value="Center"/>
+        <Style.Triggers>
+            <Trigger Property="IsSelected" Value="True">
+                <Setter Property="BorderBrush" Value="{x:Null}" />
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+
+    <Style x:Key="GridListingStyle" TargetType="DataGrid">
+        <Setter Property="Background" Value="Transparent"/>
+    </Style>
+
+    <Style x:Key="GridDetailsButtonStyle" TargetType="Button">
+        <Setter Property="Cursor" Value="Hand"/>
+        <Setter Property="BorderBrush" Value="#23262B"/>
+        <Setter Property="Foreground" Value="White"/>
+        <Setter Property="FontSize" Value="15"/>
+        <Setter Property="Background" Value="#23262B"/>
+        <Setter Property="Margin" Value="0,0,0,2"/>
+    </Style>
+
+    <Style x:Key="GridSelectButtonStyle" TargetType="Button">
+        <Setter Property="Cursor" Value="Hand"/>
+        <Setter Property="BorderBrush" Value="#23262B"/>
+        <Setter Property="Foreground" Value="White"/>
+        <Setter Property="FontSize" Value="15"/>
+        <Setter Property="Background" Value="#23262B"/>
+        <Setter Property="Margin" Value="0,0,0,0"/>
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Background" Value="#404D5B"/>
+                <Setter Property="BorderBrush" Value="#404D5B"/>
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+
+    <Style TargetType="{x:Type DataGridRow}">
+        <Setter Property="BorderBrush" Value="LightGray" />
+        <Setter Property="BorderThickness" Value="1" />
+        <Style.Triggers>
+            <Trigger Property="IsSelected" Value="True">
+                <Setter Property="BorderBrush" Value="#404D5B" />
+            </Trigger>
+        </Style.Triggers>
+        <Style.Resources>
+            <SolidColorBrush x:Key="{x:Static SystemColors.HighlightBrushKey}" Color="Transparent" />
+            <SolidColorBrush x:Key="{x:Static SystemColors.HighlightTextBrushKey}" Color="Transparent" />
+        </Style.Resources>
+    </Style>
+
 </ResourceDictionary>

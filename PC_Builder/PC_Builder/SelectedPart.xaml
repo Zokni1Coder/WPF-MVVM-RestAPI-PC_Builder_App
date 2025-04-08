@@ -1,0 +1,13 @@
+﻿<Window x:Class="PC_Builder.SelectedPart"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PC_Builder"
+        mc:Ignorable="d"
+        Title="SelectedPart" Height="650" Width="550"
+        BorderBrush="#23262B">
+    <Grid>
+        <ContentControl x:Name="CControll" Content="{Binding SelectedViewModel}" Margin="0, 0, 0, 0"/>
+    </Grid>
+</Window>

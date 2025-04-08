@@ -20,7 +20,7 @@
             </Border.Background>
         </Border>
 
-        <DataGrid x:Name="DGrid" ColumnHeaderStyle="{StaticResource GridHeaderStyle}" BorderBrush="#23262B">
+        <DataGrid x:Name="DGrid" ItemsSource="{Binding Coolers}" AutoGenerateColumns="False" ColumnHeaderStyle="{StaticResource GridHeaderStyle}" BorderBrush="#23262B">
             <DataGrid.Background>
                 <LinearGradientBrush StartPoint="0,0" EndPoint="0,5">
                     <GradientStop Color="#23262B" Offset="0.0"/>
@@ -28,17 +28,19 @@
                 </LinearGradientBrush>
             </DataGrid.Background>
             <DataGrid.Columns>
-                <DataGridTextColumn Header="Model" IsReadOnly="True" Width="*"/>
-                <DataGridTextColumn Header="Manufacturer" IsReadOnly="True" Width="*"/>
-                <DataGridTextColumn Header="Fan RPM" IsReadOnly="True" Width="*"/>
-                <DataGridTextColumn Header="Noise Level" IsReadOnly="True" Width="*"/>
-                <DataGridTextColumn Header="Water Cooled" IsReadOnly="True" Width="*"/>
-                <DataGridTextColumn Header="Price" IsReadOnly="True" Width="*"/>
-                <DataGridTemplateColumn Header="a" IsReadOnly="True" Width="auto">
+                <DataGridTextColumn Header="Model" Binding="{Binding Model}" CellStyle="{StaticResource GridCellStyle}" IsReadOnly="True" Width="*"/>
+                <DataGridTextColumn Header="Manufacturer" Binding="{Binding Manufacturer}" CellStyle="{StaticResource GridCellStyle}" IsReadOnly="True" Width="*"/>
+                <DataGridTextColumn Header="Fan RPM" Binding="{Binding Fan_RPM, StringFormat='{}{0} RPM'}" CellStyle="{StaticResource GridCellStyle}" IsReadOnly="True" Width="*"/>
+                <DataGridTextColumn Header="Noise Level" Binding="{Binding Noise_level, StringFormat='{}{0} dB'}" CellStyle="{StaticResource GridCellStyle}" IsReadOnly="True" Width="*"/>
+                <DataGridTextColumn Header="Water Cooled" Binding="{Binding WaterCooledToGrid}" CellStyle="{StaticResource GridCellStyle}" IsReadOnly="True" Width="*"/>
+                <DataGridTextColumn Header="Price" Binding="{Binding Price, StringFormat='{}{0} €'}" CellStyle="{StaticResource GridCellStyle}" IsReadOnly="True" Width="*"/>
+                <DataGridTemplateColumn Header="" IsReadOnly="True" Width="*">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
                             <StackPanel>
-                                <Button x:Name="BtnOpen" Cursor="Hand"/>
+                                <Button x:Name="BtnOpen" CommandParameter="{Binding .}" Command="{Binding DataContext.SelectViewCommand, RelativeSource={RelativeSource AncestorType=UserControl}}" Style="{StaticResource GridDetailsButtonStyle}" Content="More details" Cursor="Hand">
+                                </Button>
+                                <Button x:Name="BtnSelect" CommandParameter="{Binding DataContext, RelativeSource={RelativeSource AncestorType=DataGridRow}}" Command="{Binding DataContext.SelectPartCommand, RelativeSource={RelativeSource AncestorType=Window}}" Content="Select" Style="{StaticResource GridSelectButtonStyle}" Cursor="Hand"/>
                             </StackPanel>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>

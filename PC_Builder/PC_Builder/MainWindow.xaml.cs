@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using PC_Builder.ViewModels;
+using PC_Builder.Views;
 
 namespace PC_Builder
 {
@@ -23,14 +24,19 @@ namespace PC_Builder
     {
         public MainWindow()
         {
+            double PositionLeft = SystemParameters.PrimaryScreenWidth * .1;
+            double PositionTop = SystemParameters.PrimaryScreenHeight * .2;
+            this.Left = PositionLeft;
+            this.Top = PositionTop;
             InitializeComponent();
-
             DataContext = new MainWindowViewModel();
+            ConfigWindow configWindow = new ConfigWindow(PositionLeft, PositionTop);
+            configWindow.Show();
         }
 
         private void BtnClose_Click(object sender, RoutedEventArgs e)
         {
-            this.Close();
+            Application.Current.Shutdown();           
         }
     }
 }

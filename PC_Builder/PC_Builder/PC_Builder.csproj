@@ -35,8 +35,40 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.Bcl.AsyncInterfaces, Version=8.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Bcl.AsyncInterfaces.8.0.0\lib\net462\Microsoft.Bcl.AsyncInterfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="RestSharp, Version=112.1.0.0, Culture=neutral, PublicKeyToken=598062e77f915f75, processorArchitecture=MSIL">
+      <HintPath>..\packages\RestSharp.112.1.0\lib\net471\RestSharp.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
+    </Reference>
     <Reference Include="System.Data" />
+    <Reference Include="System.Memory, Version=4.0.1.2, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Memory.4.5.5\lib\net461\System.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Numerics.Vectors, Version=4.1.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Numerics.Vectors.4.5.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.6.0.0\lib\net461\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Text.Encodings.Web, Version=8.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Text.Encodings.Web.8.0.0\lib\net462\System.Text.Encodings.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Text.Json, Version=8.0.0.4, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Text.Json.8.0.4\lib\net462\System.Text.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Threading.Tasks.Extensions, Version=4.2.0.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Threading.Tasks.Extensions.4.5.4\lib\net461\System.Threading.Tasks.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ValueTuple, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ValueTuple.4.5.0\lib\net47\System.ValueTuple.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
@@ -55,10 +87,44 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Commands\SelectPartCommand.cs" />
+    <Compile Include="Commands\SelectViewCommand.cs" />
+    <Compile Include="Commands\TestCommand.cs" />
     <Compile Include="Commands\UpdateViewCommand.cs" />
+    <Compile Include="Checker\Compatibility_Checker.cs" />
+    <Compile Include="ErrorWindow.xaml.cs">
+      <DependentUpon>ErrorWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Exceptions\ConnectionErrorException.cs" />
+    <Compile Include="Exceptions\EmptySelectedPartException.cs" />
+    <Compile Include="Interfaces\IComputer.cs" />
+    <Compile Include="Interfaces\IComputerPart.cs" />
+    <Compile Include="Interfaces\IComputerPartVisitor.cs" />
+    <Compile Include="Models\CPU.cs" />
+    <Compile Include="Models\CPU_Cooler.cs" />
+    <Compile Include="Models\CPU_Cooler_Compatibility.cs" />
+    <Compile Include="Models\GPU.cs" />
+    <Compile Include="Models\M2.cs" />
+    <Compile Include="Models\Motherboard.cs" />
+    <Compile Include="Models\PC.cs" />
+    <Compile Include="Models\Power_Supply.cs" />
+    <Compile Include="Models\RAM.cs" />
+    <Compile Include="Models\ROM.cs" />
+    <Compile Include="Models\TupleConverter.cs" />
+    <Compile Include="Models\USBHeader.cs" />
+    <Compile Include="SelectedPart.xaml.cs">
+      <DependentUpon>SelectedPart.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="TestResultPopupWindow.xaml.cs">
+      <DependentUpon>TestResultPopupWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ViewModels\BaseSelectedViewModel.cs" />
     <Compile Include="ViewModels\BaseViewModel.cs" />
+    <Compile Include="ViewModels\ConfigWindowViewModel.cs" />
     <Compile Include="ViewModels\CPUCoolerViewModel.cs" />
     <Compile Include="ViewModels\CPUViewModel.cs" />
+    <Compile Include="ViewModels\ErrorWindowViewModel.cs" />
+    <Compile Include="ViewModels\FailedTestWindowViewModel.cs" />
     <Compile Include="ViewModels\GPUViewModel.cs" />
     <Compile Include="ViewModels\HomeViewModel.cs" />
     <Compile Include="ViewModels\MainWindowViewModel.cs" />
@@ -66,11 +132,29 @@
     <Compile Include="ViewModels\PowerSupplyViewModel.cs" />
     <Compile Include="ViewModels\RAMViewModel.cs" />
     <Compile Include="ViewModels\ROMViewModel.cs" />
+    <Compile Include="ViewModels\SelectedCPUCoolerViewModel.cs" />
+    <Compile Include="ViewModels\SelectedCPUViewModel.cs" />
+    <Compile Include="ViewModels\SelectedGPUViewModel.cs" />
+    <Compile Include="ViewModels\SelectedMotherboardViewModel.cs" />
+    <Compile Include="ViewModels\SelectedPartViewModel.cs" />
+    <Compile Include="ViewModels\SelectedPowerSupplyViewModel.cs" />
+    <Compile Include="ViewModels\SelectedRAMViewModel.cs" />
+    <Compile Include="ViewModels\SelectedROMViewModel.cs" />
+    <Compile Include="ViewModels\TestResultPopupWindowViewModel.cs" />
+    <Compile Include="Views\BaseSelectedView.xaml.cs">
+      <DependentUpon>BaseSelectedView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ConfigWindow.xaml.cs">
+      <DependentUpon>ConfigWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\CPUCoolerView.xaml.cs">
       <DependentUpon>CPUCoolerView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\CPUView.xaml.cs">
       <DependentUpon>CPUView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\FailedTestResultPopupWindowView.xaml.cs">
+      <DependentUpon>FailedTestResultPopupWindowView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\GPUView.xaml.cs">
       <DependentUpon>GPUView.xaml</DependentUpon>
@@ -90,6 +174,34 @@
     <Compile Include="Views\ROMView.xaml.cs">
       <DependentUpon>ROMView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\SelectedCPUCoolerView.xaml.cs">
+      <DependentUpon>SelectedCPUCoolerView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SelectedCPUView.xaml.cs">
+      <DependentUpon>SelectedCPUView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SelectedGPUView.xaml.cs">
+      <DependentUpon>SelectedGPUView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SelectedMotherboardView.xaml.cs">
+      <DependentUpon>SelectedMotherboardView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SelectedPSView.xaml.cs">
+      <DependentUpon>SelectedPSView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SelectedRAMView.xaml.cs">
+      <DependentUpon>SelectedRAMView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SelectedROMView.xaml.cs">
+      <DependentUpon>SelectedROMView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\TestResultPopupWindowView.xaml.cs">
+      <DependentUpon>TestResultPopupWindowView.xaml</DependentUpon>
+    </Compile>
+    <Page Include="ErrorWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -102,6 +214,10 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="SelectedPart.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Styles\ButtonStyles.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -110,11 +226,27 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="TestResultPopupWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\BaseSelectedView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\ConfigWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\CPUCoolerView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\CPUView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\FailedTestResultPopupWindowView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -142,6 +274,38 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Views\SelectedCPUCoolerView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\SelectedCPUView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\SelectedGPUView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\SelectedMotherboardView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\SelectedPSView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\SelectedRAMView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\SelectedROMView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\TestResultPopupWindowView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs">
@@ -161,6 +325,7 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -175,7 +340,7 @@
     </Resource>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Models\" />
+    <Resource Include="Assets\motherboard.png" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Assets\delete.png">
@@ -183,14 +348,31 @@
     </Resource>
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="delete.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
+    <Resource Include="Assets\cpu.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="home.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
+    <Resource Include="Assets\graphic-card.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\cooler.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\ram-memory.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\power-supply.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\memory.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\megaphone.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\OKBG.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\failedTestBG.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

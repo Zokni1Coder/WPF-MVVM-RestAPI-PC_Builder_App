@@ -15,7 +15,7 @@ namespace PC_Builder.Commands
         {
             this.viewModel = viewModel;
         }
-
+      
         public event EventHandler CanExecuteChanged;
 
         public bool CanExecute(object parameter)
@@ -29,7 +29,7 @@ namespace PC_Builder.Commands
             switch (parameter.ToString())
             {
                 case "Home":
-                    viewModel.SelectedViewModel = new HomeViewModel();
+                    viewModel.SelectedViewModel = new HomeViewModel();                    
                     break;
                 case "Motherboard":
                     viewModel.SelectedViewModel = new MotherboardViewModel();

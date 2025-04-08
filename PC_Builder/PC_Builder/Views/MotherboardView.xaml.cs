@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using PC_Builder.ViewModels;
 
 namespace PC_Builder.Views
 {
@@ -23,6 +24,9 @@ namespace PC_Builder.Views
         public MotherboardView()
         {
             InitializeComponent();
+
+            DataContext = new MotherboardViewModel();
         }
+
     }
 }
