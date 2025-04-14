@@ -1,6 +1,6 @@
-const express = require('express');  //ez egy csomag. installaltuk a terminalban
-const app = express(); //executolja az express csomagot
-const motherboardRoutes = require('./api/routes/motherboards'); //mivel itt megadtuk, ezert nem kell a motherboard.js-ben megadni, csak a "\" jelet.
+const express = require('express');  
+const app = express(); 
+const motherboardRoutes = require('./api/routes/motherboards');
 const cpu_coolerRoutes = require('./api/routes/cpu_coolers');
 const cpuRoutes = require('./api/routes/cpus');
 const gpuRoutes = require('./api/routes/gpus');
@@ -12,7 +12,7 @@ const bodyParser = require('body-parser');
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());
 
-app.use('/motherboards', motherboardRoutes); // ennek koszonhetoen minden ami ezzel kezdodik url tovabbitva lesz a motherboard.js-be
+app.use('/motherboards', motherboardRoutes); 
 app.use('/cpu_coolers', cpu_coolerRoutes);
 app.use('/cpus', cpuRoutes);
 app.use('/gpus', gpuRoutes);
